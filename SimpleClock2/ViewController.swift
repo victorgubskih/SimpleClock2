@@ -11,7 +11,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var sipleclock2: UIView!
     
+    @IBOutlet weak var hourClock: UIView!
     
+    @IBOutlet weak var minuteHandClock: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

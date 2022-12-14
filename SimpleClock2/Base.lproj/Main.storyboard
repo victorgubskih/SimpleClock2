@@ -27,8 +27,13 @@
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="73a-Pa-Tys">
                                         <rect key="frame" x="133" y="40" width="10" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tsz-Sl-uVp">
+                                        <rect key="frame" x="134" y="40" width="4" height="95"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -40,6 +45,7 @@
                     <connections>
                         <outlet property="hourClock" destination="A2w-Wn-bz2" id="DWS-Qs-BSz"/>
                         <outlet property="minuteHandClock" destination="73a-Pa-Tys" id="YgH-8W-B23"/>
+                        <outlet property="secondHandClock" destination="Tsz-Sl-uVp" id="Pli-Wx-JBa"/>
                         <outlet property="sipleclock2" destination="kAw-cZ-1NY" id="1FT-IT-kPT"/>
                     </connections>
                 </viewController>

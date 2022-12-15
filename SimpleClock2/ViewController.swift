@@ -20,6 +20,12 @@ class ViewController: UIViewController {
     
     
     
+    
+    var second = 0
+    var minute = 0
+    var hour = 5
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -61,9 +67,20 @@ class ViewController: UIViewController {
             angle += step
             
         }
-       
+        movementHandClock(count: 12, index: hour, handView: hourClock)
             
-        }
+    }
+    func movementHandClock(count: Int, index: Int, handView: UIView) {
+        let step = CGFloat(2 * Double.pi / CGFloat(count))
+        
+        let x = handView.bounds.width / 4
+        let y = handView.bounds.height / 2
+        var transform = CGAffineTransform(translationX: x, y: y)
+        transform = transform.rotated(by: CGFloat(index) * step)
+        transform = transform.translatedBy(x: -x, y: -y)
+        handView.transform = transform
+        
+    }
         
     
 }

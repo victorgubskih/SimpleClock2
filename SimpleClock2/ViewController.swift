@@ -21,8 +21,8 @@ class ViewController: UIViewController {
     
     
     
-    var second = 0
-    var minute = 0
+    var second = 40
+    var minute = 20
     var hour = 5
     
     
@@ -68,6 +68,8 @@ class ViewController: UIViewController {
             
         }
         movementHandClock(count: 12, index: hour, handView: hourClock)
+        movementHandClock(count: 60, index: minute, handView: minuteHandClock)
+        movementHandClock(count: 60, index: second, handView: secondHandClock)
             
     }
     func movementHandClock(count: Int, index: Int, handView: UIView) {

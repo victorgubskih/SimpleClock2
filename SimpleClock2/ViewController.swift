@@ -23,9 +23,9 @@ class ViewController: UIViewController {
     
     
     
-    var second = 0
-    var minute = 0
-    var hour = 0
+   /* var second = 30
+    var minute = 20
+    var hour = 10*/
     
     
     override func viewDidLoad() {
@@ -81,9 +81,9 @@ class ViewController: UIViewController {
             angle += step
             
         }
-        movementHandClock(count: 12, index: hour, handView: hourClock)
-        movementHandClock(count: 60, index: minute, handView: minuteHandClock)
-        movementHandClock(count: 60, index: second, handView: secondHandClock)
+        movementHandClock(count: 12, index: 1, handView: hourClock)
+        movementHandClock(count: 60, index: 20, handView: minuteHandClock)
+        movementHandClock(count: 60, index: 30, handView: secondHandClock)
             
     }
     func movementHandClock(count: Int, index: Int, handView: UIView) {
@@ -98,7 +98,15 @@ class ViewController: UIViewController {
         
     }
     @objc func dataPickerAction(sender: UIDatePicker) {
-        
+        let date = dataPicker.date
+        let components = Calendar.current.dateComponents([.hour, .minute, .second], from: date)
+        let hour = components.hour ?? 0
+        let minute = components.minute ?? 0
+        let second = components.second ?? 0
+        movementHandClock(count: 12, index: hour, handView: hourClock)
+        movementHandClock(count: 60, index: minute, handView: minuteHandClock)
+        movementHandClock(count: 60, index: second, handView: secondHandClock)
+            
     }
         
     

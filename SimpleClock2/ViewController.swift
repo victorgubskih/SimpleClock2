@@ -18,12 +18,14 @@ class ViewController: UIViewController {
    
     @IBOutlet weak var secondHandClock: UIView!
     
+    var dataPicker = UIDatePicker()
     
     
     
-    var second = 40
-    var minute = 20
-    var hour = 5
+    
+    var second = 0
+    var minute = 0
+    var hour = 0
     
     
     override func viewDidLoad() {
@@ -36,6 +38,18 @@ class ViewController: UIViewController {
         sipleclock2.layer.borderColor = UIColor.black.cgColor
         
         sipleclock2.layer.cornerRadius = sipleclock2.frame.height / 2
+        
+        
+       
+        dataPicker.frame = CGRect(x: 0, y: 40, width: 200, height: 50)
+        dataPicker.center.x = sipleclock2.center.x
+        dataPicker.center.y = sipleclock2.center.y
+        
+        dataPicker.preferredDatePickerStyle = .compact
+        dataPicker.datePickerMode = .time
+        view.addSubview(dataPicker)
+        
+        dataPicker.addTarget(self, action: #selector(dataPickerAction(sender:)), for: .valueChanged)
         
         createOblectAraundCircle()
     }
@@ -81,6 +95,9 @@ class ViewController: UIViewController {
         transform = transform.rotated(by: CGFloat(index) * step)
         transform = transform.translatedBy(x: -x, y: -y)
         handView.transform = transform
+        
+    }
+    @objc func dataPickerAction(sender: UIDatePicker) {
         
     }
         

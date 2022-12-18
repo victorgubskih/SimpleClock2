@@ -20,12 +20,14 @@ class ViewController: UIViewController {
     
     var dataPicker = UIDatePicker()
     
+    var timer = Timer()
     
     
     
-   /* var second = 30
+    
+    var second = 30
     var minute = 20
-    var hour = 10*/
+    var hour = 10
     
     
     override func viewDidLoad() {
@@ -50,6 +52,8 @@ class ViewController: UIViewController {
         view.addSubview(dataPicker)
         
         dataPicker.addTarget(self, action: #selector(dataPickerAction(sender:)), for: .valueChanged)
+        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
         
         createOblectAraundCircle()
     }
@@ -107,6 +111,20 @@ class ViewController: UIViewController {
         movementHandClock(count: 60, index: minute, handView: minuteHandClock)
         movementHandClock(count: 60, index: second, handView: secondHandClock)
             
+    }
+    @objc func timerAction() {
+        second += 1
+        movementHandClock(count: 60, index: second, handView: secondHandClock)
+        if second == 60  {
+            second = 0
+            movementHandClock(count: 60, index: minute, handView: minuteHandClock)
+            if minute == 60 {
+                minute = 0
+                movementHandClock(count: 12, index: hour, handView: hourClock)
+            }
+            
+        }
+        
     }
         
     

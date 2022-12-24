@@ -9,6 +9,7 @@ import UIKit
 
 class ClockView: UIView {
 
-
-
+    override var intrinsicContentSize: CGSize {
+       return CGSize(width: 270, height: 270)
+    }
 }

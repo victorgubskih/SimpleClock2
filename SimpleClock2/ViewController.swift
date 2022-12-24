@@ -117,9 +117,11 @@ class ViewController: UIViewController {
         movementHandClock(count: 60, index: second, handView: secondHandClock)
         if second == 60  {
             second = 0
+            minute += 1
             movementHandClock(count: 60, index: minute, handView: minuteHandClock)
             if minute == 60 {
                 minute = 0
+                hour += 1
                 movementHandClock(count: 12, index: hour, handView: hourClock)
             }
             

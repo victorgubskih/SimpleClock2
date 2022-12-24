@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var sipleclock2: UIView!
+    @IBOutlet weak var sipleclock2: ClockView!
     
     @IBOutlet weak var hourClock: UIView!
     

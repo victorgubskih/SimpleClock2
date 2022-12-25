@@ -8,8 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var sipleclock2: ClockView!
+    
+    var sipleclock2: ClockView!
+    
+    
+   
     
     @IBOutlet weak var hourClock: UIView!
     
@@ -32,14 +35,21 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        sipleclock2.translatesAutoresizingMaskIntoConstraints = false
         
+        sipleclock2.sizeToFit()
+        sipleclock2.layer.cornerRadius = sipleclock2.frame.height / 2
         sipleclock2.center = view.center
         sipleclock2.layer.borderWidth = 2
         sipleclock2.layer.borderColor = UIColor.black.cgColor
+        view.addSubview(sipleclock2)
+       
+        //sipleclock2.translatesAutoresizingMaskIntoConstraints = false
         
-        sipleclock2.layer.cornerRadius = sipleclock2.frame.height / 2
+        //sipleclock2.center = view.center
+        //sipleclock2.layer.borderWidth = 2
+        //sipleclock2.layer.borderColor = UIColor.black.cgColor
+        
+        //sipleclock2.layer.cornerRadius = sipleclock2.frame.height / 2
         
         
        
@@ -54,6 +64,8 @@ class ViewController: UIViewController {
         dataPicker.addTarget(self, action: #selector(dataPickerAction(sender:)), for: .valueChanged)
         
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        
+        
         
         createOblectAraundCircle()
     }

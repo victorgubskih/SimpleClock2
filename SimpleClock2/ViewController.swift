@@ -70,7 +70,7 @@ class ViewController: UIViewController {
         createOblectAraundCircle()
     }
 
-    func createOblectAraundCircle() {
+   /* func createOblectAraundCircle() {
         
         let centre = CGPoint(x: sipleclock2.bounds.width / 2, y: sipleclock2.bounds.height / 2)
         let radius: CGFloat = 100
@@ -97,6 +97,9 @@ class ViewController: UIViewController {
             angle += step
             
         }
+    
+    
+    */
         movementHandClock(count: 12, index: 1, handView: hourClock)
         movementHandClock(count: 60, index: 20, handView: minuteHandClock)
         movementHandClock(count: 60, index: 30, handView: secondHandClock)

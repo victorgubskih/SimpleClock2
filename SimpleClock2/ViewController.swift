@@ -9,19 +9,19 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var sipleclock2: ClockView!
+    var simpleClock: ClockView!
     
     
    
     
-    @IBOutlet weak var hourClock: UIView!
+    weak var hourClock: UIView!
     
-    @IBOutlet weak var minuteHandClock: UIView!
+    weak var minuteHandClock: UIView!
     
    
-    @IBOutlet weak var secondHandClock: UIView!
+    weak var secondHandClock: UIView!
     
-    var dataPicker = UIDatePicker()
+   
     
     var timer = Timer()
     
@@ -35,44 +35,56 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        simpleClock = ClockView()
+        simpleClock.frame.size = CGSize(width: 270, height: 270)
+        simpleClock.layer.cornerRadius = simpleClock.frame.height / 2
+        simpleClock.center = view.center
+        simpleClock.layer.borderWidth = 2
+        simpleClock.layer.borderColor = UIColor.black.cgColor
+        view.addSubview(simpleClock)
         
-        sipleclock2.sizeToFit()
-        sipleclock2.layer.cornerRadius = sipleclock2.frame.height / 2
-        sipleclock2.center = view.center
-        sipleclock2.layer.borderWidth = 2
-        sipleclock2.layer.borderColor = UIColor.black.cgColor
-        view.addSubview(sipleclock2)
+        let hourClock = UIView()
+        hourClock.frame.size = CGSize(width: 16, height: 70)
+        hourClock.layer.borderWidth = 1
+        hourClock.layer.borderColor = UIColor.black.cgColor
+        hourClock.center = CGPoint(x: simpleClock.frame.width/2, y: simpleClock.frame.height/2 - hourClock.frame.height / 2)
+        simpleClock.addSubview(hourClock)
+        self.hourClock = hourClock
        
-        //sipleclock2.translatesAutoresizingMaskIntoConstraints = false
+        let minuteHandClock = UIView()
+        minuteHandClock.frame.size = CGSize(width: 8, height: 90)
+        minuteHandClock.layer.borderWidth = 1
+        minuteHandClock.layer.borderColor = UIColor.green.cgColor
+        minuteHandClock.center = CGPoint(x: simpleClock.frame.width/2, y: simpleClock.frame.height/2 - minuteHandClock.frame.height / 2)
+        simpleClock.addSubview(minuteHandClock)
+        self.minuteHandClock = minuteHandClock
         
-        //sipleclock2.center = view.center
-        //sipleclock2.layer.borderWidth = 2
-        //sipleclock2.layer.borderColor = UIColor.black.cgColor
-        
-        //sipleclock2.layer.cornerRadius = sipleclock2.frame.height / 2
+        let secondHandClock = UIView()
+        secondHandClock.frame.size = CGSize(width: 4, height: 95)
+        secondHandClock.layer.borderWidth = 1
+        secondHandClock.layer.borderColor = UIColor.red.cgColor
+        secondHandClock.center = CGPoint(x: simpleClock.frame.width/2, y: simpleClock.bounds.height/2 - secondHandClock.frame.height / 2)
+        simpleClock.addSubview(secondHandClock)
+        self.secondHandClock = secondHandClock
+       
+        movementHandClock(count: 12, index: 0, handView: hourClock)
+        movementHandClock(count: 60, index: 0, handView: minuteHandClock)
+        movementHandClock(count: 60, index: 0, handView: secondHandClock)
         
         
        
-        dataPicker.frame = CGRect(x: 0, y: 40, width: 200, height: 50)
-        dataPicker.center.x = sipleclock2.center.x
-        dataPicker.center.y = sipleclock2.center.y
         
-        dataPicker.preferredDatePickerStyle = .compact
-        dataPicker.datePickerMode = .time
-        view.addSubview(dataPicker)
-        
-        dataPicker.addTarget(self, action: #selector(dataPickerAction(sender:)), for: .valueChanged)
-        
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+       // timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
         
         
         
-        createOblectAraundCircle()
+        simpleClock.createOblectAraundCircle()
     }
 
-   /* func createOblectAraundCircle() {
+    func createOblectAraundCircle() {
         
-        let centre = CGPoint(x: sipleclock2.bounds.width / 2, y: sipleclock2.bounds.height / 2)
+        let centre = CGPoint(x: simpleClock.bounds.width / 2, y: simpleClock.bounds.height / 2)
         let radius: CGFloat = 100
         let count = 12
         
@@ -93,18 +105,17 @@ class ViewController: UIViewController {
             
             label.center = CGPoint(x: x, y: y)
             
-            sipleclock2.addSubview(label)
+            simpleClock.addSubview(label)
             angle += step
             
         }
     
     
-    */
-        movementHandClock(count: 12, index: 1, handView: hourClock)
-        movementHandClock(count: 60, index: 20, handView: minuteHandClock)
-        movementHandClock(count: 60, index: 30, handView: secondHandClock)
+   
+    
             
     }
+    
     func movementHandClock(count: Int, index: Int, handView: UIView) {
         let step = CGFloat(2 * Double.pi / CGFloat(count))
         
@@ -117,7 +128,7 @@ class ViewController: UIViewController {
         
     }
     @objc func dataPickerAction(sender: UIDatePicker) {
-        let date = dataPicker.date
+        let date = sender.date
         let components = Calendar.current.dateComponents([.hour, .minute, .second], from: date)
         let hour = components.hour ?? 0
         let minute = components.minute ?? 0

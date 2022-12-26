@@ -14,7 +14,7 @@ class ClockView: UIView {
     }
     func createOblectAraundCircle() {
          
-         let centre = CGPoint(x: sipleclock2.bounds.width / 2, y: sipleclock2.bounds.height / 2)
+         let centre = CGPoint(x: self.bounds.width / 2, y: self.bounds.height / 2)
          let radius: CGFloat = 100
          let count = 12
          
@@ -35,7 +35,7 @@ class ClockView: UIView {
              
              label.center = CGPoint(x: x, y: y)
              
-             sipleclock2.addSubview(label)
+             self.addSubview(label)
              angle += step
              
          }

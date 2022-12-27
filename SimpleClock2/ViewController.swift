@@ -28,9 +28,9 @@ class ViewController: UIViewController {
     
     
     
-    var second = 30
-    var minute = 20
-    var hour = 10
+    var second = 60
+    var minute = 60
+    var hour = 12
     
     
     override func viewDidLoad() {
@@ -96,7 +96,7 @@ class ViewController: UIViewController {
         
        
         
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        //timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
         
         
         

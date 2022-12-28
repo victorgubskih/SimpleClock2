@@ -76,4 +76,14 @@ class ClockView: UIView {
         self.secondArrow = secondArrow
         
     }
+    
+    func movementHandClock(count: Int, index: Int, handView: UIView) {
+        let step = CGFloat(2 * Double.pi / CGFloat(count))
+        let x = handView.bounds.width / 4
+        let y = handView.bounds.height / 2
+        var transform = CGAffineTransform(translationX: x, y: y)
+        transform = transform.rotated(by: CGFloat(index) * step)
+        transform = transform.translatedBy(x: -x, y: -y)
+        handView.transform = transform
+    }
 }

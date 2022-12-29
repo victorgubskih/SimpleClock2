@@ -9,6 +9,7 @@ import UIKit
 
 class ClockView: UIView {
     
+    
     var second = 0
     var minute = 0
     var hour = 0
@@ -32,6 +33,13 @@ class ClockView: UIView {
         self.addSubview(centreCircle)
     }
     func createOblectAraundCircle() {
+        self.layer.cornerRadius = frame.height / 2
+        layer.borderWidth = 2
+        layer.borderColor = UIColor.black.cgColor
+        backgroundColor = UIColor.lightGray
+        let backgroundColor = UIColor.green
+        self.backgroundColor = UIColor.blue
+        
         let centre = CGPoint(x: self.bounds.width / 2, y: self.bounds.height / 2)
         let radius: CGFloat = 100
         let count = 12
@@ -73,7 +81,7 @@ class ClockView: UIView {
         let minuteArrow = UIView()
         minuteArrow.frame.size = CGSize(width: 8, height: 90)
         minuteArrow.layer.borderWidth = 1
-        minuteArrow.layer.borderColor = UIColor.green.cgColor
+        minuteArrow.layer.borderColor = UIColor.black.cgColor
         minuteArrow.layer.cornerRadius = 10
         minuteArrow.backgroundColor = UIColor.green
         minuteArrow.center = CGPoint(x: self.frame.width/2, y: self.frame.height/2 - minuteArrow.frame.height / 2)
@@ -83,7 +91,7 @@ class ClockView: UIView {
         let secondArrow = UIView()
         secondArrow.frame.size = CGSize(width: 4, height: 95)
         secondArrow.layer.borderWidth = 1
-        secondArrow.layer.borderColor = UIColor.red.cgColor
+        secondArrow.layer.borderColor = UIColor.black.cgColor
         secondArrow.layer.cornerRadius = 10
         secondArrow.backgroundColor = UIColor.red
         secondArrow.center = CGPoint(x: self.frame.width/2, y: self.frame.height/2 - secondArrow.frame.height / 2)
@@ -129,5 +137,11 @@ class ClockView: UIView {
      
         setTime(second: second, minute: minute, hour: hour)
     
+    }
+    func setUp() {
+        self.createOblectAraundCircle()
+        self.createArrrowsAndClock()
+        self.setTime(second: 0, minute: 0, hour: 0)
+        self.createCentreCircle()
     }
 }

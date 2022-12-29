@@ -8,9 +8,14 @@
 import UIKit
 
 class ClockView: UIView {
-    weak var hourArrow: UIView!
-    weak var minuteArrow: UIView!
-    weak var secondArrow: UIView!
+    
+    var second = 0
+    var minute = 0
+    var hour = 0
+    
+    private weak var hourArrow: UIView!
+    private weak var minuteArrow: UIView!
+    private weak var secondArrow: UIView!
 
     override var intrinsicContentSize: CGSize {
        return CGSize(width: 270, height: 270)
@@ -77,7 +82,7 @@ class ClockView: UIView {
         
     }
     
-    func movementHandClock(count: Int, index: Int, handView: UIView) {
+    private func movementHandClock(count: Int, index: Int, handView: UIView) {
         let step = CGFloat(2 * Double.pi / CGFloat(count))
         let x = handView.bounds.width / 4
         let y = handView.bounds.height / 2
@@ -86,4 +91,12 @@ class ClockView: UIView {
         transform = transform.translatedBy(x: -x, y: -y)
         handView.transform = transform
     }
+    
+    func setTime(second: Int, minute: Int, hour: Int) {
+        movementHandClock(count: 12, index: hour, handView: hourArrow)
+        movementHandClock(count: 60, index: minute, handView: minuteArrow)
+        movementHandClock(count: 60, index: second, handView: secondArrow)
+    }
+    
+    
 }

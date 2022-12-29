@@ -16,6 +16,7 @@ class ClockView: UIView {
     private weak var hourArrow: UIView!
     private weak var minuteArrow: UIView!
     private weak var secondArrow: UIView!
+    var timer = Timer()
 
     override var intrinsicContentSize: CGSize {
        return CGSize(width: 270, height: 270)
@@ -24,7 +25,7 @@ class ClockView: UIView {
         let centreCircle = UIView()
         centreCircle.frame.size = CGSize(width: 20, height: 20)
         centreCircle.layer.cornerRadius = centreCircle.frame.height / 2
-        centreCircle.center = self.center
+        centreCircle.center = CGPoint(x: self.frame.width/2, y: self.frame.height/2)
         centreCircle.layer.borderWidth = 1
         centreCircle.layer.borderColor = UIColor.black.cgColor
         centreCircle.backgroundColor = UIColor.orange
@@ -106,9 +107,27 @@ class ClockView: UIView {
         movementHandClock(count: 60, index: minute, handView: minuteArrow)
         movementHandClock(count: 60, index: second, handView: secondArrow)
     }
+    
+   
     func startTimer() {
-        
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
     }
     
+    @objc func timerAction() {
+        self.second += 1
+        
+        if second  == 60  {
+            second  = 0
+            minute += 1
+           
+            if minute  == 60 {
+                minute  = 0
+                hour += 1
+               
+            }
+        }
+     
+        setTime(second: second, minute: minute, hour: hour)
     
+    }
 }

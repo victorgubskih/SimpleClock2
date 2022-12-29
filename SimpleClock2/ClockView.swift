@@ -20,7 +20,16 @@ class ClockView: UIView {
     override var intrinsicContentSize: CGSize {
        return CGSize(width: 270, height: 270)
     }
-   
+    func createCentreCircle() {
+        let centreCircle = UIView()
+        centreCircle.frame.size = CGSize(width: 20, height: 20)
+        centreCircle.layer.cornerRadius = centreCircle.frame.height / 2
+        centreCircle.center = self.center
+        centreCircle.layer.borderWidth = 1
+        centreCircle.layer.borderColor = UIColor.black.cgColor
+        centreCircle.backgroundColor = UIColor.orange
+        self.addSubview(centreCircle)
+    }
     func createOblectAraundCircle() {
         let centre = CGPoint(x: self.bounds.width / 2, y: self.bounds.height / 2)
         let radius: CGFloat = 100
@@ -96,6 +105,9 @@ class ClockView: UIView {
         movementHandClock(count: 12, index: hour, handView: hourArrow)
         movementHandClock(count: 60, index: minute, handView: minuteArrow)
         movementHandClock(count: 60, index: second, handView: secondArrow)
+    }
+    func startTimer() {
+        
     }
     
     

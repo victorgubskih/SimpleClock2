@@ -27,16 +27,8 @@ class ViewController: UIViewController {
         
         simpleClock.createArrrowsAndClock()
         simpleClock.setTime(second: 0, minute: 0, hour: 0)
+        simpleClock.createCentreCircle()
         
-        let centreCircle = UIView()
-        centreCircle.frame.size = CGSize(width: 20, height: 20)
-        centreCircle.layer.cornerRadius = centreCircle.frame.height / 2
-        centreCircle.center = view.center
-        centreCircle.layer.borderWidth = 1
-        centreCircle.layer.borderColor = UIColor.black.cgColor
-        centreCircle.backgroundColor = UIColor.orange
-        view.addSubview(centreCircle)
-       
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
     }
 
@@ -55,5 +47,7 @@ class ViewController: UIViewController {
         }
         simpleClock.setTime(second: simpleClock.second, minute: simpleClock.minute, hour: simpleClock.hour)
     }
+    
+   
 }
 

@@ -8,7 +8,7 @@
 import UIKit
 
 class ClockView: UIView {
-    
+    var speed = 1.0
     var second = 0
     var minute = 0
     var hour = 0
@@ -17,10 +17,20 @@ class ClockView: UIView {
     private weak var minuteArrow: UIView!
     private weak var secondArrow: UIView!
     var timer = Timer()
-
-    override var intrinsicContentSize: CGSize {
-       return CGSize(width: 270, height: 270)
+    
+    init(speed: Double = 1) {
+        super.init(frame: .zero)
+        self.speed = speed
     }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+   // override var intrinsicContentSize: CGSize {
+     //  return CGSize(width: 270, height: 270)
+   // }
+    
     func createCentreCircle() {
         let centreCircle = UIView()
         centreCircle.frame.size = CGSize(width: 20, height: 20)
@@ -31,13 +41,13 @@ class ClockView: UIView {
         centreCircle.backgroundColor = UIColor.orange
         self.addSubview(centreCircle)
     }
+    
     func createOblectAraundCircle() {
         self.layer.cornerRadius = frame.height / 2
         layer.borderWidth = 2
         layer.borderColor = UIColor.black.cgColor
         backgroundColor = UIColor.lightGray
-        let backgroundColor = UIColor.green
-        self.backgroundColor = UIColor.blue
+       
         
         let centre = CGPoint(x: self.bounds.width / 2, y: self.bounds.height / 2)
         let radius: CGFloat = 100
@@ -117,7 +127,7 @@ class ClockView: UIView {
     
    
     func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: TimeInterval(1.0 / speed), target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
     }
     
     @objc func timerAction() {

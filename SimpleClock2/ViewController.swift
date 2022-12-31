@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         simpleClock = ClockView(speed: 50)
-        simpleClock.frame.size = CGSize(width:270 , height: 270)
+        simpleClock.frame.size = CGSize(width: 200, height: 200) 
         simpleClock.center = CGPoint( x: view.center.x, y: simpleClock.frame.height/2 )
         view.addSubview(simpleClock)
         

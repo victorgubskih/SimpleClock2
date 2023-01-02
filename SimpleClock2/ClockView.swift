@@ -16,18 +16,28 @@ class ClockView: UIView {
                 second  = 0
                 minute += 1
             }
+            movementHandClock(count: 60, index: second, handView: secondArrow)
         }
     }
-        var minute = 0 {
-            didSet {
-                if minute  == 60 {
-                    minute  = 0
-                    hour += 1
-                }
+    var minute = 0 {
+        didSet {
+            if minute  == 60 {
+                minute  = 0
+                hour += 1
             }
+            movementHandClock(count: 60, index: minute, handView: minuteArrow)
         }
+    }
     
-    var hour = 0
+    var hour = 0 {
+        didSet {
+            if hour  == 12 {
+                hour  = 0
+            }
+            movementHandClock(count: 12, index: hour, handView: hourArrow)
+        }
+        
+    }
     
     private weak var hourArrow: UIView!
     private weak var minuteArrow: UIView!
@@ -150,7 +160,7 @@ class ClockView: UIView {
     @objc func timerAction() {
         self.second += 1
       
-        setTime(second: second, minute: minute, hour: hour)
+        
     
     }
     

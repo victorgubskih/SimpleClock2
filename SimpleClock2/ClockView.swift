@@ -34,7 +34,7 @@ class ClockView: UIView {
     
     func createCentreCircle() {
         let centreCircle = UIView()
-        centreCircle.frame.size = CGSize(width: 20 * createNewSize(), height: 20 * createNewSize())
+        centreCircle.frame.size = CGSize(width: 20 * scale(), height: 20 * scale())
         centreCircle.layer.cornerRadius = centreCircle.frame.height / 2
         centreCircle.center = CGPoint(x: self.frame.width/2, y: self.frame.height/2)
         centreCircle.layer.borderWidth = 1
@@ -51,7 +51,7 @@ class ClockView: UIView {
        
         
         let centre = CGPoint(x: self.bounds.width / 2, y: self.bounds.height / 2)
-        let radius: CGFloat = 100 * createNewSize()
+        let radius: CGFloat = 100 * scale()
         let count = 12
          
          var angle = CGFloat(2 * Double.pi - Double.pi / 3)
@@ -65,7 +65,7 @@ class ClockView: UIView {
              let label = UILabel()
              label.text = "\(index + 1)"
              
-             label.font = UIFont(name: "Arial", size: 20 * createNewSize())
+             label.font = UIFont(name: "Arial", size: 20 * scale())
              label.textColor = UIColor.black
              label.sizeToFit()
              
@@ -79,7 +79,7 @@ class ClockView: UIView {
     }
     func createArrrowsAndClock() {
         let hourArrow = UIView()
-        hourArrow.frame.size = CGSize(width: 16 * createNewSize() / 270, height: 70 * createNewSize())
+        hourArrow.frame.size = CGSize(width: 16 * scale(), height: 70 * scale())
         hourArrow.layer.borderWidth = 1
         hourArrow.layer.borderColor = UIColor.black.cgColor
         hourArrow.layer.cornerRadius = 10
@@ -89,7 +89,7 @@ class ClockView: UIView {
         self.hourArrow = hourArrow
        
         let minuteArrow = UIView()
-        minuteArrow.frame.size = CGSize(width: 8 * createNewSize(), height: 90 * createNewSize())
+        minuteArrow.frame.size = CGSize(width: 8 * scale(), height: 90 * scale())
         minuteArrow.layer.borderWidth = 1
         minuteArrow.layer.borderColor = UIColor.black.cgColor
         minuteArrow.layer.cornerRadius = 10
@@ -99,7 +99,7 @@ class ClockView: UIView {
         self.minuteArrow = minuteArrow
         
         let secondArrow = UIView()
-        secondArrow.frame.size = CGSize(width: 4 * createNewSize(), height: 95 * createNewSize())
+        secondArrow.frame.size = CGSize(width: 4 * scale(), height: 95 * scale())
         secondArrow.layer.borderWidth = 1
         secondArrow.layer.borderColor = UIColor.black.cgColor
         secondArrow.layer.cornerRadius = 10
@@ -148,15 +148,15 @@ class ClockView: UIView {
         setTime(second: second, minute: minute, hour: hour)
     
     }
+    
     func setUp() {
         self.createOblectAraundCircle()
         self.createArrrowsAndClock()
         self.setTime(second: 0, minute: 0, hour: 0)
         self.createCentreCircle()
     }
-    func createNewSize() -> Double {
-        var newSize = frame.size.height / 270
-        return newSize
-        
+    
+    func scale() -> Double {
+        return frame.size.height / 270.0
     }
 }

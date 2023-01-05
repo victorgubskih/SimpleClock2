@@ -8,6 +8,8 @@
 import UIKit
 
 class ClockView: UIView {
+    
+    var theme: ClockTheme?
     var speed = 1.0
     
     var second = 0 {
@@ -17,6 +19,9 @@ class ClockView: UIView {
                 minute += 1
             }
             movementHandClock(count: 60, index: second, handView: secondArrow)
+            secondArrow.backgroundColor = theme?.colorSecond(second: second) ?? .red
+          
+            
         }
     }
     var minute = 0 {
@@ -26,6 +31,7 @@ class ClockView: UIView {
                 hour += 1
             }
             movementHandClock(count: 60, index: minute, handView: minuteArrow)
+            minuteArrow.backgroundColor = theme?.colorMinute(minute: minute) ?? .green
         }
     }
     
@@ -35,6 +41,7 @@ class ClockView: UIView {
                 hour  = 0
             }
             movementHandClock(count: 12, index: hour, handView: hourArrow)
+            hourArrow.backgroundColor = theme?.colorHour(hour: hour) ?? .black
         }
         
     }
@@ -152,16 +159,12 @@ class ClockView: UIView {
         movementHandClock(count: 60, index: second, handView: secondArrow)
     }
     
-   
-    func startTimer() {
+   func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: TimeInterval(1.0 / speed), target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
     }
     
     @objc func timerAction() {
         self.second += 1
-      
-        
-    
     }
     
     func setUp() {
@@ -175,3 +178,73 @@ class ClockView: UIView {
         frame.size.height / 270.0
     }
 }
+
+protocol ClockTheme {
+    func colorSecond(second: Int) -> UIColor
+    func colorMinute(minute: Int) -> UIColor
+    func colorHour(hour: Int) -> UIColor
+}
+ 
+struct MonochromTime: ClockTheme{
+    func colorHour(hour: Int) -> UIColor{
+        if hour % 2 == 0 {
+            return .lightGray
+        } else {
+            return .blue
+        }
+    }
+    
+    func colorMinute(minute: Int) -> UIColor {
+        if minute % 3 == 0 {
+            return .orange
+        } else if minute % 5 == 0 {
+            return .black
+        } else {
+            return .green
+        }
+    }
+    
+    func colorSecond(second: Int) -> UIColor {
+        if second % 2 == 0 {
+            return .blue
+        } else {
+            return .red
+        }
+    }
+}
+
+struct ThreeColorTheme: ClockTheme {
+    
+    func colorSecond(second: Int) -> UIColor {
+        if second % 2 == 0 {
+            return .blue
+        } else if second % 3 == 0 {
+            return .red
+        } else {
+            return .green
+        }
+    }
+    
+    func colorMinute(minute: Int) -> UIColor {
+        if minute % 3 == 0 {
+            return .darkGray
+        } else if minute % 5 == 0 {
+            return .orange
+        } else {
+            return .blue
+        }
+    }
+    
+    func colorHour(hour: Int) -> UIColor {
+        if hour % 2 == 0 {
+            return .brown
+        } else if hour == 4 {
+            return .black
+        } else {
+            return .green
+            }
+    }
+}
+    
+
+

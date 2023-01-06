@@ -214,6 +214,7 @@ struct MonochromTime: ClockTheme{
 }
 
 struct ThreeColorTheme: ClockTheme {
+    private let colors: [UIColor] = [.red, .blue, .green, .yellow, .brown]
     
     func colorSecond(second: Int) -> UIColor {
         if second % 2 == 0 {
@@ -226,13 +227,23 @@ struct ThreeColorTheme: ClockTheme {
     }
     
     func colorMinute(minute: Int) -> UIColor {
-        if minute % 3 == 0 {
+        return colors[minute % 3]
+        
+       /*switch minute % 3 {
+        case 2:
+            return .darkGray
+        case 1:
+            return .orange
+        default:
+            return .blue
+        }*/
+        /* if minute % 3 == 0 {
             return .darkGray
         } else if minute % 5 == 0 {
             return .orange
         } else {
             return .blue
-        }
+        }*/
     }
     
     func colorHour(hour: Int) -> UIColor {

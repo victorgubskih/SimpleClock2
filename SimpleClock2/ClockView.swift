@@ -120,6 +120,16 @@ class ClockView: UIView {
         hourArrow.center = CGPoint(x: self.frame.width/2, y: self.frame.height/2 - hourArrow.frame.height / 2)
         self.addSubview(hourArrow)
         self.hourArrow = hourArrow
+        hourArrow.alpha = 0
+        ClockView.animate(withDuration: 0.1) {
+            self.hourArrow.alpha = 0.01
+        } completion: { (_) in
+            ClockView.animate(withDuration: 0.1) {
+                self.hourArrow.alpha = 0.1
+            }
+        }
+        
+        
        
         let minuteArrow = UIView()
         minuteArrow.frame.size = CGSize(width: 8 * scale(), height: 90 * scale())
@@ -131,6 +141,17 @@ class ClockView: UIView {
         self.addSubview(minuteArrow)
         self.minuteArrow = minuteArrow
         
+        minuteArrow.alpha = 0
+        ClockView.animate(withDuration: 0.1) {
+            self.minuteArrow.alpha = 0.1
+        } completion: { (_) in
+            ClockView.animate(withDuration: 0.1) {
+                self.minuteArrow.alpha = 0.1
+            }
+        }
+        
+        
+        
         let secondArrow = UIView()
         secondArrow.frame.size = CGSize(width: 4 * scale(), height: 95 * scale())
         secondArrow.layer.borderWidth = 1
@@ -140,6 +161,18 @@ class ClockView: UIView {
         secondArrow.center = CGPoint(x: self.frame.width/2, y: self.frame.height/2 - secondArrow.frame.height / 2)
         self.addSubview(secondArrow)
         self.secondArrow = secondArrow
+        
+        secondArrow.alpha = 0
+        ClockView.animate(withDuration: 20) {
+            self.secondArrow.alpha = 20
+        } completion: { (_) in
+            ClockView.animate(withDuration: 20) {
+                self.secondArrow.alpha = 20
+            }
+        }
+        
+        
+        
         
     }
     

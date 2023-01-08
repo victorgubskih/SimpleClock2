@@ -11,10 +11,12 @@ class ViewController: UIViewController {
     var simpleClock: ClockView!
    
     var simpleClock1: ClockView!
-  
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+      
         
         simpleClock = ClockView(speed: 150)
         simpleClock.frame.size = CGSize(width: 200, height: 200) 
@@ -36,6 +38,19 @@ class ViewController: UIViewController {
         simpleClock1.setUp()
         simpleClock1.startTimer()
         
+        simpleClock.alpha = 0
+        
+        ClockView.animate(withDuration: 5) {
+            self.simpleClock.alpha = 5
+        } completion: { (_) in
+            ClockView.animate(withDuration: 5) {
+                self.simpleClock.alpha = 5
+            }
+        }
+        
+       
+        
+    
     }
-}
 
+}

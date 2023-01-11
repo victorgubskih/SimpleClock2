@@ -41,8 +41,22 @@ class ViewController: UIViewController {
         ])
         button.setTitle("Choose", for: .normal)
         button.setTitleColor(.red, for: .normal)
-        
+       
+        let action = UIAction { _ in
+            let newScreen = ChooseCollorsViewController()
+            newScreen.delegate = self
+            self.present(newScreen, animated: true, completion: nil)
+        }
+        button.addAction(action, for: .touchUpInside)
         
     }
 
+}
+
+extension ViewController: ChooseCollorsDelegate {
+    func setCollorsTheme(_ theme: ClockTheme) {
+        
+    }
+    
+    
 }

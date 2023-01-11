@@ -257,6 +257,7 @@ struct ThreeColorTheme: ClockTheme {
             return .green
             }
     }
+    struct 
 }
     
 

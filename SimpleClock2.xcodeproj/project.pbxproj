@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		775FAC1A296DD44300CAB2AA /* ChooseCollorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775FAC19296DD44300CAB2AA /* ChooseCollorsViewController.swift */; };
 		776351302948DC20000BAC7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7763512F2948DC20000BAC7A /* AppDelegate.swift */; };
 		776351322948DC20000BAC7A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776351312948DC20000BAC7A /* SceneDelegate.swift */; };
 		776351342948DC20000BAC7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776351332948DC20000BAC7A /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		775FAC19296DD44300CAB2AA /* ChooseCollorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCollorsViewController.swift; sourceTree = "<group>"; };
 		7763512C2948DC20000BAC7A /* SimpleClock2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleClock2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7763512F2948DC20000BAC7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		776351312948DC20000BAC7A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				7763512F2948DC20000BAC7A /* AppDelegate.swift */,
 				776351312948DC20000BAC7A /* SceneDelegate.swift */,
 				776351332948DC20000BAC7A /* ViewController.swift */,
+				775FAC19296DD44300CAB2AA /* ChooseCollorsViewController.swift */,
 				776351C7295757D3000BAC7A /* ClockView.swift */,
 				776351352948DC20000BAC7A /* Main.storyboard */,
 				776351382948DC24000BAC7A /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 				776351C8295757D4000BAC7A /* ClockView.swift in Sources */,
 				776351302948DC20000BAC7A /* AppDelegate.swift in Sources */,
 				776351322948DC20000BAC7A /* SceneDelegate.swift in Sources */,
+				775FAC1A296DD44300CAB2AA /* ChooseCollorsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

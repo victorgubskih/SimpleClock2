@@ -8,10 +8,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet private(set) var timeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let currentDate = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm:ss"
+        let timeStr = formatter.string(from: currentDate)
+        timeLabel.text = timeStr
     }
 
 

@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet private(set) var timeLabel: UILabel!
     var button = UIButton()
-    var timer = Timer()
+    var timer: Timer!
     
     
     override func viewDidLoad() {
@@ -38,7 +38,8 @@ class ViewController: UIViewController {
         let currentDate = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm:ss"
-        let timeString = formatter.string(from: currentDate)
+        formatter.timeZone = TimeZone(identifier: "UTC-7")
+        let timeString = formatter.string(from:  currentDate)
         timeLabel.text = timeString
     }
     @objc func buttonAction(sender: UIButton) {

@@ -9,16 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet private(set) var timeLabel: UILabel!
-    var button = UIButton()
+    var button = UIButton(type: .roundedRect)
+    var buttonTimeZone = UIButton(type: .roundedRect)
     var timer: Timer!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
-       
-      
+    
         updateTimeLabel()
         
         view.addSubview(button)
@@ -27,7 +26,17 @@ class ViewController: UIViewController {
         button.center.x = view.center.x
         button.setTitleColor(.red, for: .normal)
         button.addTarget(self, action: #selector(buttonAction(sender:)), for: .touchUpInside)
+        button.backgroundColor = .gray
+        button.layer.cornerRadius = 10
         
+        view.addSubview(buttonTimeZone)
+        buttonTimeZone.frame = CGRect(x: 0, y: view.frame.height - 200, width: 110, height: 48)
+        buttonTimeZone.setTitle("Time Zone", for: .normal)
+        buttonTimeZone.center.x = view.center.x
+        buttonTimeZone.setTitleColor(.green, for: .normal)
+        buttonTimeZone.addTarget(self, action: #selector(timeZoneAction(sender:)), for: .touchUpInside)
+        buttonTimeZone.backgroundColor = .gray
+        buttonTimeZone.layer.cornerRadius = 10
     }
     
     @objc func fireTimer() {
@@ -50,6 +59,11 @@ class ViewController: UIViewController {
             sender.setTitle("Stop", for: .normal)
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
         }
+    }
+    
+    @objc func timeZoneAction(sender: UIButton) {
+        let timeZoneControler = TimeZoneController()
+        self.present(timeZoneControler, animated: true)
     }
     
    

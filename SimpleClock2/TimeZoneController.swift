@@ -9,7 +9,14 @@ import UIKit
 
 import Foundation
 
+protocol UpdateTimeZoneDelegateProtocol  {
+    func upgateTimeViewControler(timeZone: TimeZone)
+}
+
 class TimeZoneController: UIViewController {
+    
+    var delegate: UpdateTimeZoneDelegateProtocol? = nil
+    
     var localButton = UIButton(type: .roundedRect)
     var losAgelesButton = UIButton(type: .roundedRect)
     
@@ -48,10 +55,12 @@ class TimeZoneController: UIViewController {
 
     @objc func localAction(sender: UIButton) {
         dismiss(animated: true, completion: nil)
+        self.delegate?.upgateTimeViewControler(timeZone: TimeZone.current)
     }
     
     @objc func losAngelesAction(sender: UIButton) {
         dismiss(animated: true, completion: nil)
+        self.delegate?.upgateTimeViewControler(timeZone: TimeZone(identifier: "UTC-7")!)
     }
 
 }

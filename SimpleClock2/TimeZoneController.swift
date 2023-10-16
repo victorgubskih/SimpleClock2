@@ -18,7 +18,7 @@ class TimeZoneController: UIViewController  {
     var delegate: UpdateTimeZoneDelegateProtocol? = nil
     let tableView = UITableView()
     var safeArea: UILayoutGuide!
-    var characters = ["Los Angeles", "Local"]
+    var timeZones: [String: TimeZone] = ["Los Angeles": TimeZone(identifier: "UTC-7")!, "Local": TimeZone.current]
    
     
     
@@ -40,18 +40,28 @@ class TimeZoneController: UIViewController  {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         tableView.dataSource = self
+        tableView.delegate = self
     }
-        
-    
 }
+
 extension TimeZoneController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return characters.count
+        return timeZones.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = characters[indexPath.row]
+        cell.textLabel?.text = timeZones.keys.sorted()[indexPath.row]
         return cell
+    }
+}
+
+extension TimeZoneController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        dismiss(animated: true, completion: nil)
+        let cityName = timeZones.keys.sorted()[indexPath.row]
+        if let timeZone = timeZones[cityName] {
+            delegate?.upgateTimeViewControler(timeZone: timeZone)
+        }
     }
 }

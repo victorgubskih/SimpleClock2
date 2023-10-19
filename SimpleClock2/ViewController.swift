@@ -18,7 +18,7 @@ class ViewController: UIViewController, UpdateTimeZoneDelegateProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         formatter.dateFormat = "HH:mm:ss"
-        formatter.timeZone = TimeZone(identifier: "UTC-7")
+        formatter.timeZone = TimeZone.current
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
         
         updateTimeLabel()
@@ -63,8 +63,10 @@ class ViewController: UIViewController, UpdateTimeZoneDelegateProtocol {
     
     @objc func timeZoneAction(sender: UIButton) {
         let timeZoneControler = TimeZoneController()
+        ///
         timeZoneControler.delegate = self
         self.present(timeZoneControler, animated: true)
+        
     }
     
     func upgateTimeViewControler(timeZone: TimeZone) {

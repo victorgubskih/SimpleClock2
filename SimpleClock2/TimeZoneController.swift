@@ -27,7 +27,7 @@ class TimeZoneController: UIViewController  {
         view.backgroundColor = .white
         safeArea = view.layoutMarginsGuide
         setupTableView()
-        var timeZoneIdentifier = TimeZone.knownTimeZoneIdentifiers
+        let timeZoneIdentifier = TimeZone.knownTimeZoneIdentifiers
         timeZones = timeZoneIdentifier.reduce(into: [String: TimeZone]()) { particulaResult, identifier in
             particulaResult[identifier] = TimeZone(identifier: identifier)!
         }
@@ -58,7 +58,17 @@ extension TimeZoneController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = timeZones.keys.sorted()[indexPath.row]
+        let key = timeZones.keys.sorted()[indexPath.row]
+        cell.textLabel?.text = key
+        if TimeZone.current == timeZones[key] {
+            cell.textLabel?.text = key + "- Current "
+        }
+       /* switch timeZones[key] {
+        case .some(TimeZone.current):
+            cell.textLabel?.text = key + "- Current "
+        default:
+            break
+        }*/
         return cell
     }
 }

@@ -63,10 +63,9 @@ class ViewController: UIViewController, UpdateTimeZoneDelegateProtocol {
     
     @objc func timeZoneAction(sender: UIButton) {
         let timeZoneControler = TimeZoneController()
-        ///
+        timeZoneControler.selectedTimeZone = formatter.timeZone
         timeZoneControler.delegate = self
         self.present(timeZoneControler, animated: true)
-        
     }
     
     func upgateTimeViewControler(timeZone: TimeZone) {

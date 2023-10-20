@@ -16,9 +16,11 @@ protocol UpdateTimeZoneDelegateProtocol  {
 class TimeZoneController: UIViewController  {
     
     var delegate: UpdateTimeZoneDelegateProtocol? = nil
-    let tableView = UITableView()
-    var safeArea: UILayoutGuide!
-    var timeZones: [String: TimeZone] = ["Los Angeles": TimeZone(identifier: "UTC-7")!, "Local": TimeZone.current]
+    private let tableView = UITableView()
+    private var safeArea: UILayoutGuide!
+    private var timeZones: [String: TimeZone] = ["Los Angeles": TimeZone(identifier: "UTC-7")!, "Local": TimeZone.current]
+    var selectedTimeZone: TimeZone?
+    
    
     
     
@@ -63,12 +65,16 @@ extension TimeZoneController: UITableViewDataSource {
         if TimeZone.current == timeZones[key] {
             cell.textLabel?.text = key + "- Current "
         }
-       /* switch timeZones[key] {
-        case .some(TimeZone.current):
-            cell.textLabel?.text = key + "- Current "
-        default:
-            break
-        }*/
+       if timeZones[key] == selectedTimeZone {
+            cell.backgroundColor = .gray
+        } else {
+            cell.backgroundColor = .white
+        }
+        if timeZones[key] == selectedTimeZone {
+            cell.accessoryType = .checkmark
+         } else {
+             cell.accessoryType = .none
+         }
         return cell
     }
 }

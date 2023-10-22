@@ -7,7 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, UpdateTimeZoneDelegateProtocol {
+class ViewController: UIViewController, UpdateTimeZoneDelegateProtocol, UpdateColorDelegateProtocol {
+   
+   
+    
    
     @IBOutlet private(set) var timeLabel: UILabel!
     var button = UIButton(type: .roundedRect)
@@ -80,6 +83,7 @@ class ViewController: UIViewController, UpdateTimeZoneDelegateProtocol {
     
     @objc func colorAction(sender: UIButton) {
         let selectColorControler = SelectColorControler()
+        selectColorControler.delegate = self
         self.present(selectColorControler, animated: true)
         
     }
@@ -88,6 +92,10 @@ class ViewController: UIViewController, UpdateTimeZoneDelegateProtocol {
         formatter.timeZone = timeZone
         updateTimeLabel()
     }
+    func buttonTapedAt(color: UIColor) {
+        buttonColor.setTitleColor(color, for: .normal)
+    }
+    
     
 }
 

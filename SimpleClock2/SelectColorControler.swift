@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol UpdateColorDelegateProtocol: AnyObject {
+    func buttonTapedAt(color: UIColor)
+}
+
 class SelectColorControler: UIViewController {
+    
+    var delegate: UpdateColorDelegateProtocol? = nil
     var buttonColorRed = UIButton(type: .roundedRect)
     var buttonColorBlue = UIButton(type: .roundedRect)
     var buttonColorGreen = UIButton(type: .roundedRect)
@@ -46,7 +52,7 @@ class SelectColorControler: UIViewController {
         view.addSubview(buttonColorGreen)
         buttonColorGreen.setTitle("Green", for: .normal)
         buttonColorGreen.setTitleColor(.green, for: .normal)
-        buttonColorGreen.addTarget(self, action: #selector(blueButtonAction(sender:)), for: .touchUpInside)
+        buttonColorGreen.addTarget(self, action: #selector(greenButtonAction(sender:)), for: .touchUpInside)
         buttonColorGreen.backgroundColor = .gray
         buttonColorGreen.layer.cornerRadius = 10
         buttonColorGreen.translatesAutoresizingMaskIntoConstraints = false
@@ -61,11 +67,14 @@ class SelectColorControler: UIViewController {
 
     @objc func redButtonAction(sender: UIButton) {
         dismiss(animated: true, completion: nil)
+        self.delegate?.buttonTapedAt(color: .red)
     }
     @objc func blueButtonAction(sender: UIButton) {
         dismiss(animated: true, completion: nil)
+        self.delegate?.buttonTapedAt(color: .blue)
     }
     @objc func greenButtonAction(sender: UIButton) {
         dismiss(animated: true, completion: nil)
+        self.delegate?.buttonTapedAt(color: .green)
     }
 }

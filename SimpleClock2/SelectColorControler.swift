@@ -66,15 +66,15 @@ class SelectColorControler: UIViewController {
 
 
     @objc func redButtonAction(sender: UIButton) {
-        dismiss(animated: true, completion: nil)
         self.delegate?.buttonTapedAt(color: .red)
+        dismiss(animated: true, completion: nil)
     }
     @objc func blueButtonAction(sender: UIButton) {
-        dismiss(animated: true, completion: nil)
         self.delegate?.buttonTapedAt(color: .blue)
+        dismiss(animated: true, completion: nil)
     }
     @objc func greenButtonAction(sender: UIButton) {
-        dismiss(animated: true, completion: nil)
         self.delegate?.buttonTapedAt(color: .green)
+        dismiss(animated: true, completion: nil)
     }
 }

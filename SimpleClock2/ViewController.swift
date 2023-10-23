@@ -9,9 +9,6 @@ import UIKit
 
 class ViewController: UIViewController, UpdateTimeZoneDelegateProtocol, UpdateColorDelegateProtocol {
    
-   
-    
-   
     @IBOutlet private(set) var timeLabel: UILabel!
     var button = UIButton(type: .roundedRect)
     var buttonTimeZone = UIButton(type: .roundedRect)
@@ -90,10 +87,11 @@ class ViewController: UIViewController, UpdateTimeZoneDelegateProtocol, UpdateCo
     
     func upgateTimeViewControler(timeZone: TimeZone) {
         formatter.timeZone = timeZone
-        updateTimeLabel()
+        self.updateTimeLabel()
     }
     func buttonTapedAt(color: UIColor) {
         buttonColor.setTitleColor(color, for: .normal)
+        timeLabel.textColor = color
     }
     
     

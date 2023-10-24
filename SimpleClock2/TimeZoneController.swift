@@ -26,6 +26,7 @@ class TimeZoneController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .white
         safeArea = view.layoutMarginsGuide
         setupTableView()

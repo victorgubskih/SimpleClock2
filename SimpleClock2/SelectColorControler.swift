@@ -14,8 +14,8 @@ protocol UpdateColorDelegateProtocol: AnyObject {
 class SelectColorControler: UIViewController {
     private let tableView = UITableView()
     var delegate: UpdateColorDelegateProtocol? = nil
-    private var colors: [String] = ["Red", "Green", "Blue"]
-  
+    private var colors: [(String, UIColor)] = [("Red", UIColor.red), ("Green", UIColor.green), ("Blue", UIColor.blue)]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class SelectColorControler: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         tableView.dataSource = self
-       // tableView.delegate = self
+        tableView.delegate = self
     }
 
 
@@ -48,9 +48,18 @@ extension SelectColorControler: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = colors[indexPath.row]
+        cell.textLabel?.text = (colors[indexPath.row]).0
         return cell
     }
     
  
+}
+
+extension SelectColorControler: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        dismiss(animated: true, completion: nil)
+        let color = colors[indexPath.row].1
+        delegate?.buttonTapedAt(color: color)
+        
+    }
 }

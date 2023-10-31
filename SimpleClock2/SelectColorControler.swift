@@ -114,11 +114,29 @@ extension SelectColorControler : UIColorPickerViewControllerDelegate {
 
     func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
         let selectedColor = viewController.selectedColor
-        items.append(SelectColorItem.color(selectedColor))
+        //items.append(SelectColorItem.color(selectedColor))
+        let insertIndex = (items.count - 1) < 0 ? 0 : (items.count - 1)
+        items.insert(SelectColorItem.color(selectedColor), at: insertIndex )
+       
         tableView.reloadData()
         saveItems()
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete, case SelectColorItem.color(_) = items[indexPath.row] {
+            items.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            saveItems()
+        }
+        
+    }
     
-
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        switch items[indexPath.row] {
+        case .color(_):
+            return true
+        case .addNew(_):
+            return false
+        }
+    }
 }

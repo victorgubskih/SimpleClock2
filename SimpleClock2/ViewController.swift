@@ -10,6 +10,10 @@ import UIKit
 class ViewController: UIViewController, UpdateTimeZoneDelegateProtocol, UpdateColorDelegateProtocol {
    
     @IBOutlet private(set) var timeLabel: UILabel!
+   
+    
+    
+    
     var button = UIButton(type: .roundedRect)
     var buttonTimeZone = UIButton(type: .roundedRect)
     var buttonColor = UIButton(type: .roundedRect)

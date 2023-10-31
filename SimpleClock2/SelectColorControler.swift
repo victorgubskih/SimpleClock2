@@ -11,7 +11,7 @@ protocol UpdateColorDelegateProtocol: AnyObject {
     func buttonTapedAt(color: UIColor)
 }
 
-enum SelectColorItem {
+enum SelectColorItem: Codable {
     case color(UIColor)
     case addNew(String)
 }
@@ -25,14 +25,16 @@ class SelectColorControler: UIViewController {
         .color(UIColor.blue),
         .addNew("Add new color")
     ]
+    let userKey = "selectItems"
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTableView()
+        readItems()
         tableView.reloadData()
     }
+    
     func setupTableView() {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -46,7 +48,20 @@ class SelectColorControler: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
-
+    
+    func saveItems() {
+        if let data = try? JSONEncoder().encode(items) {
+            UserDefaults.standard.set(data, forKey: userKey)
+        }
+    }
+    
+    func readItems() {
+        guard let data = UserDefaults.standard.data(forKey: userKey) else {
+            saveItems()
+            return
+        }
+        self.items = (try? JSONDecoder().decode([SelectColorItem].self, from: data)) ?? []
+    }
 
    
 }
@@ -101,6 +116,7 @@ extension SelectColorControler : UIColorPickerViewControllerDelegate {
         let selectedColor = viewController.selectedColor
         items.append(SelectColorItem.color(selectedColor))
         tableView.reloadData()
+        saveItems()
     }
     
     

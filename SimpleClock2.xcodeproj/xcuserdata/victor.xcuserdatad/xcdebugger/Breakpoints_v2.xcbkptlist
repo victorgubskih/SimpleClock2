@@ -3,4 +3,70 @@
    uuid = "53FC394B-F65D-4F4B-904F-094B46209839"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "431C67B6-FE17-4175-9EC9-4756AB922090"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleClock2/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "startAction(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D9CCFB52-A096-4C60-B5BE-6D42F8D65AAC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleClock2/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "startAction(sender:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D9CCFB52-A096-4C60-B5BE-6D42F8D65AAC - eb99f17459b84f60"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleClock2.ViewController.startAction(sender: __C.UIButton) -&gt; ()"
+                  moduleName = "SimpleClock2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/victor/MyProjects/SimpleClock2/SimpleClock2/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "1006">
+               </Location>
+               <Location
+                  uuid = "D9CCFB52-A096-4C60-B5BE-6D42F8D65AAC - eb99f17459b84f60"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpleClock2.ViewController.startAction(sender: __C.UIButton) -&gt; ()"
+                  moduleName = "SimpleClock2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/victor/MyProjects/SimpleClock2/SimpleClock2/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "509">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -16,28 +16,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bac-Go-ZDV">
-                                <rect key="frame" x="39.333333333333343" y="420.66666666666669" width="314.33333333333326" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="w8z-dB-mcK">
+                                <rect key="frame" x="0.0" y="79" width="393" height="699"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bac-Go-ZDV">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="506"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="51"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwM-BC-6z1">
+                                        <rect key="frame" x="0.0" y="536" width="393" height="34.333333333333371"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34.329999999999998" id="8Oq-65-UlP"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Stop"/>
+                                        <connections>
+                                            <action selector="startActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mb7-2m-onD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4Q-3b-Zlz">
+                                        <rect key="frame" x="0.0" y="600.33333333333337" width="393" height="34.333333333333371"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34.329999999999998" id="tmf-zc-Bnm"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Time zone"/>
+                                        <connections>
+                                            <action selector="timeZoneActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t9S-YD-n9N"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PP9-tG-YZj">
+                                        <rect key="frame" x="0.0" y="664.66666666666663" width="393" height="34.333333333333371"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34.329999999999998" id="GnA-bQ-fKd"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Select color"/>
+                                        <connections>
+                                            <action selector="colorActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F0h-ug-nT4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bac-Go-ZDV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OAi-9P-rin"/>
-                            <constraint firstItem="bac-Go-ZDV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="lfB-RK-enl"/>
-                            <constraint firstItem="bac-Go-ZDV" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="rd4-G3-8TT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="w8z-dB-mcK" secondAttribute="bottom" constant="40" id="7L7-1L-zIU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w8z-dB-mcK" secondAttribute="trailing" id="coJ-cw-Ek9"/>
+                            <constraint firstItem="w8z-dB-mcK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="gCh-Di-fmn"/>
+                            <constraint firstItem="w8z-dB-mcK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kOm-m3-I4u"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="timeLabel" destination="bac-Go-ZDV" id="fDG-7X-00x"/>
+                        <outlet property="colorButton" destination="PP9-tG-YZj" id="uIO-ZO-4rk"/>
+                        <outlet property="startButton" destination="cwM-BC-6z1" id="uQ7-D4-RB2"/>
+                        <outlet property="timeLabel" destination="bac-Go-ZDV" id="phB-vQ-KIF"/>
+                        <outlet property="timeZoneButton" destination="I4Q-3b-Zlz" id="oSc-Qg-WHX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.824427480916029" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="-758.01526717557249" y="-154.22535211267606"/>
         </scene>
     </scenes>
     <resources>

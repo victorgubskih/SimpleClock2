@@ -11,12 +11,15 @@ class ViewController: UIViewController, UpdateTimeZoneDelegateProtocol, UpdateCo
    
     @IBOutlet private(set) var timeLabel: UILabel!
    
+    @IBOutlet weak var startButton: UIButton!
+
+    @IBOutlet weak var timeZoneButton: UIButton!
     
+    @IBOutlet weak var colorButton: UIButton!
     
-    
-    var button = UIButton(type: .roundedRect)
-    var buttonTimeZone = UIButton(type: .roundedRect)
-    var buttonColor = UIButton(type: .roundedRect)
+    //var button = UIButton(type: .roundedRect)
+    //var buttonTimeZone = UIButton(type: .roundedRect)
+    //var buttonColor = UIButton(type: .roundedRect)
     var timer: Timer!
     let formatter = DateFormatter()
     
@@ -28,7 +31,7 @@ class ViewController: UIViewController, UpdateTimeZoneDelegateProtocol, UpdateCo
         
         updateTimeLabel()
         
-        view.addSubview(button)
+    /*    view.addSubview(button)
         button.frame = CGRect(x: 0, y: view.frame.height - 300, width: 110, height: 48)
         button.setTitle("Stop", for: .normal)
         button.center.x = view.center.x
@@ -53,7 +56,7 @@ class ViewController: UIViewController, UpdateTimeZoneDelegateProtocol, UpdateCo
         buttonColor.setTitleColor(.yellow, for: .normal)
         buttonColor.addTarget(self, action: #selector(colorAction(sender:)), for: .touchUpInside)
         buttonColor.backgroundColor = .gray
-        buttonColor.layer.cornerRadius = 10
+        buttonColor.layer.cornerRadius = 10*/
     }
     
     @objc func fireTimer() {
@@ -65,8 +68,8 @@ class ViewController: UIViewController, UpdateTimeZoneDelegateProtocol, UpdateCo
         let timeString = formatter.string(from:  currentDate)
         timeLabel.text = timeString
     }
-    @objc func buttonAction(sender: UIButton) {
-        if sender.title(for: .normal) == "Stop"  {
+    @IBAction func startAction(sender: UIButton) {
+        if timer.isValid  {
             sender.setTitle("Start", for: .normal)
             timer.invalidate()
         } else {
@@ -75,14 +78,14 @@ class ViewController: UIViewController, UpdateTimeZoneDelegateProtocol, UpdateCo
         }
     }
     
-    @objc func timeZoneAction(sender: UIButton) {
+    @IBAction func timeZoneAction(sender: UIButton) {
         let timeZoneControler = TimeZoneController()
         timeZoneControler.selectedTimeZone = formatter.timeZone
         timeZoneControler.delegate = self
         self.present(timeZoneControler, animated: true)
     }
     
-    @objc func colorAction(sender: UIButton) {
+    @IBAction func colorAction(sender: UIButton) {
         let selectColorControler = SelectColorControler()
         selectColorControler.delegate = self
         self.present(selectColorControler, animated: true)
@@ -94,7 +97,7 @@ class ViewController: UIViewController, UpdateTimeZoneDelegateProtocol, UpdateCo
         self.updateTimeLabel()
     }
     func buttonTapedAt(color: UIColor) {
-        buttonColor.setTitleColor(color, for: .normal)
+        colorButton.setTitleColor(color, for: .normal)
         timeLabel.textColor = color
     }
     

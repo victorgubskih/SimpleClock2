@@ -19,12 +19,10 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="w8z-dB-mcK">
                                 <rect key="frame" x="0.0" y="79" width="393" height="699"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bac-Go-ZDV">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2va-wH-KQb" customClass="LableClockView" customModule="SimpleClock2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="506"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="51"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwM-BC-6z1">
                                         <rect key="frame" x="0.0" y="536" width="393" height="34.333333333333371"/>
                                         <constraints>
@@ -71,9 +69,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="clockView" destination="2va-wH-KQb" id="EgV-aU-1Wp"/>
                         <outlet property="colorButton" destination="PP9-tG-YZj" id="uIO-ZO-4rk"/>
                         <outlet property="startButton" destination="cwM-BC-6z1" id="uQ7-D4-RB2"/>
-                        <outlet property="timeLabel" destination="bac-Go-ZDV" id="phB-vQ-KIF"/>
                         <outlet property="timeZoneButton" destination="I4Q-3b-Zlz" id="oSc-Qg-WHX"/>
                     </connections>
                 </viewController>

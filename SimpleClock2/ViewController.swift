@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController, UpdateTimeZoneDelegateProtocol, UpdateColorDelegateProtocol {
    
-    @IBOutlet private(set) var timeLabel: UILabel!
+    @IBOutlet private(set) var clockView: LableClockView!
    
     @IBOutlet weak var startButton: UIButton!
 
@@ -17,57 +17,22 @@ class ViewController: UIViewController, UpdateTimeZoneDelegateProtocol, UpdateCo
     
     @IBOutlet weak var colorButton: UIButton!
     
-    //var button = UIButton(type: .roundedRect)
-    //var buttonTimeZone = UIButton(type: .roundedRect)
-    //var buttonColor = UIButton(type: .roundedRect)
     var timer: Timer!
-    let formatter = DateFormatter()
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        formatter.dateFormat = "HH:mm:ss"
-        formatter.timeZone = TimeZone.current
+        
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
         
-        updateTimeLabel()
-        
-    /*    view.addSubview(button)
-        button.frame = CGRect(x: 0, y: view.frame.height - 300, width: 110, height: 48)
-        button.setTitle("Stop", for: .normal)
-        button.center.x = view.center.x
-        button.setTitleColor(.red, for: .normal)
-        button.addTarget(self, action: #selector(buttonAction(sender:)), for: .touchUpInside)
-        button.backgroundColor = .gray
-        button.layer.cornerRadius = 10
-        
-        view.addSubview(buttonTimeZone)
-        buttonTimeZone.frame = CGRect(x: 0, y: view.frame.height - 200, width: 110, height: 48)
-        buttonTimeZone.setTitle("Time Zone", for: .normal)
-        buttonTimeZone.center.x = view.center.x
-        buttonTimeZone.setTitleColor(.green, for: .normal)
-        buttonTimeZone.addTarget(self, action: #selector(timeZoneAction(sender:)), for: .touchUpInside)
-        buttonTimeZone.backgroundColor = .gray
-        buttonTimeZone.layer.cornerRadius = 10
-        
-        view.addSubview(buttonColor)
-        buttonColor.frame = CGRect(x: 0, y: view.frame.height - 100, width: 110, height: 48)
-        buttonColor.setTitle("Color", for: .normal)
-        buttonColor.center.x = view.center.x
-        buttonColor.setTitleColor(.yellow, for: .normal)
-        buttonColor.addTarget(self, action: #selector(colorAction(sender:)), for: .touchUpInside)
-        buttonColor.backgroundColor = .gray
-        buttonColor.layer.cornerRadius = 10*/
+        clockView.updateTimeLabel()
     }
     
     @objc func fireTimer() {
-        updateTimeLabel()
+        clockView.updateTimeLabel()
     }
     
-    func updateTimeLabel() {
-        let currentDate = Date()
-        let timeString = formatter.string(from:  currentDate)
-        timeLabel.text = timeString
-    }
+   
     @IBAction func startAction(sender: UIButton) {
         if timer.isValid  {
             sender.setTitle("Start", for: .normal)
@@ -80,7 +45,7 @@ class ViewController: UIViewController, UpdateTimeZoneDelegateProtocol, UpdateCo
     
     @IBAction func timeZoneAction(sender: UIButton) {
         let timeZoneControler = TimeZoneController()
-        timeZoneControler.selectedTimeZone = formatter.timeZone
+        //timeZoneControler.selectedTimeZone = formatter.timeZone
         timeZoneControler.delegate = self
         self.present(timeZoneControler, animated: true)
     }
@@ -93,12 +58,12 @@ class ViewController: UIViewController, UpdateTimeZoneDelegateProtocol, UpdateCo
     }
     
     func upgateTimeViewControler(timeZone: TimeZone) {
-        formatter.timeZone = timeZone
-        self.updateTimeLabel()
+        //formatter.timeZone = timeZone
+        clockView.updateTimeLabel()
     }
     func buttonTapedAt(color: UIColor) {
-        colorButton.setTitleColor(color, for: .normal)
-        timeLabel.textColor = color
+        colorButton.setTitleColor(color, for: .reserved)
+        //timeLabel.textColor = color
     }
     
     

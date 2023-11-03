@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LableClockView" customModule="SimpleClock2" customModuleProvider="target">
+            <connections>
+                <outlet property="timeLabel" destination="UAb-bv-ySb" id="7x6-jM-zEa"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAb-bv-ySb">
+                    <rect key="frame" x="10" y="69" width="373" height="739"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="51"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="UAb-bv-ySb" secondAttribute="trailing" constant="10" id="Ig4-TU-isV"/>
+                <constraint firstItem="UAb-bv-ySb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Q0e-zN-THD"/>
+                <constraint firstItem="UAb-bv-ySb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="U69-Rt-Bt6"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="UAb-bv-ySb" secondAttribute="bottom" constant="10" id="Y66-Jd-TaH"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="-12"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

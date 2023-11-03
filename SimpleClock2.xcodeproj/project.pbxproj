@@ -12,6 +12,8 @@
 		570B23342AE30817008DF2D7 /* SelectColorControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B23322AE30817008DF2D7 /* SelectColorControler.swift */; };
 		570B23352AE30817008DF2D7 /* SelectColorControler.xib in Resources */ = {isa = PBXBuildFile; fileRef = 570B23332AE30817008DF2D7 /* SelectColorControler.xib */; };
 		5755E12C2AF02BAB00429A7E /* UIColor+Codable .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755E12B2AF02BAB00429A7E /* UIColor+Codable .swift */; };
+		5755E1362AF568EC00429A7E /* LableClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755E1352AF568EC00429A7E /* LableClockView.swift */; };
+		5755E1382AF5695900429A7E /* LableClockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5755E1372AF5695900429A7E /* LableClockView.xib */; };
 		5778DD5D2ACC708B00675257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5778DD5C2ACC708B00675257 /* AppDelegate.swift */; };
 		5778DD5F2ACC708B00675257 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5778DD5E2ACC708B00675257 /* SceneDelegate.swift */; };
 		5778DD612ACC708B00675257 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5778DD602ACC708B00675257 /* ViewController.swift */; };
@@ -26,6 +28,8 @@
 		570B23322AE30817008DF2D7 /* SelectColorControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectColorControler.swift; sourceTree = "<group>"; };
 		570B23332AE30817008DF2D7 /* SelectColorControler.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectColorControler.xib; sourceTree = "<group>"; };
 		5755E12B2AF02BAB00429A7E /* UIColor+Codable .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Codable .swift"; sourceTree = "<group>"; };
+		5755E1352AF568EC00429A7E /* LableClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LableClockView.swift; sourceTree = "<group>"; };
+		5755E1372AF5695900429A7E /* LableClockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LableClockView.xib; sourceTree = "<group>"; };
 		5778DD592ACC708A00675257 /* SimpleClock2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleClock2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5778DD5C2ACC708B00675257 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5778DD5E2ACC708B00675257 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 				570B23332AE30817008DF2D7 /* SelectColorControler.xib */,
 				570B232A2AD5B670008DF2D7 /* TimeZoneController.swift */,
 				570B232B2AD5B670008DF2D7 /* TimeZoneController.xib */,
+				5755E1352AF568EC00429A7E /* LableClockView.swift */,
+				5755E1372AF5695900429A7E /* LableClockView.xib */,
 				5778DD622ACC708B00675257 /* Main.storyboard */,
 				5778DD652ACC708C00675257 /* Assets.xcassets */,
 				5778DD672ACC708C00675257 /* LaunchScreen.storyboard */,
@@ -144,6 +150,7 @@
 				5778DD662ACC708C00675257 /* Assets.xcassets in Resources */,
 				570B232D2AD5B670008DF2D7 /* TimeZoneController.xib in Resources */,
 				5778DD642ACC708B00675257 /* Main.storyboard in Resources */,
+				5755E1382AF5695900429A7E /* LableClockView.xib in Resources */,
 				570B23352AE30817008DF2D7 /* SelectColorControler.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5755E1362AF568EC00429A7E /* LableClockView.swift in Sources */,
 				5778DD612ACC708B00675257 /* ViewController.swift in Sources */,
 				5755E12C2AF02BAB00429A7E /* UIColor+Codable .swift in Sources */,
 				5778DD5D2ACC708B00675257 /* AppDelegate.swift in Sources */,

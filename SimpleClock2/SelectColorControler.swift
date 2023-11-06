@@ -7,8 +7,8 @@
 
 import UIKit
 
-protocol UpdateColorDelegateProtocol: AnyObject {
-    func buttonTapedAt(color: UIColor)
+protocol SelectColorDelegate: AnyObject {
+    func didSelect(color: UIColor)
 }
 
 enum SelectColorItem: Codable {
@@ -18,7 +18,7 @@ enum SelectColorItem: Codable {
 
 class SelectColorControler: UIViewController {
     private let tableView = UITableView()
-    var delegate: UpdateColorDelegateProtocol? = nil
+    var delegate: SelectColorDelegate? = nil
     private var items: [SelectColorItem] = [
         .color(UIColor.red),
         .color(UIColor.green),
@@ -102,7 +102,7 @@ extension SelectColorControler: UITableViewDelegate {
         switch items[indexPath.row] {
         case .color(let c):
             dismiss(animated: true, completion: nil)
-            delegate?.buttonTapedAt(color: c)
+            delegate?.didSelect(color: c)
         case .addNew(let t):
             let colorPickerVC = UIColorPickerViewController()
             colorPickerVC.delegate = self

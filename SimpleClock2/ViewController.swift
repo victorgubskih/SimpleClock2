@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, UpdateTimeZoneDelegateProtocol, UpdateColorDelegateProtocol {
+class ViewController: UIViewController {
    
-    @IBOutlet private(set) var clockView: LableClockView!
+    @IBOutlet private(set) var clockView: ClockViewProtocol!
    
     @IBOutlet weak var startButton: UIButton!
 
@@ -45,7 +45,7 @@ class ViewController: UIViewController, UpdateTimeZoneDelegateProtocol, UpdateCo
     
     @IBAction func timeZoneAction(sender: UIButton) {
         let timeZoneControler = TimeZoneController()
-        //timeZoneControler.selectedTimeZone = formatter.timeZone
+        timeZoneControler.selectedTimeZone = clockView.currentTimeZone()
         timeZoneControler.delegate = self
         self.present(timeZoneControler, animated: true)
     }
@@ -54,18 +54,22 @@ class ViewController: UIViewController, UpdateTimeZoneDelegateProtocol, UpdateCo
         let selectColorControler = SelectColorControler()
         selectColorControler.delegate = self
         self.present(selectColorControler, animated: true)
-        
     }
-    
-    func upgateTimeViewControler(timeZone: TimeZone) {
-        //formatter.timeZone = timeZone
-        clockView.updateTimeLabel()
-    }
-    func buttonTapedAt(color: UIColor) {
-        colorButton.setTitleColor(color, for: .reserved)
-        //timeLabel.textColor = color
-    }
-    
-    
 }
 
+// MARK: SelectTimeZoneDelegate
+extension ViewController: SelectTimeZoneDelegate {
+    func didSelect(timeZone: TimeZone) {
+        //formatter.timeZone = timeZone
+        clockView.upgate(timeZone: timeZone)
+    }
+}
+
+// MARK: SelectColorDelegate
+extension ViewController: SelectColorDelegate {
+    func didSelect(color: UIColor) {
+        colorButton.setTitleColor(color, for: .reserved)
+        //timeLabel.textColor = color
+        clockView.update(color: color)
+    }
+}

@@ -10,7 +10,7 @@ import UIKit
 class LableClockView: UIView {
 
     @IBOutlet private(set) var timeLabel: UILabel!
-    let formatter = DateFormatter()
+    private let formatter = DateFormatter()
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -39,10 +39,25 @@ class LableClockView: UIView {
         formatter.dateFormat = "HH:mm:ss"
         formatter.timeZone = TimeZone.current
     }
-    
+}
+// MARK: ClockViewForProtocol
+extension LableClockView: ClockViewProtocol {
     func updateTimeLabel() {
         let currentDate = Date()
         let timeString = formatter.string(from:  currentDate)
         timeLabel.text = timeString
+    }
+    
+    func upgate(timeZone: TimeZone) {
+        formatter.timeZone = timeZone
+        updateTimeLabel()
+    }
+    
+    func update(color: UIColor) {
+       timeLabel.textColor = color
+    }
+    
+    func currentTimeZone() -> TimeZone {
+        return formatter.timeZone
     }
 }

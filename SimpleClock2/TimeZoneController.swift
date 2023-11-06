@@ -9,13 +9,13 @@ import UIKit
 
 import Foundation
 
-protocol UpdateTimeZoneDelegateProtocol  {
-    func upgateTimeViewControler(timeZone: TimeZone)
+protocol SelectTimeZoneDelegate  {
+    func didSelect(timeZone: TimeZone)
 }
 
 class TimeZoneController: UIViewController  {
     
-    var delegate: UpdateTimeZoneDelegateProtocol? = nil
+    var delegate: SelectTimeZoneDelegate? = nil
     private let tableView = UITableView()
     private var safeArea: UILayoutGuide!
     private var timeZones: [String: TimeZone] = ["Los Angeles": TimeZone(identifier: "UTC-7")!, "Local": TimeZone.current]
@@ -85,7 +85,7 @@ extension TimeZoneController: UITableViewDelegate {
         dismiss(animated: true, completion: nil)
         let cityName = timeZones.keys.sorted()[indexPath.row]
         if let timeZone = timeZones[cityName] {
-            delegate?.upgateTimeViewControler(timeZone: timeZone)
+            delegate?.didSelect(timeZone: timeZone)
         }
     }
 }

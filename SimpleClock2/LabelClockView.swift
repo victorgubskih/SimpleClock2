@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LableClockView: UIView {
+class LabelClockView: UIView {
 
     @IBOutlet private(set) var timeLabel: UILabel!
     private let formatter = DateFormatter()
@@ -41,7 +41,7 @@ class LableClockView: UIView {
     }
 }
 // MARK: ClockViewForProtocol
-extension LableClockView: ClockViewProtocol {
+extension LabelClockView: ClockViewProtocol {
     func updateTimeLabel() {
         let currentDate = Date()
         let timeString = formatter.string(from:  currentDate)

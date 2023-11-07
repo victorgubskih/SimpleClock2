@@ -19,7 +19,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="w8z-dB-mcK">
                                 <rect key="frame" x="0.0" y="79" width="393" height="699"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2va-wH-KQb" customClass="LableClockView" customModule="SimpleClock2" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2va-wH-KQb" customClass="LabelClockView2" customModule="SimpleClock2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="506"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>

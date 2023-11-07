@@ -20,7 +20,7 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTf-ct-Qce">
                     <rect key="frame" x="10" y="10" width="373" height="798"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="51"/>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="51"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>

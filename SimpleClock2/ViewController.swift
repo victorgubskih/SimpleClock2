@@ -18,12 +18,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var colorButton: UIButton!
     
     var timer: Timer!
+    let timeInterval = TimeInterval(1)
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
         
         clockView.updateTimeLabel()
     }
@@ -39,7 +40,7 @@ class ViewController: UIViewController {
             timer.invalidate()
         } else {
             sender.setTitle("Stop", for: .normal)
-            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
         }
     }
     

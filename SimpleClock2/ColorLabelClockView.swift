@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LabelClockView2: UIView {
+class ColorLabelClockView: UIView {
 
     @IBOutlet private(set) var clockView: UILabel!
     private let formatter = DateFormatter()
@@ -53,6 +53,7 @@ class LabelClockView2: UIView {
         let dateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: currentDate)
         startTime = calendar.date(from: dateComponents)!
         finishTime = calendar.date(byAdding: .minute, value: 1, to: startTime)!
+        animateBackground()
     }
     
     func currentColor(for currentDate: Date) -> UIColor {
@@ -79,9 +80,19 @@ class LabelClockView2: UIView {
         return UIColor(_colorLiteralRed: red, green: green, blue: blue, alpha: alpha)
     }
     
+    func animateBackground() {
+        let currentDate = Date()
+        let currentColor = self.currentColor(for: currentDate)
+        self.layer.backgroundColor = currentColor.cgColor
+        self.layer.removeAllAnimations()
+        UIView.animate(withDuration: finishTime.timeIntervalSince1970 - currentDate.timeIntervalSince1970, delay: 0, options: .curveLinear) {
+            self.layer.backgroundColor = self.finishColor.cgColor
+        }
+    }
+    
 }
 //MARK: ClockViewForProtocol
-extension LabelClockView2: ClockViewProtocol {
+extension ColorLabelClockView: ClockViewProtocol {
     
     func updateTimeLabel() {
         let currentDate = Date()
@@ -91,7 +102,6 @@ extension LabelClockView2: ClockViewProtocol {
         if currentDate >= finishTime {
             updateTimeInterval()
         }
-        clockView.backgroundColor = currentColor(for: currentDate)
     }
     
     func upgate(timeZone: TimeZone) {

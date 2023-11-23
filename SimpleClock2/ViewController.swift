@@ -17,12 +17,19 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var colorButton: UIButton!
     
+    @IBOutlet weak var clockButton: UIButton!
+    
+    @IBOutlet weak var contentStackView: UIStackView!
+    
     var timer: Timer!
     let timeInterval = TimeInterval(1)
+    let clocks: [ClockViewProtocol & UIView] = [LabelClockView(), ColorLabelClockView(), VerticalLabelClockView()]
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        clockAction()
         
         timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
         
@@ -55,6 +62,19 @@ class ViewController: UIViewController {
         let selectColorControler = SelectColorControler()
         selectColorControler.delegate = self
         self.present(selectColorControler, animated: true)
+    }
+    
+    @IBAction func clockAction() {
+        let currentClockView = contentStackView.arrangedSubviews.first as? ClockViewProtocol
+        if let index = clocks.firstIndex(where: { $0 === currentClockView}), index + 1 < clocks.count {
+            contentStackView.arrangedSubviews.first?.removeFromSuperview()
+            contentStackView.insertArrangedSubview(clocks[index + 1], at: 0)
+            clockView = clocks[index + 1]
+        } else {
+            contentStackView.arrangedSubviews.first?.removeFromSuperview()
+            contentStackView.insertArrangedSubview(clocks[0], at: 0)
+            clockView = clocks[0]
+        }
     }
 }
 

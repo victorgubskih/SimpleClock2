@@ -71,6 +71,7 @@ extension SelectColorControler: UITableViewDataSource {
         return items.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         /*if indexPath.row < colors.count {

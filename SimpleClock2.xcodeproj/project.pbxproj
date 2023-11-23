@@ -13,7 +13,7 @@
 		570B23352AE30817008DF2D7 /* SelectColorControler.xib in Resources */ = {isa = PBXBuildFile; fileRef = 570B23332AE30817008DF2D7 /* SelectColorControler.xib */; };
 		5755E12C2AF02BAB00429A7E /* UIColor+Codable .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755E12B2AF02BAB00429A7E /* UIColor+Codable .swift */; };
 		5755E1362AF568EC00429A7E /* LabelClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755E1352AF568EC00429A7E /* LabelClockView.swift */; };
-		5755E1382AF5695900429A7E /* LableClockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5755E1372AF5695900429A7E /* LableClockView.xib */; };
+		5755E1382AF5695900429A7E /* LabelClockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5755E1372AF5695900429A7E /* LabelClockView.xib */; };
 		5755E1402AF93D4800429A7E /* ClockViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755E13F2AF93D4800429A7E /* ClockViewProtocol.swift */; };
 		5755E1482AFA5FC200429A7E /* ColorLabelClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755E1472AFA5FC200429A7E /* ColorLabelClockView.swift */; };
 		5755E14C2AFA608100429A7E /* ColorLabelClockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5755E14B2AFA608100429A7E /* ColorLabelClockView.xib */; };
@@ -34,7 +34,7 @@
 		570B23332AE30817008DF2D7 /* SelectColorControler.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectColorControler.xib; sourceTree = "<group>"; };
 		5755E12B2AF02BAB00429A7E /* UIColor+Codable .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Codable .swift"; sourceTree = "<group>"; };
 		5755E1352AF568EC00429A7E /* LabelClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelClockView.swift; sourceTree = "<group>"; };
-		5755E1372AF5695900429A7E /* LableClockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LableClockView.xib; sourceTree = "<group>"; };
+		5755E1372AF5695900429A7E /* LabelClockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelClockView.xib; sourceTree = "<group>"; };
 		5755E13F2AF93D4800429A7E /* ClockViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockViewProtocol.swift; sourceTree = "<group>"; };
 		5755E1472AFA5FC200429A7E /* ColorLabelClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLabelClockView.swift; sourceTree = "<group>"; };
 		5755E14B2AFA608100429A7E /* ColorLabelClockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorLabelClockView.xib; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 				570B232A2AD5B670008DF2D7 /* TimeZoneController.swift */,
 				570B232B2AD5B670008DF2D7 /* TimeZoneController.xib */,
 				5755E1352AF568EC00429A7E /* LabelClockView.swift */,
-				5755E1372AF5695900429A7E /* LableClockView.xib */,
+				5755E1372AF5695900429A7E /* LabelClockView.xib */,
 				5755E1472AFA5FC200429A7E /* ColorLabelClockView.swift */,
 				5755E14B2AFA608100429A7E /* ColorLabelClockView.xib */,
 				5755E1532B07921900429A7E /* VerticalLabelClockView.swift */,
@@ -165,7 +165,7 @@
 				5778DD662ACC708C00675257 /* Assets.xcassets in Resources */,
 				570B232D2AD5B670008DF2D7 /* TimeZoneController.xib in Resources */,
 				5778DD642ACC708B00675257 /* Main.storyboard in Resources */,
-				5755E1382AF5695900429A7E /* LableClockView.xib in Resources */,
+				5755E1382AF5695900429A7E /* LabelClockView.xib in Resources */,
 				570B23352AE30817008DF2D7 /* SelectColorControler.xib in Resources */,
 				5755E1562B07961F00429A7E /* VerticalLabelClockView.xib in Resources */,
 				5755E14C2AFA608100429A7E /* ColorLabelClockView.xib in Resources */,

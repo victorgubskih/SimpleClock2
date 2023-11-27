@@ -42,13 +42,17 @@ class LabelClockView: UIView {
 }
 // MARK: ClockViewForProtocol
 extension LabelClockView: ClockViewProtocol {
+    func currentColor() -> UIColor {
+        return timeLabel.textColor
+    }
+    
     func updateTimeLabel() {
         let currentDate = Date()
         let timeString = formatter.string(from:  currentDate)
         timeLabel.text = timeString
     }
     
-    func upgate(timeZone: TimeZone) {
+    func update(timeZone: TimeZone) {
         formatter.timeZone = timeZone
         updateTimeLabel()
     }

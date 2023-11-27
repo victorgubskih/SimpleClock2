@@ -9,7 +9,7 @@ import UIKit
 
 class ColorLabelClockView: UIView {
 
-    @IBOutlet private(set) var clockView: UILabel!
+    @IBOutlet private(set) var timeLabel: UILabel!
     private let formatter = DateFormatter()
     let startColor = UIColor.white
     let finishColor = UIColor.red
@@ -93,24 +93,27 @@ class ColorLabelClockView: UIView {
 }
 //MARK: ClockViewForProtocol
 extension ColorLabelClockView: ClockViewProtocol {
+    func currentColor() -> UIColor {
+        return timeLabel.textColor
+    }
     
     func updateTimeLabel() {
         let currentDate = Date()
         let timeString = formatter.string(from: currentDate)
-        clockView.text = timeString
+        timeLabel.text = timeString
         
         if currentDate >= finishTime {
             updateTimeInterval()
         }
     }
     
-    func upgate(timeZone: TimeZone) {
+    func update(timeZone: TimeZone) {
         formatter.timeZone = timeZone
         updateTimeLabel()
     }
     
     func update(color: UIColor) {
-        clockView.textColor = color
+        timeLabel.textColor = color
     }
     
     func currentTimeZone() -> TimeZone {

@@ -12,9 +12,11 @@ import UIKit
    
     func updateTimeLabel()
     
-    func upgate(timeZone: TimeZone)
+    func update(timeZone: TimeZone)
     
     func update(color: UIColor)
     
     func currentTimeZone() -> TimeZone
+    
+    func currentColor() -> UIColor
 }

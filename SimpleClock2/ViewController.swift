@@ -65,24 +65,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clockAction() {
-        let currentClockView = contentStackView.arrangedSubviews.first as? ClockViewProtocol
-        if let index = clocks.firstIndex(where: { $0 === currentClockView}), index + 1 < clocks.count {
-            contentStackView.arrangedSubviews.first?.removeFromSuperview()
-            contentStackView.insertArrangedSubview(clocks[index + 1], at: 0)
-            clockView = clocks[index + 1]
-        } else {
-            contentStackView.arrangedSubviews.first?.removeFromSuperview()
-            contentStackView.insertArrangedSubview(clocks[0], at: 0)
-            clockView = clocks[0]
-        }
+        let selectClockControler = SelectClockController()
+        selectClockControler.delegate = self
+        self.present(selectClockControler, animated: true)
+        
+        
     }
 }
 
 // MARK: SelectTimeZoneDelegate
 extension ViewController: SelectTimeZoneDelegate {
     func didSelect(timeZone: TimeZone) {
-        //formatter.timeZone = timeZone
-        clockView.upgate(timeZone: timeZone)
+        
+        clockView.update(timeZone: timeZone)
     }
 }
 
@@ -90,7 +85,20 @@ extension ViewController: SelectTimeZoneDelegate {
 extension ViewController: SelectColorDelegate {
     func didSelect(color: UIColor) {
         colorButton.setTitleColor(color, for: .reserved)
-        //timeLabel.textColor = color
         clockView.update(color: color)
     }
 }
+
+extension ViewController: SelectClockDelegate {
+    func didSelect(clock:  UIView & ClockViewProtocol) {
+        contentStackView.arrangedSubviews.first?.removeFromSuperview()
+        contentStackView.insertArrangedSubview(clock, at: 0)
+        let oldClockView = clockView
+        clockView = clock
+        clockView.update(timeZone: oldClockView!.currentTimeZone())
+        clockView.update(color: oldClockView!.currentColor())
+        clockView.updateTimeLabel()
+        
+    }
+}
+

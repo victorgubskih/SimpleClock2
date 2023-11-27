@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorLabelClockView" customModule="SimpleClock2" customModuleProvider="target">
             <connections>
-                <outlet property="clockView" destination="kTf-ct-Qce" id="B0j-K6-et2"/>
+                <outlet property="timeLabel" destination="kTf-ct-Qce" id="B0j-K6-et2"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

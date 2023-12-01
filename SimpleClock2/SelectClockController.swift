@@ -14,10 +14,12 @@ class SelectClockController: UIViewController {
 
     var delegate: SelectClockDelegate? = nil
     let tableView = UITableView()
-    var clocks: [String] = ["LabelClockView", "ColorLabelClockView", "VerticalLabelClockView"]
+    var previews: [ClockViewFactory.Preview] = []
+    let factory = ClockViewFactory()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        previews = factory.makePreviews()
         setupTableView()
         tableView.reloadData()
     }
@@ -41,13 +43,13 @@ class SelectClockController: UIViewController {
 
 extension SelectClockController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return clocks.count
+        return previews.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = clocks[indexPath.row]
+        cell.textLabel?.text = previews[indexPath.row].rawValue
         return cell
     }
         
@@ -56,19 +58,14 @@ extension SelectClockController: UITableViewDataSource {
 extension SelectClockController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         dismiss(animated: true, completion: nil)
-        let clockName = clocks[indexPath.row]
-        if clockName == "LabelClockView" {
-            let currentClock = LabelClockView()
-            delegate?.didSelect(clock: currentClock)
-        }
-        if clockName == "ColorLabelClockView" {
-            let currentClock = ColorLabelClockView()
-            delegate?.didSelect(clock: currentClock)
-        }
-        if clockName == "VerticalLabelClockView" {
+        let preview = previews[indexPath.row]
+        let currentClock = factory.make(preview: preview)
+        delegate?.didSelect(clock: currentClock)
+        
+        /*if clockName == "VerticalLabelClockView" {
             let currentClock = VerticalLabelClockView()
             delegate?.didSelect(clock: currentClock)
-        }
+        }*/
     }
 }
 

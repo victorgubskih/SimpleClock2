@@ -12,11 +12,12 @@ class ClockViewFactory {
     enum Preview: String {
         case label = "LabelClockView"
         case colorLabel = "ColorLabelClockView"
+        case greenBlueLabel = "ColorLabelClockView green blue"
         case verticalLabel = "VerticalLabelClockView"
     }
     
     func makePreviews() -> [Preview] {
-        return [.label, .colorLabel, .verticalLabel]
+        return [.label, .colorLabel, .verticalLabel, .greenBlueLabel]
     }
     
     func make(preview: Preview) -> UIView & ClockViewProtocol {
@@ -27,6 +28,8 @@ class ClockViewFactory {
             return  ColorLabelClockView()
         case .verticalLabel:
             return VerticalLabelClockView()
+        case .greenBlueLabel:
+            return ColorLabelClockView(startColor: .green, finishColor: .blue)
         }
     }
 }

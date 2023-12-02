@@ -11,18 +11,29 @@ class ColorLabelClockView: UIView {
 
     @IBOutlet private(set) var timeLabel: UILabel!
     private let formatter = DateFormatter()
-    let startColor = UIColor.white
-    let finishColor = UIColor.red
+    let startColor: UIColor
+    let finishColor: UIColor
     var startTime: Date!
     var finishTime: Date!
     
     required init?(coder: NSCoder) {
+        startColor = UIColor.white
+        finishColor = UIColor.red
         super.init(coder: coder)
         setupFromNib()
     }
     
     override init(frame: CGRect) {
+        startColor = UIColor.white
+        finishColor = UIColor.red
         super.init(frame: frame)
+        setupFromNib()
+    }
+    
+    init(startColor: UIColor, finishColor: UIColor) {
+        self.startColor = startColor
+        self.finishColor = finishColor
+        super.init(frame: .zero)
         setupFromNib()
     }
     

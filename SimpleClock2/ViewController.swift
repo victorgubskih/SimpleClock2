@@ -90,7 +90,7 @@ extension ViewController: SelectColorDelegate {
 }
 
 extension ViewController: SelectClockDelegate {
-    func didSelect(clock:  UIView & ClockViewProtocol) {
+    func didSelect(clock: UIView & ClockViewProtocol) {
         contentStackView.arrangedSubviews.first?.removeFromSuperview()
         contentStackView.insertArrangedSubview(clock, at: 0)
         let oldClockView = clockView

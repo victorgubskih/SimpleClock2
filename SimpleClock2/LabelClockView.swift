@@ -10,16 +10,27 @@ import UIKit
 class LabelClockView: UIView {
 
     @IBOutlet private(set) var timeLabel: UILabel!
+
     private let formatter = DateFormatter()
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
+       super.init(coder: coder)
         setupFromNib()
+        
     }
     
     override init(frame: CGRect) {
-        super.init(frame: frame)
+       super.init(frame: frame)
+       setupFromNib()
+       
+    }
+    
+    
+    init(backgroundColor: UIColor) {
+        super.init(frame: .zero)
         setupFromNib()
+        self.timeLabel.backgroundColor = backgroundColor
+        
     }
     
     private func setupFromNib() {

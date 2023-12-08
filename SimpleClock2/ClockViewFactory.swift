@@ -11,13 +11,14 @@ import UIKit
 class ClockViewFactory {
     enum Preview: String {
         case label = "LabelClockView"
+        case yelowLabel = "LabelClockView yellow"
         case colorLabel = "ColorLabelClockView"
         case greenBlueLabel = "ColorLabelClockView green blue"
         case verticalLabel = "VerticalLabelClockView"
     }
     
     func makePreviews() -> [Preview] {
-        return [.label, .colorLabel, .verticalLabel, .greenBlueLabel]
+        return [.label, .colorLabel, .verticalLabel, .greenBlueLabel, .yelowLabel]
     }
     
     func make(preview: Preview) -> UIView & ClockViewProtocol {
@@ -30,6 +31,10 @@ class ClockViewFactory {
             return VerticalLabelClockView()
         case .greenBlueLabel:
             return ColorLabelClockView(startColor: .green, finishColor: .blue)
+        case .yelowLabel:
+            return LabelClockView(backgroundColor: .yellow) 
+            
+        
         }
     }
 }

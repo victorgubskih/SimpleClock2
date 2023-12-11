@@ -10,7 +10,7 @@ import UIKit
 
 @objc protocol ClockViewProtocol {
    
-    func updateTimeLabel()
+    func updateTime()
     
     func update(timeZone: TimeZone)
     

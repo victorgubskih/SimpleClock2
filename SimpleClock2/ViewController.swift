@@ -33,11 +33,11 @@ class ViewController: UIViewController {
         
         timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
         
-        clockView.updateTimeLabel()
+        clockView.updateTime()
     }
     
     @objc func fireTimer() {
-        clockView.updateTimeLabel()
+        clockView.updateTime()
     }
     
    
@@ -97,7 +97,7 @@ extension ViewController: SelectClockDelegate {
         clockView = clock
         clockView.update(timeZone: oldClockView!.currentTimeZone())
         clockView.update(color: oldClockView!.currentColor())
-        clockView.updateTimeLabel()
+        clockView.updateTime()
         
     }
 }

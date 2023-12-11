@@ -21,7 +21,19 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2va-wH-KQb" customClass="VerticalLabelClockView" customModule="SimpleClock2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="441.66666666666669"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HT2-Dc-7ru">
+                                                <rect key="frame" x="0.0" y="-19" width="393" height="441.66666666666669"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="HT2-Dc-7ru" firstAttribute="leading" secondItem="2va-wH-KQb" secondAttribute="leading" id="DVK-at-KjQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="HT2-Dc-7ru" secondAttribute="trailing" id="EUu-Uv-btG"/>
+                                        </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwM-BC-6z1">
                                         <rect key="frame" x="0.0" y="471.66666666666663" width="393" height="34.333333333333314"/>

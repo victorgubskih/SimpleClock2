@@ -1,26 +1,40 @@
 //
-//  VerticalLabelClickView.swift
+//  CloudClockView.swift
 //  SimpleClock2
 //
-//  Created by Victor on 17.11.2023.
+//  Created by Victor on 08.12.2023.
 //
 
 import UIKit
 
-class VerticalLabelClockView: UIView {
+class CloudClockView: UIView {
+    
+    @IBOutlet private(set) var circlelView: UIView!
+    
+    @IBOutlet private(set) var dateLabel: UILabel!
     
     @IBOutlet private(set) var timeLabel: UILabel!
+
     private let formatter = DateFormatter()
     
-    
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
+       super.init(coder: coder)
         setupFromNib()
+        
     }
     
     override init(frame: CGRect) {
-        super.init(frame: frame)
+       super.init(frame: frame)
+       setupFromNib()
+       
+    }
+    
+    
+    init(backgroundColor: UIColor) {
+        super.init(frame: .zero)
         setupFromNib()
+        self.timeLabel.backgroundColor = backgroundColor
+        
     }
     
     private func setupFromNib() {
@@ -30,7 +44,6 @@ class VerticalLabelClockView: UIView {
         guard let view = nib.instantiate(withOwner: self).first as? UIView else {
             return
         }
-        
         addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor).isActive = true
@@ -38,22 +51,39 @@ class VerticalLabelClockView: UIView {
         view.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor).isActive = true
         view.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
-        formatter.dateFormat =  "HH\nmm\nss"
+        formatter.dateFormat = "HH:mm:ss"
+        
         formatter.timeZone = TimeZone.current
         
-        //updateTimeInterval()
+        circlelView.layer.cornerRadius = circlelView.frame.height / 2
+        circlelView.layer.borderWidth = 4.0
+        circlelView.layer.borderColor = timeLabel.textColor.cgColor
+        circlelView.clipsToBounds = true
+        
+        
     }
+    
+    func updateDateLabel() {
+        formatter.dateFormat = "dd MMM"
+        let currentDate = Date()
+        let dateString = formatter.string(from: currentDate)
+        dateLabel.text = dateString
+    }
+   
 }
-// MARK: ClockViewForProtocol
-extension VerticalLabelClockView: ClockViewProtocol {
+
+extension CloudClockView: ClockViewProtocol {
     func currentColor() -> UIColor {
         return timeLabel.textColor
     }
     
     func updateTime() {
         let currentDate = Date()
-        let timeString = formatter.string(from:  currentDate)
+        formatter.dateFormat = "HH:mm:ss"
+        let timeString = formatter.string(from: currentDate)
         timeLabel.text = timeString
+        
+        updateDateLabel()
     }
     
     func update(timeZone: TimeZone) {

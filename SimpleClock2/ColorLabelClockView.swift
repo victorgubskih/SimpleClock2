@@ -108,7 +108,7 @@ extension ColorLabelClockView: ClockViewProtocol {
         return timeLabel.textColor
     }
     
-    func updateTimeLabel() {
+    func updateTime() {
         let currentDate = Date()
         let timeString = formatter.string(from: currentDate)
         timeLabel.text = timeString
@@ -120,7 +120,7 @@ extension ColorLabelClockView: ClockViewProtocol {
     
     func update(timeZone: TimeZone) {
         formatter.timeZone = timeZone
-        updateTimeLabel()
+        updateTime()
     }
     
     func update(color: UIColor) {

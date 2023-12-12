@@ -16,10 +16,11 @@ class ClockViewFactory {
         case greenBlueLabel = "ColorLabelClockView green blue"
         case verticalLabel = "VerticalLabelClockView"
         case cloudLabel = "LabelClockViewCloud"
+        case justClockView = "JustClockView"
     }
     
     func makePreviews() -> [Preview] {
-        return [.label, .colorLabel, .verticalLabel, .greenBlueLabel, .yelowLabel, .cloudLabel]
+        return [.label, .colorLabel, .verticalLabel, .greenBlueLabel, .yelowLabel, .cloudLabel, .justClockView]
     }
     
     func make(preview: Preview) -> UIView & ClockViewProtocol {
@@ -36,6 +37,8 @@ class ClockViewFactory {
             return LabelClockView(backgroundColor: .yellow) 
         case .cloudLabel:
             return CloudClockView()
+        case.justClockView:
+            return JustClockView()
         }
     }
 }

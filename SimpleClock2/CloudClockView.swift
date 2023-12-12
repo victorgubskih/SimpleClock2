@@ -61,6 +61,7 @@ class CloudClockView: UIView {
         circlelView.clipsToBounds = true
         
         
+        
     }
     
     func updateDateLabel() {
@@ -92,7 +93,10 @@ extension CloudClockView: ClockViewProtocol {
     }
     
     func update(color: UIColor) {
-       timeLabel.textColor = color
+        timeLabel.textColor = color
+        dateLabel.textColor = color
+        circlelView.layer.borderColor = color.cgColor
+        
     }
     
     func currentTimeZone() -> TimeZone {

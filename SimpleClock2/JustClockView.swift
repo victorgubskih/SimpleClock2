@@ -11,9 +11,7 @@ import UIKit
 class JustClockView: UIView {
     
     @IBOutlet private(set) var circlelView1: UIView!
-    
 
-    
     @IBOutlet private(set) var secondHandView: UIView!
     @IBOutlet private(set) var secondsHandsContainer: UIView!
     
@@ -22,7 +20,7 @@ class JustClockView: UIView {
     
     @IBOutlet private(set) var hourHandsContainer: UIView!
     @IBOutlet private(set) var hourHandView: UIView!
-   
+    var calendar = Calendar.current
     
     required init?(coder: NSCoder) {
        super.init(coder: coder)
@@ -50,13 +48,8 @@ class JustClockView: UIView {
         view.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor).isActive = true
         view.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
-       
-        
-       
-        
         circlelView1.layer.cornerRadius = circlelView1.frame.height / 2
         circlelView1.layer.borderWidth = 4.0
-        //circlelView1.layer.borderColor = timeLabel.textColor.cgColor
         circlelView1.clipsToBounds = true
         
         hourHandView.layer.cornerRadius = 10
@@ -75,12 +68,12 @@ class JustClockView: UIView {
 
 extension JustClockView: ClockViewProtocol {
     func currentColor() -> UIColor {
-        return .red
+        return hourHandView.backgroundColor ?? .clear
     }
     
     func updateTime() {
         let currentDate = Date()
-        let calendar = Calendar.current
+        
         let components = calendar.dateComponents([.second, .minute, .hour], from: currentDate)
         
         let hours = CGFloat(components.hour ?? 0)
@@ -95,21 +88,21 @@ extension JustClockView: ClockViewProtocol {
     }
     
     func update(timeZone: TimeZone) {
-        
+        calendar.timeZone = timeZone
         updateTime()
     }
     
     func update(color: UIColor) {
         circlelView1.layer.borderColor = color.cgColor
-       
-        hourHandView.layer.backgroundColor = color.cgColor
-        minuteHandView.layer.backgroundColor = color.cgColor
-        secondHandView.layer.backgroundColor = color.cgColor
+
+        hourHandView.backgroundColor = color
+        minuteHandView.backgroundColor = color
+        secondHandView.backgroundColor = color
         
     }
     
     func currentTimeZone() -> TimeZone {
-        return .current
+        return calendar.timeZone
     }
 }
 

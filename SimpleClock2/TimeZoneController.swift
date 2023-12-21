@@ -13,7 +13,7 @@ protocol SelectTimeZoneDelegate  {
     func didSelect(timeZone: TimeZone)
 }
 
-class TimeZoneController: UIViewController  {
+class TimeZoneController: UIViewController {
     
     var delegate: SelectTimeZoneDelegate? = nil
     private let tableView = UITableView()
@@ -21,11 +21,21 @@ class TimeZoneController: UIViewController  {
     private var timeZones: [String: TimeZone] = ["Los Angeles": TimeZone(identifier: "UTC-7")!, "Local": TimeZone.current]
     var selectedTimeZone: TimeZone?
     
+    var searchControler: UISearchController!
+    var searchResult: [String: TimeZone] = [:]
+   
+    var isSearchActive: Bool {
+        return !(searchControler.searchBar.text ?? "").isEmpty
+    }
    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchControler = UISearchController(searchResultsController: nil)
+        searchControler.searchResultsUpdater = self
+        tableView.tableHeaderView = searchControler.searchBar
         
         view.backgroundColor = .white
         safeArea = view.layoutMarginsGuide
@@ -52,15 +62,23 @@ class TimeZoneController: UIViewController  {
         tableView.delegate = self
     }
     
+    
+    
+    func filterContent(searchText: String) {
+        searchResult = timeZones.filter({(key_name, value_timeZone) -> Bool in
+            return key_name.contains(searchText) || value_timeZone == self.selectedTimeZone
+        })
+    }
 }
 
 extension TimeZoneController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return timeZones.count
+        return isSearchActive ? searchResult.count : timeZones.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let timeZones = isSearchActive ? searchResult : self.timeZones
         let key = timeZones.keys.sorted()[indexPath.row]
         cell.textLabel?.text = key
         if TimeZone.current == timeZones[key] {
@@ -82,10 +100,23 @@ extension TimeZoneController: UITableViewDataSource {
 
 extension TimeZoneController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if searchControler.isActive {
+            searchControler.dismiss(animated: false)
+        }
         dismiss(animated: true, completion: nil)
+        let timeZones = isSearchActive ? searchResult : self.timeZones
         let cityName = timeZones.keys.sorted()[indexPath.row]
         if let timeZone = timeZones[cityName] {
             delegate?.didSelect(timeZone: timeZone)
         }
+    }
+}
+
+extension TimeZoneController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+           filterContent(searchText: searchText)
+        }
+        tableView.reloadData()
     }
 }

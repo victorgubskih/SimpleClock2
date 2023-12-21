@@ -27,6 +27,9 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5b0-vV-o3n" userLabel="Circle View">
                     <rect key="frame" x="46.666666666666657" y="288.66666666666669" width="300" height="300.00000000000006"/>
                     <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="R5w-vJ-nz0">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vY8-mh-9fr" userLabel="hour hands container">
                             <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                             <subviews>
@@ -84,17 +87,21 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="R5w-vJ-nz0" secondAttribute="trailing" id="3cb-DN-faB"/>
                         <constraint firstItem="Iqb-Ud-saa" firstAttribute="leading" secondItem="5b0-vV-o3n" secondAttribute="leading" id="8Gy-qJ-E2s"/>
                         <constraint firstAttribute="bottom" secondItem="Iqb-Ud-saa" secondAttribute="bottom" id="AzO-x8-EPD"/>
                         <constraint firstItem="bsq-pX-vpK" firstAttribute="top" secondItem="5b0-vV-o3n" secondAttribute="top" id="E8F-Xk-FYT"/>
                         <constraint firstItem="bsq-pX-vpK" firstAttribute="leading" secondItem="5b0-vV-o3n" secondAttribute="leading" id="ILU-m4-Yro"/>
                         <constraint firstAttribute="height" constant="300" id="IeN-13-ujS"/>
+                        <constraint firstItem="R5w-vJ-nz0" firstAttribute="leading" secondItem="5b0-vV-o3n" secondAttribute="leading" id="T20-EO-BiF"/>
                         <constraint firstItem="vY8-mh-9fr" firstAttribute="leading" secondItem="5b0-vV-o3n" secondAttribute="leading" id="VKo-Ev-Wq4"/>
                         <constraint firstAttribute="bottom" secondItem="vY8-mh-9fr" secondAttribute="bottom" id="YXp-wW-QlC"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="bjc-zD-KcD"/>
                         <constraint firstItem="vY8-mh-9fr" firstAttribute="top" secondItem="5b0-vV-o3n" secondAttribute="top" id="fWP-PF-KOz"/>
                         <constraint firstAttribute="width" constant="300" id="h7F-Ep-QD4"/>
+                        <constraint firstItem="R5w-vJ-nz0" firstAttribute="top" secondItem="5b0-vV-o3n" secondAttribute="top" id="hp8-hI-jpV"/>
                         <constraint firstAttribute="trailing" secondItem="Iqb-Ud-saa" secondAttribute="trailing" id="lDa-qe-ZO9"/>
+                        <constraint firstAttribute="bottom" secondItem="R5w-vJ-nz0" secondAttribute="bottom" id="lKX-yA-b25"/>
                         <constraint firstItem="Iqb-Ud-saa" firstAttribute="top" secondItem="5b0-vV-o3n" secondAttribute="top" id="tE3-zQ-cry"/>
                         <constraint firstAttribute="trailing" secondItem="vY8-mh-9fr" secondAttribute="trailing" id="u0n-nm-M9j"/>
                         <constraint firstAttribute="trailing" secondItem="bsq-pX-vpK" secondAttribute="trailing" id="uUC-fo-frl"/>
@@ -112,6 +119,7 @@
         </view>
     </objects>
     <resources>
+        <image name="clock" width="600" height="600"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

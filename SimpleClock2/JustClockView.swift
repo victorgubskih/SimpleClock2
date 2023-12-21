@@ -48,10 +48,6 @@ class JustClockView: UIView {
         view.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor).isActive = true
         view.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
-        circlelView1.layer.cornerRadius = circlelView1.frame.height / 2
-        circlelView1.layer.borderWidth = 4.0
-        circlelView1.clipsToBounds = true
-        
         hourHandView.layer.cornerRadius = 10
         hourHandView.layer.borderWidth = 1.0
         hourHandView.clipsToBounds = true
@@ -93,8 +89,6 @@ extension JustClockView: ClockViewProtocol {
     }
     
     func update(color: UIColor) {
-        circlelView1.layer.borderColor = color.cgColor
-
         hourHandView.backgroundColor = color
         minuteHandView.backgroundColor = color
         secondHandView.backgroundColor = color

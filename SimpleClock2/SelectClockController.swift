@@ -59,13 +59,9 @@ extension SelectClockController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         dismiss(animated: true, completion: nil)
         let preview = previews[indexPath.row]
-        let currentClock = factory.make(preview: preview)
+        let currentClock = factory.makeClockView(with: preview)
         delegate?.didSelect(clock: currentClock)
         
-        /*if clockName == "VerticalLabelClockView" {
-            let currentClock = VerticalLabelClockView()
-            delegate?.didSelect(clock: currentClock)
-        }*/
     }
 }
 

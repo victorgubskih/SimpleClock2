@@ -9,13 +9,14 @@ import UIKit
 
 import Foundation
 
-protocol SelectTimeZoneDelegate  {
-    func didSelect(timeZone: TimeZone)
-}
+//protocol SelectTimeZoneDelegate  {
+//    func didSelect(timeZone: TimeZone)
+//}
 
 class TimeZoneController: UIViewController {
     
-    var delegate: SelectTimeZoneDelegate? = nil
+   // var delegate: SelectTimeZoneDelegate? = nil
+    let action: (TimeZone) -> ()
     private let tableView = UITableView()
     private var safeArea: UILayoutGuide!
     private var timeZones: [String: TimeZone] = ["Los Angeles": TimeZone(identifier: "UTC-7")!, "Local": TimeZone.current]
@@ -28,7 +29,14 @@ class TimeZoneController: UIViewController {
         return !(searchControler.searchBar.text ?? "").isEmpty
     }
    
+    init(action: @escaping (TimeZone) -> ()) {
+        self.action = action
+        super.init(nibName: nil, bundle: nil)
+    }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,7 +115,8 @@ extension TimeZoneController: UITableViewDelegate {
         let timeZones = isSearchActive ? searchResult : self.timeZones
         let cityName = timeZones.keys.sorted()[indexPath.row]
         if let timeZone = timeZones[cityName] {
-            delegate?.didSelect(timeZone: timeZone)
+            //delegate?.didSelect(timeZone: timeZone)
+            action(timeZone)
         }
     }
 }

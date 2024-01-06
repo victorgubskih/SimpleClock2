@@ -23,7 +23,7 @@ class ClockViewFactory {
         return [.label, .colorLabel, .verticalLabel, .greenBlueLabel, .yelowLabel, .cloudLabel, .justClockView]
     }
     
-    func make(preview: Preview) -> UIView & ClockViewProtocol {
+    func makeClockView(with preview: Preview) -> UIView & ClockViewProtocol {
         switch preview {
         case .label:
             return LabelClockView()

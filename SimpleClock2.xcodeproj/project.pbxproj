@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		570B232C2AD5B670008DF2D7 /* TimeZoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B232A2AD5B670008DF2D7 /* TimeZoneController.swift */; };
-		570B232D2AD5B670008DF2D7 /* TimeZoneController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 570B232B2AD5B670008DF2D7 /* TimeZoneController.xib */; };
 		570B23342AE30817008DF2D7 /* SelectColorControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B23322AE30817008DF2D7 /* SelectColorControler.swift */; };
 		570B23352AE30817008DF2D7 /* SelectColorControler.xib in Resources */ = {isa = PBXBuildFile; fileRef = 570B23332AE30817008DF2D7 /* SelectColorControler.xib */; };
 		572474A52B17AAF90080BE56 /* ClockViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572474A42B17AAF90080BE56 /* ClockViewFactory.swift */; };
@@ -35,7 +34,6 @@
 
 /* Begin PBXFileReference section */
 		570B232A2AD5B670008DF2D7 /* TimeZoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneController.swift; sourceTree = "<group>"; };
-		570B232B2AD5B670008DF2D7 /* TimeZoneController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeZoneController.xib; sourceTree = "<group>"; };
 		570B23322AE30817008DF2D7 /* SelectColorControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectColorControler.swift; sourceTree = "<group>"; };
 		570B23332AE30817008DF2D7 /* SelectColorControler.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectColorControler.xib; sourceTree = "<group>"; };
 		572474A42B17AAF90080BE56 /* ClockViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockViewFactory.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				5755E12B2AF02BAB00429A7E /* UIColor+Codable .swift */,
 				570B23332AE30817008DF2D7 /* SelectColorControler.xib */,
 				570B232A2AD5B670008DF2D7 /* TimeZoneController.swift */,
-				570B232B2AD5B670008DF2D7 /* TimeZoneController.xib */,
 				575210C12B0FD36300C4A2A7 /* SelectClockController.swift */,
 				572474A42B17AAF90080BE56 /* ClockViewFactory.swift */,
 				5755E1352AF568EC00429A7E /* LabelClockView.swift */,
@@ -182,7 +179,6 @@
 				572474AF2B2392980080BE56 /* CloudClockView.xib in Resources */,
 				5778DD692ACC708C00675257 /* LaunchScreen.storyboard in Resources */,
 				5778DD662ACC708C00675257 /* Assets.xcassets in Resources */,
-				570B232D2AD5B670008DF2D7 /* TimeZoneController.xib in Resources */,
 				5778DD642ACC708B00675257 /* Main.storyboard in Resources */,
 				5755E1382AF5695900429A7E /* LabelClockView.xib in Resources */,
 				570B23352AE30817008DF2D7 /* SelectColorControler.xib in Resources */,

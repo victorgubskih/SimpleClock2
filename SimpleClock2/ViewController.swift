@@ -52,9 +52,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func timeZoneAction(sender: UIButton) {
-        let timeZoneControler = TimeZoneController()
+        let timeZoneControler = TimeZoneController(action: { timeZone in self.clockView.update(timeZone: timeZone) })
         timeZoneControler.selectedTimeZone = clockView.currentTimeZone()
-        timeZoneControler.delegate = self
+//        timeZoneControler.delegate = self
         self.present(timeZoneControler, animated: true)
     }
     
@@ -74,12 +74,12 @@ class ViewController: UIViewController {
 }
 
 // MARK: SelectTimeZoneDelegate
-extension ViewController: SelectTimeZoneDelegate {
-    func didSelect(timeZone: TimeZone) {
-        
-        clockView.update(timeZone: timeZone)
-    }
-}
+//extension ViewController: SelectTimeZoneDelegate {
+//    func didSelect(timeZone: TimeZone) {
+//        
+//        clockView.update(timeZone: timeZone)
+//    }
+//}
 
 // MARK: SelectColorDelegate
 extension ViewController: SelectColorDelegate {

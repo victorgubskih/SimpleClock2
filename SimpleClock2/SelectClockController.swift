@@ -32,7 +32,10 @@ class SelectClockController: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.rowHeight = 60
+        let nib = UINib(nibName: "ClockPreviewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "cell")
+       // tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -49,7 +52,10 @@ extension SelectClockController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = previews[indexPath.row].rawValue
+        if let previewCell = cell as? ClockPreviewCell {
+            previewCell.preview = previews[indexPath.row]
+        }
+        //cell.textLabel?.text = previews[indexPath.row].rawValue
         return cell
     }
         

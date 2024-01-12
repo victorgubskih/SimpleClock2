@@ -30,6 +30,8 @@
 		5778DD642ACC708B00675257 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5778DD622ACC708B00675257 /* Main.storyboard */; };
 		5778DD662ACC708C00675257 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5778DD652ACC708C00675257 /* Assets.xcassets */; };
 		5778DD692ACC708C00675257 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5778DD672ACC708C00675257 /* LaunchScreen.storyboard */; };
+		578592062B4DBF23008637CA /* ClockPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578592042B4DBF23008637CA /* ClockPreviewCell.swift */; };
+		578592072B4DBF23008637CA /* ClockPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 578592052B4DBF23008637CA /* ClockPreviewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		5778DD652ACC708C00675257 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5778DD682ACC708C00675257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5778DD6A2ACC708C00675257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		578592042B4DBF23008637CA /* ClockPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockPreviewCell.swift; sourceTree = "<group>"; };
+		578592052B4DBF23008637CA /* ClockPreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClockPreviewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 				570B23332AE30817008DF2D7 /* SelectColorControler.xib */,
 				570B232A2AD5B670008DF2D7 /* TimeZoneController.swift */,
 				575210C12B0FD36300C4A2A7 /* SelectClockController.swift */,
+				578592042B4DBF23008637CA /* ClockPreviewCell.swift */,
+				578592052B4DBF23008637CA /* ClockPreviewCell.xib */,
 				572474A42B17AAF90080BE56 /* ClockViewFactory.swift */,
 				5755E1352AF568EC00429A7E /* LabelClockView.swift */,
 				5755E1372AF5695900429A7E /* LabelClockView.xib */,
@@ -177,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				572474AF2B2392980080BE56 /* CloudClockView.xib in Resources */,
+				578592072B4DBF23008637CA /* ClockPreviewCell.xib in Resources */,
 				5778DD692ACC708C00675257 /* LaunchScreen.storyboard in Resources */,
 				5778DD662ACC708C00675257 /* Assets.xcassets in Resources */,
 				5778DD642ACC708B00675257 /* Main.storyboard in Resources */,
@@ -195,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				578592062B4DBF23008637CA /* ClockPreviewCell.swift in Sources */,
 				5755E1402AF93D4800429A7E /* ClockViewProtocol.swift in Sources */,
 				5755E1362AF568EC00429A7E /* LabelClockView.swift in Sources */,
 				5778DD612ACC708B00675257 /* ViewController.swift in Sources */,

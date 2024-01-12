@@ -29,7 +29,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        clockAction()
+        if let previewStr = UserDefaults.standard.string(forKey: ClockViewFactory.Preview.key), let preview = ClockViewFactory.Preview(rawValue: previewStr) {
+            let clockView = ClockViewFactory().makeClockView(with: preview)
+            didSelect(clock: clockView)
+        }
         
         timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
         

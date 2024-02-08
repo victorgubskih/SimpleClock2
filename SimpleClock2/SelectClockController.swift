@@ -7,7 +7,7 @@
 
 import UIKit
 protocol SelectClockDelegate  {
-    func didSelect(clock: UIView & ClockViewProtocol)
+    func didSelect(clock: UIView & ClockViewProtocol, preview: ClockViewFactory.Preview)
 }
 
 class SelectClockController: UIViewController {
@@ -16,6 +16,9 @@ class SelectClockController: UIViewController {
     let tableView = UITableView()
     var previews: [ClockViewFactory.Preview] = []
     let factory = ClockViewFactory()
+    var selectedClock: ClockViewFactory.Preview? = nil
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +58,13 @@ extension SelectClockController: UITableViewDataSource {
         if let previewCell = cell as? ClockPreviewCell {
             previewCell.preview = previews[indexPath.row]
         }
-        //cell.textLabel?.text = previews[indexPath.row].rawValue
+        
+        if  previews[indexPath.row] == selectedClock {
+             cell.backgroundColor = .gray
+         } else {
+             cell.backgroundColor = .white
+         }
+        
         return cell
     }
         
@@ -67,7 +76,7 @@ extension SelectClockController: UITableViewDelegate {
         let preview = previews[indexPath.row]
         UserDefaults.standard.set(preview.rawValue, forKey: ClockViewFactory.Preview.key)
         let currentClock = factory.makeClockView(with: preview)
-        delegate?.didSelect(clock: currentClock)
+        delegate?.didSelect(clock: currentClock, preview: preview)
         
     }
 }

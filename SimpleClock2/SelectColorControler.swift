@@ -25,7 +25,14 @@ class SelectColorControler: UIViewController {
         .color(UIColor.blue),
         .addNew("Add new color")
     ]
+    var selectedColor: UIColor!
+    
+    
     let userKey = "selectItems"
+    
+    static let userKeySelectedColor = "selectedColor"
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,12 +90,18 @@ extension SelectColorControler: UITableViewDataSource {
         case .color(let c):
             cell.backgroundColor = c
             cell.textLabel?.text = nil
+            if c == selectedColor {
+                cell.accessoryType = .checkmark
+             } else {
+                 cell.accessoryType = .none
+             }
         case .addNew(let t):
             cell.textLabel?.text = t
             cell.backgroundColor = .white
         }
         return cell
     }
+    
     
    
 }
@@ -104,7 +117,10 @@ extension SelectColorControler: UITableViewDelegate {
         case .color(let c):
             dismiss(animated: true, completion: nil)
             delegate?.didSelect(color: c)
-        case .addNew(let t):
+            if let data = try? JSONEncoder().encode(c) {
+                UserDefaults.standard.set(data, forKey: Self.userKeySelectedColor)
+            }
+        case .addNew(_):
             let colorPickerVC = UIColorPickerViewController()
             colorPickerVC.delegate = self
             present(colorPickerVC, animated: true)
@@ -140,4 +156,6 @@ extension SelectColorControler : UIColorPickerViewControllerDelegate {
             return false
         }
     }
+    
+    
 }

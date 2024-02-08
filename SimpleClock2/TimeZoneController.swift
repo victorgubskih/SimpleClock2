@@ -24,6 +24,8 @@ class TimeZoneController: UIViewController {
     
     var searchControler: UISearchController!
     var searchResult: [String: TimeZone] = [:]
+    
+    static let userKey = "selectedTimeZone"
    
     var isSearchActive: Bool {
         return !(searchControler.searchBar.text ?? "").isEmpty
@@ -114,10 +116,12 @@ extension TimeZoneController: UITableViewDelegate {
         dismiss(animated: true, completion: nil)
         let timeZones = isSearchActive ? searchResult : self.timeZones
         let cityName = timeZones.keys.sorted()[indexPath.row]
-        if let timeZone = timeZones[cityName] {
+        if let selectedTimeZone = timeZones[cityName] {
             //delegate?.didSelect(timeZone: timeZone)
-            action(timeZone)
+            action(selectedTimeZone)
+            UserDefaults.standard.set(selectedTimeZone.identifier, forKey: TimeZoneController.userKey)
         }
+        
     }
 }
 

@@ -24,14 +24,21 @@ class ViewController: UIViewController {
     var timer: Timer!
     let timeInterval = TimeInterval(1)
     let clocks: [ClockViewProtocol & UIView] = [LabelClockView(), ColorLabelClockView(), VerticalLabelClockView()]
-   
+    var selectedPreview: ClockViewFactory.Preview?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let previewStr = UserDefaults.standard.string(forKey: ClockViewFactory.Preview.key), let preview = ClockViewFactory.Preview(rawValue: previewStr) {
             let clockView = ClockViewFactory().makeClockView(with: preview)
-            didSelect(clock: clockView)
+            didSelect(clock: clockView, preview: preview)
+        }
+        if let idenifier = UserDefaults.standard.string(forKey: TimeZoneController.userKey), let timeZone = TimeZone(identifier: idenifier)  {
+            clockView.update(timeZone: timeZone)
+        }
+        
+        if let colorData = UserDefaults.standard.data(forKey: SelectColorControler.userKeySelectedColor), let color = try? JSONDecoder().decode(UIColor.self, from: colorData) {
+            clockView.update(color: color)
         }
         
         timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
@@ -64,11 +71,13 @@ class ViewController: UIViewController {
     @IBAction func colorAction(sender: UIButton) {
         let selectColorControler = SelectColorControler()
         selectColorControler.delegate = self
+        selectColorControler.selectedColor = clockView.currentColor()
         self.present(selectColorControler, animated: true)
     }
     
     @IBAction func clockAction() {
         let selectClockControler = SelectClockController()
+        selectClockControler.selectedClock = selectedPreview
         selectClockControler.delegate = self
         self.present(selectClockControler, animated: true)
         
@@ -93,7 +102,7 @@ extension ViewController: SelectColorDelegate {
 }
 
 extension ViewController: SelectClockDelegate {
-    func didSelect(clock: UIView & ClockViewProtocol) {
+    func didSelect(clock: UIView & ClockViewProtocol, preview: ClockViewFactory.Preview) {
         contentStackView.arrangedSubviews.first?.removeFromSuperview()
         contentStackView.insertArrangedSubview(clock, at: 0)
         let oldClockView = clockView
@@ -101,7 +110,7 @@ extension ViewController: SelectClockDelegate {
         clockView.update(timeZone: oldClockView!.currentTimeZone())
         clockView.update(color: oldClockView!.currentColor())
         clockView.updateTime()
-        
+        selectedPreview = preview
     }
 }
 

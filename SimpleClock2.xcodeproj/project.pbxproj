@@ -32,6 +32,7 @@
 		5778DD692ACC708C00675257 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5778DD672ACC708C00675257 /* LaunchScreen.storyboard */; };
 		578592062B4DBF23008637CA /* ClockPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578592042B4DBF23008637CA /* ClockPreviewCell.swift */; };
 		578592072B4DBF23008637CA /* ClockPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 578592052B4DBF23008637CA /* ClockPreviewCell.xib */; };
+		57C548582B7E88EC00206A30 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 57C548572B7E88EC00206A30 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		5778DD6A2ACC708C00675257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		578592042B4DBF23008637CA /* ClockPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockPreviewCell.swift; sourceTree = "<group>"; };
 		578592052B4DBF23008637CA /* ClockPreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClockPreviewCell.xib; sourceTree = "<group>"; };
+		57C548572B7E88EC00206A30 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,11 +77,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5701CD8E2B7E8D2C00BACDC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5778DD502ACC708A00675257 = {
 			isa = PBXGroup;
 			children = (
 				5778DD5B2ACC708B00675257 /* SimpleClock2 */,
 				5778DD5A2ACC708A00675257 /* Products */,
+				5701CD8E2B7E8D2C00BACDC9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +130,7 @@
 				5778DD652ACC708C00675257 /* Assets.xcassets */,
 				5778DD672ACC708C00675257 /* LaunchScreen.storyboard */,
 				5778DD6A2ACC708C00675257 /* Info.plist */,
+				57C548572B7E88EC00206A30 /* .swiftlint.yml */,
 			);
 			path = SimpleClock2;
 			sourceTree = "<group>";
@@ -138,8 +149,11 @@
 			buildRules = (
 			);
 			dependencies = (
+				57C548542B7E867A00206A30 /* PBXTargetDependency */,
 			);
 			name = SimpleClock2;
+			packageProductDependencies = (
+			);
 			productName = SimpleClock2;
 			productReference = 5778DD592ACC708A00675257 /* SimpleClock2.app */;
 			productType = "com.apple.product-type.application";
@@ -168,6 +182,9 @@
 				Base,
 			);
 			mainGroup = 5778DD502ACC708A00675257;
+			packageReferences = (
+				57C5484E2B7E85B100206A30 /* XCRemoteSwiftPackageReference "SwiftLint" */,
+			);
 			productRefGroup = 5778DD5A2ACC708A00675257 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -192,6 +209,7 @@
 				572474B72B286CAB0080BE56 /* JustClockView.xib in Resources */,
 				5755E1562B07961F00429A7E /* VerticalLabelClockView.xib in Resources */,
 				5755E14C2AFA608100429A7E /* ColorLabelClockView.xib in Resources */,
+				57C548582B7E88EC00206A30 /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +239,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		57C548542B7E867A00206A30 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 57C548532B7E867A00206A30 /* SwiftLintPlugin */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5778DD622ACC708B00675257 /* Main.storyboard */ = {
@@ -437,6 +462,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		57C5484E2B7E85B100206A30 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.54.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		57C548532B7E867A00206A30 /* SwiftLintPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 57C5484E2B7E85B100206A30 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintPlugin";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5778DD512ACC708A00675257 /* Project object */;
 }

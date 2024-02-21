@@ -34,6 +34,7 @@
 		578592072B4DBF23008637CA /* ClockPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 578592052B4DBF23008637CA /* ClockPreviewCell.xib */; };
 		57C548582B7E88EC00206A30 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 57C548572B7E88EC00206A30 /* .swiftlint.yml */; };
 		57D282952B8661A800A46E23 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D282942B8661A800A46E23 /* Repository.swift */; };
+		57D282982B8664A000A46E23 /* DefaultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D282972B8664A000A46E23 /* DefaultRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		578592052B4DBF23008637CA /* ClockPreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClockPreviewCell.xib; sourceTree = "<group>"; };
 		57C548572B7E88EC00206A30 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		57D282942B8661A800A46E23 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		57D282972B8664A000A46E23 /* DefaultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				57D282942B8661A800A46E23 /* Repository.swift */,
+				57D282972B8664A000A46E23 /* DefaultRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				578592062B4DBF23008637CA /* ClockPreviewCell.swift in Sources */,
+				57D282982B8664A000A46E23 /* DefaultRepository.swift in Sources */,
 				5755E1402AF93D4800429A7E /* ClockViewProtocol.swift in Sources */,
 				5755E1362AF568EC00429A7E /* LabelClockView.swift in Sources */,
 				5778DD612ACC708B00675257 /* ViewController.swift in Sources */,

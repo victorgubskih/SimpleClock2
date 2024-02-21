@@ -10,8 +10,6 @@ import UIKit
 
 class ClockViewFactory {
     enum Preview: String {
-        static let key = "ClockPreviewKey"
-        
         case label = "LabelClockView"
         case yelowLabel = "LabelClockView yellow"
         case colorLabel = "ColorLabelClockView"

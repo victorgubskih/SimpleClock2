@@ -7,8 +7,10 @@
 
 import UIKit
 
+let repository = DefaultRepository()
+
 class ViewController: UIViewController {
-   
+
     @IBOutlet private(set) var clockView: ClockViewProtocol!
    
     @IBOutlet weak var startButton: UIButton!
@@ -29,15 +31,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let previewStr = UserDefaults.standard.string(forKey: ClockViewFactory.Preview.key), let preview = ClockViewFactory.Preview(rawValue: previewStr) {
+        if let preview = repository.preview() {
             let clockView = ClockViewFactory().makeClockView(with: preview)
             didSelect(clock: clockView, preview: preview)
         }
-        if let idenifier = UserDefaults.standard.string(forKey: TimeZoneController.userKey), let timeZone = TimeZone(identifier: idenifier)  {
+        if let timeZone = repository.timeZone() {
             clockView.update(timeZone: timeZone)
         }
         
-        if let colorData = UserDefaults.standard.data(forKey: SelectColorControler.userKeySelectedColor), let color = try? JSONDecoder().decode(UIColor.self, from: colorData) {
+        if let color = repository.color() {
             clockView.update(color: color)
         }
         

@@ -33,6 +33,8 @@
 		578592062B4DBF23008637CA /* ClockPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578592042B4DBF23008637CA /* ClockPreviewCell.swift */; };
 		578592072B4DBF23008637CA /* ClockPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 578592052B4DBF23008637CA /* ClockPreviewCell.xib */; };
 		57C548582B7E88EC00206A30 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 57C548572B7E88EC00206A30 /* .swiftlint.yml */; };
+		57D282952B8661A800A46E23 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D282942B8661A800A46E23 /* Repository.swift */; };
+		57D282982B8664A000A46E23 /* DefaultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D282972B8664A000A46E23 /* DefaultRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		578592042B4DBF23008637CA /* ClockPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockPreviewCell.swift; sourceTree = "<group>"; };
 		578592052B4DBF23008637CA /* ClockPreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClockPreviewCell.xib; sourceTree = "<group>"; };
 		57C548572B7E88EC00206A30 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		57D282942B8661A800A46E23 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		57D282972B8664A000A46E23 /* DefaultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,7 @@
 				572474B42B286C810080BE56 /* JustClockView.swift */,
 				572474B62B286CAB0080BE56 /* JustClockView.xib */,
 				5755E13F2AF93D4800429A7E /* ClockViewProtocol.swift */,
+				57D282962B86635500A46E23 /* Repository */,
 				5778DD622ACC708B00675257 /* Main.storyboard */,
 				5778DD652ACC708C00675257 /* Assets.xcassets */,
 				5778DD672ACC708C00675257 /* LaunchScreen.storyboard */,
@@ -133,6 +138,15 @@
 				57C548572B7E88EC00206A30 /* .swiftlint.yml */,
 			);
 			path = SimpleClock2;
+			sourceTree = "<group>";
+		};
+		57D282962B86635500A46E23 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				57D282942B8661A800A46E23 /* Repository.swift */,
+				57D282972B8664A000A46E23 /* DefaultRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				578592062B4DBF23008637CA /* ClockPreviewCell.swift in Sources */,
+				57D282982B8664A000A46E23 /* DefaultRepository.swift in Sources */,
 				5755E1402AF93D4800429A7E /* ClockViewProtocol.swift in Sources */,
 				5755E1362AF568EC00429A7E /* LabelClockView.swift in Sources */,
 				5778DD612ACC708B00675257 /* ViewController.swift in Sources */,
@@ -231,6 +246,7 @@
 				5755E12C2AF02BAB00429A7E /* UIColor+Codable .swift in Sources */,
 				5778DD5D2ACC708B00675257 /* AppDelegate.swift in Sources */,
 				570B23342AE30817008DF2D7 /* SelectColorControler.swift in Sources */,
+				57D282952B8661A800A46E23 /* Repository.swift in Sources */,
 				570B232C2AD5B670008DF2D7 /* TimeZoneController.swift in Sources */,
 				572474AB2B238F8F0080BE56 /* CloudClockView.swift in Sources */,
 				5778DD5F2ACC708B00675257 /* SceneDelegate.swift in Sources */,

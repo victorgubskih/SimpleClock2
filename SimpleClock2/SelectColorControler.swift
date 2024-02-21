@@ -27,7 +27,7 @@ class SelectColorControler: UIViewController {
     ]
     var selectedColor: UIColor!
     let userKey = "selectItems"
-    static let userKeySelectedColor = "selectedColor"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -101,9 +101,7 @@ extension SelectColorControler: UITableViewDelegate {
         case .color(let c):
             dismiss(animated: true, completion: nil)
             delegate?.didSelect(color: c)
-            if let data = try? JSONEncoder().encode(c) {
-                UserDefaults.standard.set(data, forKey: Self.userKeySelectedColor)
-            }
+            repository.save(color: c)
         case .addNew(_):
             let colorPickerVC = UIColorPickerViewController()
             colorPickerVC.delegate = self

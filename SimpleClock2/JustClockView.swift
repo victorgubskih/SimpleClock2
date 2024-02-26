@@ -7,9 +7,8 @@
 
 import UIKit
 
-
 class JustClockView: UIView {
-    
+
     @IBOutlet private(set) var circlelView1: UIView!
     
     @IBOutlet private(set) var secondsHandsContainer: UIView!

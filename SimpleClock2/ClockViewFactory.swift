@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class ClockViewFactory {
-    enum Preview: String {
+    enum Preview: String, Codable {
         static let key = "ClockPreviewKey"
         
         case label = "LabelClockView"

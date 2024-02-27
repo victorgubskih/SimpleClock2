@@ -101,9 +101,6 @@ extension SelectColorControler: UITableViewDelegate {
         case .color(let c):
             dismiss(animated: true, completion: nil)
             delegate?.didSelect(color: c)
-            if let data = try? JSONEncoder().encode(c) {
-                UserDefaults.standard.set(data, forKey: Self.userKeySelectedColor)
-            }
         case .addNew(_):
             let colorPickerVC = UIColorPickerViewController()
             colorPickerVC.delegate = self

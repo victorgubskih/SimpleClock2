@@ -34,6 +34,7 @@
 		578592072B4DBF23008637CA /* ClockPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 578592052B4DBF23008637CA /* ClockPreviewCell.xib */; };
 		57C548582B7E88EC00206A30 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 57C548572B7E88EC00206A30 /* .swiftlint.yml */; };
 		57D282952B8661A800A46E23 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D282942B8661A800A46E23 /* Repository.swift */; };
+		57D282EB2B8D083D00A46E23 /* FileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D282EA2B8D083D00A46E23 /* FileRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		578592052B4DBF23008637CA /* ClockPreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClockPreviewCell.xib; sourceTree = "<group>"; };
 		57C548572B7E88EC00206A30 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		57D282942B8661A800A46E23 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		57D282EA2B8D083D00A46E23 /* FileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				57D282942B8661A800A46E23 /* Repository.swift */,
+				57D282EA2B8D083D00A46E23 /* FileRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				5778DD612ACC708B00675257 /* ViewController.swift in Sources */,
 				575210C22B0FD36300C4A2A7 /* SelectClockController.swift in Sources */,
 				572474A52B17AAF90080BE56 /* ClockViewFactory.swift in Sources */,
+				57D282EB2B8D083D00A46E23 /* FileRepository.swift in Sources */,
 				5755E1482AFA5FC200429A7E /* ColorLabelClockView.swift in Sources */,
 				5755E1542B07921900429A7E /* VerticalLabelClockView.swift in Sources */,
 				5755E12C2AF02BAB00429A7E /* UIColor+Codable .swift in Sources */,

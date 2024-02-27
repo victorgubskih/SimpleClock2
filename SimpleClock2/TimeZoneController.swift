@@ -119,7 +119,6 @@ extension TimeZoneController: UITableViewDelegate {
         if let selectedTimeZone = timeZones[cityName] {
             //delegate?.didSelect(timeZone: timeZone)
             action(selectedTimeZone)
-            UserDefaults.standard.set(selectedTimeZone.identifier, forKey: TimeZoneController.userKey)
         }
         
     }

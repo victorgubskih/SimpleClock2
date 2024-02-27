@@ -74,7 +74,6 @@ extension SelectClockController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         dismiss(animated: true, completion: nil)
         let preview = previews[indexPath.row]
-        repository.save(preview: preview)
         let currentClock = factory.makeClockView(with: preview)
         delegate?.didSelect(clock: currentClock, preview: preview)
         

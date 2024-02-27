@@ -117,7 +117,6 @@ extension TimeZoneController: UITableViewDelegate {
         if let selectedTimeZone = timeZones[cityName] {
             //delegate?.didSelect(timeZone: timeZone)
             action(selectedTimeZone)
-            repository.save(timeZone: selectedTimeZone)
         }
         
     }

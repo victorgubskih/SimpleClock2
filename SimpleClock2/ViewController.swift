@@ -7,7 +7,7 @@
 
 import UIKit
 
-let repository = DefaultRepository()
+let repository = FileRepository()
 
 class ViewController: UIViewController {
 
@@ -64,7 +64,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func timeZoneAction(sender: UIButton) {
-        let timeZoneControler = TimeZoneController(action: { timeZone in self.clockView.update(timeZone: timeZone) })
+        let timeZoneControler = TimeZoneController(action: { timeZone in
+            repository.save(timeZone: timeZone)
+            self.clockView.update(timeZone: timeZone)
+        })
         timeZoneControler.selectedTimeZone = clockView.currentTimeZone()
 //        timeZoneControler.delegate = self
         self.present(timeZoneControler, animated: true)
@@ -98,6 +101,7 @@ class ViewController: UIViewController {
 // MARK: SelectColorDelegate
 extension ViewController: SelectColorDelegate {
     func didSelect(color: UIColor) {
+        repository.save(color: color)
         colorButton.setTitleColor(color, for: .reserved)
         clockView.update(color: color)
     }
@@ -105,6 +109,7 @@ extension ViewController: SelectColorDelegate {
 
 extension ViewController: SelectClockDelegate {
     func didSelect(clock: UIView & ClockViewProtocol, preview: ClockViewFactory.Preview) {
+        repository.save(preview: preview)
         contentStackView.arrangedSubviews.first?.removeFromSuperview()
         contentStackView.insertArrangedSubview(clock, at: 0)
         let oldClockView = clockView

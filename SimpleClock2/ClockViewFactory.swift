@@ -9,7 +9,8 @@ import Foundation
 import UIKit
 
 class ClockViewFactory {
-    enum Preview: String {
+
+    enum Preview: String, Codable {
         case label = "LabelClockView"
         case yelowLabel = "LabelClockView yellow"
         case colorLabel = "ColorLabelClockView"

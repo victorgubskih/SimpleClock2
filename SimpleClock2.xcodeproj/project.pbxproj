@@ -25,11 +25,17 @@
 		5755E1482AFA5FC200429A7E /* ColorLabelClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755E1472AFA5FC200429A7E /* ColorLabelClockView.swift */; };
 		5755E14C2AFA608100429A7E /* ColorLabelClockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5755E14B2AFA608100429A7E /* ColorLabelClockView.xib */; };
 		5755E1542B07921900429A7E /* VerticalLabelClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755E1532B07921900429A7E /* VerticalLabelClockView.swift */; };
-		5755E1562B07961F00429A7E /* VerticalLabelClockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5755E1552B07961F00429A7E /* VerticalLabelClockView.xib */; };
 		576100AC2B98D74300478398 /* LabelClockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576100AA2B98D74300478398 /* LabelClockCell.swift */; };
 		576100AD2B98D74300478398 /* LabelClockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576100AB2B98D74300478398 /* LabelClockCell.xib */; };
 		576100B12B99A71500478398 /* ColorLabelClockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576100AF2B99A71500478398 /* ColorLabelClockCell.swift */; };
 		576100B22B99A71500478398 /* ColorLabelClockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576100B02B99A71500478398 /* ColorLabelClockCell.xib */; };
+		576100BA2B99C07500478398 /* VerticalLabelClockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576100B82B99C07500478398 /* VerticalLabelClockCell.swift */; };
+		576100BB2B99C07500478398 /* VerticalLabelClockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576100B92B99C07500478398 /* VerticalLabelClockCell.xib */; };
+		576100C32B99C6EA00478398 /* CloudLabelClockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576100C12B99C6EA00478398 /* CloudLabelClockCell.swift */; };
+		576100C42B99C6EA00478398 /* CloudLabelClockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576100C22B99C6EA00478398 /* CloudLabelClockCell.xib */; };
+		576100C92B99D00400478398 /* JustClockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576100C72B99D00400478398 /* JustClockCell.swift */; };
+		576100CA2B99D00400478398 /* JustClockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576100C82B99D00400478398 /* JustClockCell.xib */; };
+		576100CC2B9A29F000478398 /* VerticalLabelClockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576100CB2B9A29F000478398 /* VerticalLabelClockView.xib */; };
 		5778DD5D2ACC708B00675257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5778DD5C2ACC708B00675257 /* AppDelegate.swift */; };
 		5778DD5F2ACC708B00675257 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5778DD5E2ACC708B00675257 /* SceneDelegate.swift */; };
 		5778DD612ACC708B00675257 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5778DD602ACC708B00675257 /* ViewController.swift */; };
@@ -63,11 +69,17 @@
 		5755E1472AFA5FC200429A7E /* ColorLabelClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLabelClockView.swift; sourceTree = "<group>"; };
 		5755E14B2AFA608100429A7E /* ColorLabelClockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorLabelClockView.xib; sourceTree = "<group>"; };
 		5755E1532B07921900429A7E /* VerticalLabelClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalLabelClockView.swift; sourceTree = "<group>"; };
-		5755E1552B07961F00429A7E /* VerticalLabelClockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerticalLabelClockView.xib; sourceTree = "<group>"; };
 		576100AA2B98D74300478398 /* LabelClockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelClockCell.swift; sourceTree = "<group>"; };
 		576100AB2B98D74300478398 /* LabelClockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelClockCell.xib; sourceTree = "<group>"; };
 		576100AF2B99A71500478398 /* ColorLabelClockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLabelClockCell.swift; sourceTree = "<group>"; };
 		576100B02B99A71500478398 /* ColorLabelClockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorLabelClockCell.xib; sourceTree = "<group>"; };
+		576100B82B99C07500478398 /* VerticalLabelClockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalLabelClockCell.swift; sourceTree = "<group>"; };
+		576100B92B99C07500478398 /* VerticalLabelClockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerticalLabelClockCell.xib; sourceTree = "<group>"; };
+		576100C12B99C6EA00478398 /* CloudLabelClockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudLabelClockCell.swift; sourceTree = "<group>"; };
+		576100C22B99C6EA00478398 /* CloudLabelClockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CloudLabelClockCell.xib; sourceTree = "<group>"; };
+		576100C72B99D00400478398 /* JustClockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustClockCell.swift; sourceTree = "<group>"; };
+		576100C82B99D00400478398 /* JustClockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JustClockCell.xib; sourceTree = "<group>"; };
+		576100CB2B9A29F000478398 /* VerticalLabelClockView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerticalLabelClockView.xib; sourceTree = "<group>"; };
 		5778DD592ACC708A00675257 /* SimpleClock2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleClock2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5778DD5C2ACC708B00675257 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5778DD5E2ACC708B00675257 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +141,39 @@
 			path = ColorLabelClock;
 			sourceTree = "<group>";
 		};
+		576100B32B99B9D100478398 /* VerticalLabelClock */ = {
+			isa = PBXGroup;
+			children = (
+				5755E1532B07921900429A7E /* VerticalLabelClockView.swift */,
+				576100CB2B9A29F000478398 /* VerticalLabelClockView.xib */,
+				576100B82B99C07500478398 /* VerticalLabelClockCell.swift */,
+				576100B92B99C07500478398 /* VerticalLabelClockCell.xib */,
+			);
+			path = VerticalLabelClock;
+			sourceTree = "<group>";
+		};
+		576100BC2B99C32300478398 /* JustClock */ = {
+			isa = PBXGroup;
+			children = (
+				572474B42B286C810080BE56 /* JustClockView.swift */,
+				572474B62B286CAB0080BE56 /* JustClockView.xib */,
+				576100C72B99D00400478398 /* JustClockCell.swift */,
+				576100C82B99D00400478398 /* JustClockCell.xib */,
+			);
+			path = JustClock;
+			sourceTree = "<group>";
+		};
+		576100C62B99CDA700478398 /* CloudClock */ = {
+			isa = PBXGroup;
+			children = (
+				572474AA2B238F8F0080BE56 /* CloudClockView.swift */,
+				572474AE2B2392980080BE56 /* CloudClockView.xib */,
+				576100C12B99C6EA00478398 /* CloudLabelClockCell.swift */,
+				576100C22B99C6EA00478398 /* CloudLabelClockCell.xib */,
+			);
+			path = CloudClock;
+			sourceTree = "<group>";
+		};
 		5778DD502ACC708A00675257 = {
 			isa = PBXGroup;
 			children = (
@@ -162,12 +207,6 @@
 				578592052B4DBF23008637CA /* ClockPreviewCell.xib */,
 				572474A42B17AAF90080BE56 /* ClockViewFactory.swift */,
 				57DFC0E32B98D4F100D62069 /* ClockViews */,
-				5755E1532B07921900429A7E /* VerticalLabelClockView.swift */,
-				5755E1552B07961F00429A7E /* VerticalLabelClockView.xib */,
-				572474AA2B238F8F0080BE56 /* CloudClockView.swift */,
-				572474AE2B2392980080BE56 /* CloudClockView.xib */,
-				572474B42B286C810080BE56 /* JustClockView.swift */,
-				572474B62B286CAB0080BE56 /* JustClockView.xib */,
 				5755E13F2AF93D4800429A7E /* ClockViewProtocol.swift */,
 				571D30502B92498000FE0964 /* Model */,
 				57D282962B86635500A46E23 /* Repository */,
@@ -193,6 +232,9 @@
 		57DFC0E32B98D4F100D62069 /* ClockViews */ = {
 			isa = PBXGroup;
 			children = (
+				576100C62B99CDA700478398 /* CloudClock */,
+				576100BC2B99C32300478398 /* JustClock */,
+				576100B32B99B9D100478398 /* VerticalLabelClock */,
 				576100AE2B99A61B00478398 /* ColorLabelClock */,
 				57DFC0E42B98D51A00D62069 /* LabelClock */,
 			);
@@ -278,15 +320,18 @@
 				578592072B4DBF23008637CA /* ClockPreviewCell.xib in Resources */,
 				5778DD692ACC708C00675257 /* LaunchScreen.storyboard in Resources */,
 				5778DD662ACC708C00675257 /* Assets.xcassets in Resources */,
+				576100CA2B99D00400478398 /* JustClockCell.xib in Resources */,
 				5778DD642ACC708B00675257 /* Main.storyboard in Resources */,
+				576100C42B99C6EA00478398 /* CloudLabelClockCell.xib in Resources */,
 				5755E1382AF5695900429A7E /* LabelClockView.xib in Resources */,
 				576100B22B99A71500478398 /* ColorLabelClockCell.xib in Resources */,
 				570B23352AE30817008DF2D7 /* SelectColorControler.xib in Resources */,
 				576100AD2B98D74300478398 /* LabelClockCell.xib in Resources */,
 				572474B72B286CAB0080BE56 /* JustClockView.xib in Resources */,
-				5755E1562B07961F00429A7E /* VerticalLabelClockView.xib in Resources */,
+				576100CC2B9A29F000478398 /* VerticalLabelClockView.xib in Resources */,
 				5755E14C2AFA608100429A7E /* ColorLabelClockView.xib in Resources */,
 				57C548582B7E88EC00206A30 /* .swiftlint.yml in Resources */,
+				576100BB2B99C07500478398 /* VerticalLabelClockCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,9 +345,11 @@
 				578592062B4DBF23008637CA /* ClockPreviewCell.swift in Sources */,
 				576100B12B99A71500478398 /* ColorLabelClockCell.swift in Sources */,
 				576100AC2B98D74300478398 /* LabelClockCell.swift in Sources */,
+				576100BA2B99C07500478398 /* VerticalLabelClockCell.swift in Sources */,
 				57D282982B8664A000A46E23 /* DefaultRepository.swift in Sources */,
 				5755E1402AF93D4800429A7E /* ClockViewProtocol.swift in Sources */,
 				5755E1362AF568EC00429A7E /* LabelClockView.swift in Sources */,
+				576100C92B99D00400478398 /* JustClockCell.swift in Sources */,
 				571D30522B9249B100FE0964 /* Clock.swift in Sources */,
 				5778DD612ACC708B00675257 /* ViewController.swift in Sources */,
 				57D2830F2B8E607600A46E23 /* FileRepository.swift in Sources */,
@@ -319,6 +366,7 @@
 				570341BE2B9639A4000A748E /* GalleryViewController.swift in Sources */,
 				5778DD5F2ACC708B00675257 /* SceneDelegate.swift in Sources */,
 				572474B52B286C810080BE56 /* JustClockView.swift in Sources */,
+				576100C32B99C6EA00478398 /* CloudLabelClockCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

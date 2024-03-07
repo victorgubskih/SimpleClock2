@@ -41,7 +41,7 @@ class VerticalLabelClockView: UIView {
         formatter.dateFormat =  "HH\nmm\nss"
         formatter.timeZone = TimeZone.current
         
-       
+        timeLabel.text = "12\n00\n00"
     }
 }
 // MARK: ClockViewForProtocol

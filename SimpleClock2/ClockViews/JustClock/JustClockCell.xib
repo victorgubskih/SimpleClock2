@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="JustClockCell" customModule="SimpleClock2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="313" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="313" height="300"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xcP-8u-xkV" customClass="JustClockView" customModule="SimpleClock2" customModuleProvider="target">
+                        <rect key="frame" x="11" y="0.0" width="313" height="300"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="xcP-8u-xkV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="03n-er-NpA"/>
+                <constraint firstItem="xcP-8u-xkV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="YC8-AK-X4Y"/>
+                <constraint firstAttribute="bottom" secondItem="xcP-8u-xkV" secondAttribute="bottom" id="Yjy-qh-hGF"/>
+                <constraint firstAttribute="trailing" secondItem="xcP-8u-xkV" secondAttribute="trailing" id="gYV-a6-Kci"/>
+            </constraints>
+            <size key="customSize" width="313" height="300"/>
+            <point key="canvasLocation" x="202.29007633587784" y="-100.70422535211269"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

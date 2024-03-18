@@ -19,7 +19,6 @@ class GalleryViewController: UIViewController {
         collectionView.register(UINib(nibName: "CloudLabelClockCell", bundle: nil), forCellWithReuseIdentifier: "CloudLabelClockCell")
         collectionView.register(UINib(nibName: "JustClockCell", bundle: nil), forCellWithReuseIdentifier: "JustClockCell")
 
-
         previews = ClockViewFactory().makePreviews()
     }
 }
@@ -28,18 +27,18 @@ extension GalleryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return previews.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch previews[indexPath.row] {
 
         case .label:
             let clockCell = collectionView.dequeueReusableCell(withReuseIdentifier: "LabelClockCell", for: indexPath) as! LabelClockCell
             return clockCell
-       
+
         case .colorLabel:
             let clockCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ColorLabelClockCell", for: indexPath) as! ColorLabelClockCell
             return clockCell
-        
+
         case .verticalLabel:
             let clockCell = collectionView.dequeueReusableCell(withReuseIdentifier: "VerticalLabelClockCell", for: indexPath) as! VerticalLabelClockCell
             return clockCell
@@ -52,8 +51,6 @@ extension GalleryViewController: UICollectionViewDataSource {
             let clockCell = collectionView.dequeueReusableCell(withReuseIdentifier: "JustClockCell", for: indexPath) as! JustClockCell
             return clockCell
 
-
-
         case .yelowLabel:
             return collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         case .greenBlueLabel:
@@ -61,10 +58,7 @@ extension GalleryViewController: UICollectionViewDataSource {
 
         }
 
-
     }
-    
-
 }
 
 extension GalleryViewController: UICollectionViewDelegateFlowLayout {

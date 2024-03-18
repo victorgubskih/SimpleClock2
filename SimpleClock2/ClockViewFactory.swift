@@ -19,7 +19,7 @@ class ClockViewFactory {
         case cloudLabel = "LabelClockViewCloud"
         case justClockView = "JustClockView"
     }
-    
+
     func makePreviews() -> [Preview] {
         return [.label, .colorLabel, .verticalLabel, .greenBlueLabel, .yelowLabel, .cloudLabel, .justClockView]
     }

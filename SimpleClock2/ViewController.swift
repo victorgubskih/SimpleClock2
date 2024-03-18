@@ -12,22 +12,22 @@ let repository = FileRepository()
 class ViewController: UIViewController {
 
     @IBOutlet private(set) var clockView: ClockViewProtocol!
-   
+
     @IBOutlet weak var startButton: UIButton!
 
     @IBOutlet weak var timeZoneButton: UIButton!
-    
+
     @IBOutlet weak var colorButton: UIButton!
-    
+
     @IBOutlet weak var clockButton: UIButton!
-    
+
     @IBOutlet weak var contentStackView: UIStackView!
-    
+
     var timer: Timer!
     let timeInterval = TimeInterval(1)
     let clocks: [ClockViewProtocol & UIView] = [LabelClockView(), ColorLabelClockView(), VerticalLabelClockView()]
     var selectedPreview: ClockViewFactory.Preview?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

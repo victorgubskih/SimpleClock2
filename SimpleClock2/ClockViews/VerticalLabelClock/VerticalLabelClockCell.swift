@@ -9,9 +9,9 @@ import UIKit
 
 class VerticalLabelClockCell: UICollectionViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    @IBOutlet private var clockView: VerticalLabelClockView!
 
+    func config(with model: VerticalLabelClock) {
+        clockView.config(with: model)
+    }
 }

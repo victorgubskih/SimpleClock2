@@ -11,7 +11,13 @@ class VerticalLabelClockView: UIView {
     
     @IBOutlet private(set) var timeLabel: UILabel!
     private let formatter = DateFormatter()
-    
+    private(set) var model: VerticalLabelClock = VerticalLabelClock(timeZone: .current, textColor: .black) {
+        didSet {
+            formatter.timeZone = model.timeZone
+            timeLabel?.textColor = model.textColor
+        }
+    }
+
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -22,7 +28,11 @@ class VerticalLabelClockView: UIView {
         super.init(frame: frame)
         setupFromNib()
     }
-    
+
+    func config(with model: VerticalLabelClock) {
+        self.model = model
+    }
+
     private func setupFromNib() {
         let nibName = String(describing: Self.self)
         let bundle = Bundle(for: Self.self)

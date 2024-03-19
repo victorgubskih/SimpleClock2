@@ -33,6 +33,9 @@
                 <constraint firstItem="eZw-55-dbR" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="gol-bz-F9t"/>
             </constraints>
             <size key="customSize" width="399" height="345"/>
+            <connections>
+                <outlet property="clockView" destination="eZw-55-dbR" id="D1n-Nu-Ggt"/>
+            </connections>
             <point key="canvasLocation" x="380.91603053435114" y="-95.422535211267615"/>
         </collectionViewCell>
     </objects>

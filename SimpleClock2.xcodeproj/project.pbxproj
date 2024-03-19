@@ -44,6 +44,7 @@
 		5778DD642ACC708B00675257 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5778DD622ACC708B00675257 /* Main.storyboard */; };
 		5778DD662ACC708C00675257 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5778DD652ACC708C00675257 /* Assets.xcassets */; };
 		5778DD692ACC708C00675257 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5778DD672ACC708C00675257 /* LaunchScreen.storyboard */; };
+		577C58832BA99F3D00CAE3C9 /* ColorLabelClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577C58822BA99F3D00CAE3C9 /* ColorLabelClock.swift */; };
 		578592062B4DBF23008637CA /* ClockPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578592042B4DBF23008637CA /* ClockPreviewCell.swift */; };
 		578592072B4DBF23008637CA /* ClockPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 578592052B4DBF23008637CA /* ClockPreviewCell.xib */; };
 		57C548582B7E88EC00206A30 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 57C548572B7E88EC00206A30 /* .swiftlint.yml */; };
@@ -92,6 +93,7 @@
 		5778DD652ACC708C00675257 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5778DD682ACC708C00675257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5778DD6A2ACC708C00675257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		577C58822BA99F3D00CAE3C9 /* ColorLabelClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLabelClock.swift; sourceTree = "<group>"; };
 		578592042B4DBF23008637CA /* ClockPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockPreviewCell.swift; sourceTree = "<group>"; };
 		578592052B4DBF23008637CA /* ClockPreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClockPreviewCell.xib; sourceTree = "<group>"; };
 		57C548572B7E88EC00206A30 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				571D30512B9249B100FE0964 /* Clock.swift */,
 				576101192BA8AF2400478398 /* LabelClock.swift */,
 				5761011B2BA9824400478398 /* VerticalLabelClock.swift */,
+				577C58822BA99F3D00CAE3C9 /* ColorLabelClock.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				5778DD5F2ACC708B00675257 /* SceneDelegate.swift in Sources */,
 				572474B52B286C810080BE56 /* JustClockView.swift in Sources */,
 				576100C32B99C6EA00478398 /* CloudLabelClockCell.swift in Sources */,
+				577C58832BA99F3D00CAE3C9 /* ColorLabelClock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

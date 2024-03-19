@@ -11,18 +11,25 @@ class ColorLabelClockView: UIView {
 
     @IBOutlet private(set) var timeLabel: UILabel!
     private let formatter = DateFormatter()
+    private(set) var model: ColorLabelClock = .init(timeZone: .current, textColor: .black) {
+        didSet {
+            formatter.timeZone = model.timeZone
+            timeLabel?.textColor = model.textColor
+        }
+    }
+
     let startColor: UIColor
     let finishColor: UIColor
     var startTime: Date!
     var finishTime: Date!
-    
+
     required init?(coder: NSCoder) {
         startColor = UIColor.white
         finishColor = UIColor.red
         super.init(coder: coder)
         setupFromNib()
     }
-    
+
     override init(frame: CGRect) {
         startColor = UIColor.white
         finishColor = UIColor.red
@@ -36,7 +43,11 @@ class ColorLabelClockView: UIView {
         super.init(frame: .zero)
         setupFromNib()
     }
-    
+
+    func config(with model: ColorLabelClock) {
+        self.model = model
+    }
+
     private func setupFromNib() {
         let nibName = String(describing: Self.self)
         let bundle = Bundle(for: Self.self)

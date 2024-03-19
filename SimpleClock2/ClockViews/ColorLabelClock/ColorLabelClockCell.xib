@@ -33,6 +33,9 @@
                 <constraint firstItem="TAf-EB-daQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tHO-SK-22A"/>
             </constraints>
             <size key="customSize" width="315" height="269"/>
+            <connections>
+                <outlet property="clockView" destination="TAf-EB-daQ" id="Ffs-C1-nvO"/>
+            </connections>
             <point key="canvasLocation" x="203.81679389312976" y="-82.042253521126767"/>
         </collectionViewCell>
     </objects>

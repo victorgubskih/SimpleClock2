@@ -12,7 +12,14 @@ class LabelClockView: UIView {
     @IBOutlet private(set) var timeLabel: UILabel!
 
     private let formatter = DateFormatter()
-    
+
+    private(set) var model: LabelClock = LabelClock(timeZone: .current, textColor: .black) {
+        didSet {
+            formatter.timeZone = model.timeZone
+            timeLabel?.textColor = model.textColor
+        }
+    }
+
     required init?(coder: NSCoder) {
        super.init(coder: coder)
         setupFromNib()
@@ -32,7 +39,11 @@ class LabelClockView: UIView {
         self.timeLabel.backgroundColor = backgroundColor
         
     }
-    
+
+    func config(with model: LabelClock) {
+        self.model = model
+    }
+
     private func setupFromNib() {
         let nibName = String(describing: Self.self)
         let bundle = Bundle(for: Self.self)

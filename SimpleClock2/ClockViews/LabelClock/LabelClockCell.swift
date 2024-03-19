@@ -9,9 +9,9 @@ import UIKit
 
 class LabelClockCell: UICollectionViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    @IBOutlet private var clockView: LabelClockView!
 
+    func config(with model: LabelClock) {
+        clockView.config(with: model)
+    }
 }

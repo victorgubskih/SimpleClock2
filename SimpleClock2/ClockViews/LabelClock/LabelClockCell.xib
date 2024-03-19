@@ -33,6 +33,9 @@
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="OyS-y5-fyj" secondAttribute="bottom" id="rMY-Ar-wHV"/>
             </constraints>
             <size key="customSize" width="342" height="309"/>
+            <connections>
+                <outlet property="clockView" destination="OyS-y5-fyj" id="2U6-Tj-bpo"/>
+            </connections>
             <point key="canvasLocation" x="332.82442748091603" y="-38.380281690140848"/>
         </collectionViewCell>
     </objects>

@@ -36,6 +36,7 @@
 		576100C92B99D00400478398 /* JustClockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576100C72B99D00400478398 /* JustClockCell.swift */; };
 		576100CA2B99D00400478398 /* JustClockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576100C82B99D00400478398 /* JustClockCell.xib */; };
 		576100CC2B9A29F000478398 /* VerticalLabelClockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 576100CB2B9A29F000478398 /* VerticalLabelClockView.xib */; };
+		5761011A2BA8AF2400478398 /* LabelClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576101192BA8AF2400478398 /* LabelClock.swift */; };
 		5778DD5D2ACC708B00675257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5778DD5C2ACC708B00675257 /* AppDelegate.swift */; };
 		5778DD5F2ACC708B00675257 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5778DD5E2ACC708B00675257 /* SceneDelegate.swift */; };
 		5778DD612ACC708B00675257 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5778DD602ACC708B00675257 /* ViewController.swift */; };
@@ -80,6 +81,7 @@
 		576100C72B99D00400478398 /* JustClockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustClockCell.swift; sourceTree = "<group>"; };
 		576100C82B99D00400478398 /* JustClockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JustClockCell.xib; sourceTree = "<group>"; };
 		576100CB2B9A29F000478398 /* VerticalLabelClockView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerticalLabelClockView.xib; sourceTree = "<group>"; };
+		576101192BA8AF2400478398 /* LabelClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelClock.swift; sourceTree = "<group>"; };
 		5778DD592ACC708A00675257 /* SimpleClock2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleClock2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5778DD5C2ACC708B00675257 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5778DD5E2ACC708B00675257 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				571D30512B9249B100FE0964 /* Clock.swift */,
+				576101192BA8AF2400478398 /* LabelClock.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				571D30522B9249B100FE0964 /* Clock.swift in Sources */,
 				5778DD612ACC708B00675257 /* ViewController.swift in Sources */,
 				57D2830F2B8E607600A46E23 /* FileRepository.swift in Sources */,
+				5761011A2BA8AF2400478398 /* LabelClock.swift in Sources */,
 				575210C22B0FD36300C4A2A7 /* SelectClockController.swift in Sources */,
 				572474A52B17AAF90080BE56 /* ClockViewFactory.swift in Sources */,
 				5755E1482AFA5FC200429A7E /* ColorLabelClockView.swift in Sources */,

@@ -10,6 +10,11 @@ import UIKit
 class GalleryViewController: UIViewController {
 
     private var previews: [ClockViewFactory.Preview] = [.label, .cloudLabel, .colorLabel]
+    private var clocks: [Clock] = [
+        LabelClock(timeZone: .current, textColor: .black),
+        LabelClock(timeZone: .current, textColor: .green),
+        LabelClock(timeZone: .current, textColor: .red)
+    ]
     @IBOutlet private var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,37 +30,41 @@ class GalleryViewController: UIViewController {
 
 extension GalleryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return previews.count
+        return clocks.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch previews[indexPath.row] {
+       
+        switch clocks[indexPath.row] {
 
-        case .label:
+        case let labelClock as LabelClock:
             let clockCell = collectionView.dequeueReusableCell(withReuseIdentifier: "LabelClockCell", for: indexPath) as! LabelClockCell
+            clockCell.config(with: labelClock)
             return clockCell
 
-        case .colorLabel:
-            let clockCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ColorLabelClockCell", for: indexPath) as! ColorLabelClockCell
-            return clockCell
+//        case .colorLabel:
+//            let clockCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ColorLabelClockCell", for: indexPath) as! ColorLabelClockCell
+//            return clockCell
+//
+//        case .verticalLabel:
+//            let clockCell = collectionView.dequeueReusableCell(withReuseIdentifier: "VerticalLabelClockCell", for: indexPath) as! VerticalLabelClockCell
+//            return clockCell
+//
+//        case .cloudLabel:
+//            let clockCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CloudLabelClockCell", for: indexPath) as! CloudLabelClockCell
+//            return clockCell
+//
+//        case .justClockView:
+//            let clockCell = collectionView.dequeueReusableCell(withReuseIdentifier: "JustClockCell", for: indexPath) as! JustClockCell
+//            return clockCell
+//
+//        case .yelowLabel:
+//            return collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+//        case .greenBlueLabel:
+//            return collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
 
-        case .verticalLabel:
-            let clockCell = collectionView.dequeueReusableCell(withReuseIdentifier: "VerticalLabelClockCell", for: indexPath) as! VerticalLabelClockCell
-            return clockCell
-
-        case .cloudLabel:
-            let clockCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CloudLabelClockCell", for: indexPath) as! CloudLabelClockCell
-            return clockCell
-
-        case .justClockView:
-            let clockCell = collectionView.dequeueReusableCell(withReuseIdentifier: "JustClockCell", for: indexPath) as! JustClockCell
-            return clockCell
-
-        case .yelowLabel:
-            return collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        case .greenBlueLabel:
-            return collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-
+        default:
+            return collectionView.dequeueReusableCell(withReuseIdentifier: "", for: indexPath)
         }
 
     }

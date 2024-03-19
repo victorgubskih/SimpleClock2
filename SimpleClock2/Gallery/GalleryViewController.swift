@@ -10,7 +10,7 @@ import UIKit
 class GalleryViewController: UIViewController {
 
     private var previews: [ClockViewFactory.Preview] = [.label, .cloudLabel, .colorLabel]
-    
+
     private var clocks: [Clock] = [
         LabelClock(timeZone: .current, textColor: .black),
         LabelClock(timeZone: .current, textColor: .green),
@@ -20,7 +20,10 @@ class GalleryViewController: UIViewController {
         VerticalLabelClock(timeZone: .current, textColor: .red),
         ColorLabelClock(timeZone: .current, textColor: .yellow),
         ColorLabelClock(timeZone: .current, textColor: .brown),
-        ColorLabelClock(timeZone: .current, textColor: .gray)
+        ColorLabelClock(timeZone: .current, textColor: .gray),
+        CloudLabelClock(timeZone: .current, textColor: .black),
+        CloudLabelClock(timeZone: .current, textColor: .blue),
+        CloudLabelClock(timeZone: .current, textColor: .green)
     ]
 
     @IBOutlet private var collectionView: UICollectionView!
@@ -55,16 +58,15 @@ extension GalleryViewController: UICollectionViewDataSource {
             clockCell.config(with: verticalLabelClock)
             return clockCell
 
-
         case let colorLabelClock as ColorLabelClock:
             let clockCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ColorLabelClockCell", for: indexPath) as! ColorLabelClockCell
             clockCell.config(with: colorLabelClock)
             return clockCell
 
-
-//        case .cloudLabel:
-//            let clockCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CloudLabelClockCell", for: indexPath) as! CloudLabelClockCell
-//            return clockCell
+        case let cloudLabelClock as CloudLabelClock:
+            let clockCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CloudLabelClockCell", for: indexPath) as! CloudLabelClockCell
+            clockCell.config(with: cloudLabelClock)
+            return clockCell
 //
 //        case .justClockView:
 //            let clockCell = collectionView.dequeueReusableCell(withReuseIdentifier: "JustClockCell", for: indexPath) as! JustClockCell

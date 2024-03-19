@@ -33,6 +33,9 @@
                 <constraint firstItem="Zxc-Xr-0fg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" id="brs-tZ-iV8"/>
             </constraints>
             <size key="customSize" width="340" height="316"/>
+            <connections>
+                <outlet property="clockView" destination="Zxc-Xr-0fg" id="Kux-jG-NYm"/>
+            </connections>
             <point key="canvasLocation" x="335.87786259541986" y="-104.92957746478874"/>
         </collectionViewCell>
     </objects>

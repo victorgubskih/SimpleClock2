@@ -31,6 +31,9 @@
                 <constraint firstAttribute="trailing" secondItem="xcP-8u-xkV" secondAttribute="trailing" id="gYV-a6-Kci"/>
             </constraints>
             <size key="customSize" width="313" height="300"/>
+            <connections>
+                <outlet property="clockView" destination="xcP-8u-xkV" id="rF0-MG-L8m"/>
+            </connections>
             <point key="canvasLocation" x="202.29007633587784" y="-100.70422535211269"/>
         </collectionViewCell>
     </objects>

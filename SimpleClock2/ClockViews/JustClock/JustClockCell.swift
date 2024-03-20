@@ -9,9 +9,11 @@ import UIKit
 
 class JustClockCell: UICollectionViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet private var clockView: JustClockView!
+
+    func config(with model: JustClock) {
+        clockView.config(with: model)
     }
+
 
 }

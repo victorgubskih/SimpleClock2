@@ -7,30 +7,36 @@
 
 import UIKit
 
-
 class JustClockView: UIView {
-    
+
     @IBOutlet private(set) var circlelView1: UIView!
-    
+
     @IBOutlet private(set) var secondsHandsContainer: UIView!
-    
+
     @IBOutlet private(set) var minuteHandsContainer2: UIView!
-    
+
     @IBOutlet private(set) var hourHandsContainer2: UIView!
     var calendar = Calendar.current
-    
+
+    private(set) var model: JustClock = .init(timeZone: .current) {
+        didSet {
+            calendar.timeZone = model.timeZone
+        }
+    }
+
     required init?(coder: NSCoder) {
        super.init(coder: coder)
         setupFromNib()
-        
     }
-    
+
     override init(frame: CGRect) {
-       super.init(frame: frame)
-       setupFromNib()
-       
+        super.init(frame: frame)
+        setupFromNib()
     }
-    
+
+    func config(with model: JustClock) {
+        self.model = model
+    }
     private func setupFromNib() {
         let nibName = String(describing: Self.self)
         let bundle = Bundle(for: Self.self)
@@ -44,8 +50,6 @@ class JustClockView: UIView {
         view.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
         view.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor).isActive = true
         view.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        
-       
     }
 }
 
@@ -62,16 +66,15 @@ extension JustClockView: ClockViewProtocol {
         let hours = CGFloat(components.hour ?? 0)
         
         hourHandsContainer2.transform = CGAffineTransform(rotationAngle: (2 * CGFloat.pi * hours / 12.0))
-       
+        
         let minutes = CGFloat(components.minute ?? 0)
         
         minuteHandsContainer2.transform = CGAffineTransform(rotationAngle: (2 * CGFloat.pi * minutes / 60.0))
         
         let seconds = CGFloat(components.second ?? 0)
-       
         
         secondsHandsContainer.transform = CGAffineTransform(rotationAngle: (2 * CGFloat.pi * seconds / 60.0))
-       
+        
     }
     
     func update(timeZone: TimeZone) {
@@ -88,4 +91,3 @@ extension JustClockView: ClockViewProtocol {
         return calendar.timeZone
     }
 }
-

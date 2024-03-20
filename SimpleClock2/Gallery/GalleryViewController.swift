@@ -23,7 +23,10 @@ class GalleryViewController: UIViewController {
         ColorLabelClock(timeZone: .current, textColor: .gray),
         CloudLabelClock(timeZone: .current, textColor: .black),
         CloudLabelClock(timeZone: .current, textColor: .blue),
-        CloudLabelClock(timeZone: .current, textColor: .green)
+        CloudLabelClock(timeZone: .current, textColor: .green),
+        JustClock(timeZone: .current),
+        JustClock(timeZone: .current),
+        JustClock(timeZone: .current)
     ]
 
     @IBOutlet private var collectionView: UICollectionView!
@@ -67,11 +70,12 @@ extension GalleryViewController: UICollectionViewDataSource {
             let clockCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CloudLabelClockCell", for: indexPath) as! CloudLabelClockCell
             clockCell.config(with: cloudLabelClock)
             return clockCell
-//
-//        case .justClockView:
-//            let clockCell = collectionView.dequeueReusableCell(withReuseIdentifier: "JustClockCell", for: indexPath) as! JustClockCell
-//            return clockCell
-//
+
+        case let justClock as JustClock:
+            let clockCell = collectionView.dequeueReusableCell(withReuseIdentifier: "JustClockCell", for: indexPath) as! JustClockCell
+            clockCell.config(with: justClock)
+            return clockCell
+
 //        case .yelowLabel:
 //            return collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
 //        case .greenBlueLabel:

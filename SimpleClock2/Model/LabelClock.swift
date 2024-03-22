@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 
 struct LabelClock: Clock {
-    var timeZone: TimeZone
-    var textColor: UIColor
+    let timeZone: TimeZone
+    let textColor: UIColor
+    let backgroundColor: UIColor
 }

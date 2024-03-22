@@ -13,10 +13,13 @@ class LabelClockView: UIView {
 
     private let formatter = DateFormatter()
 
-    private(set) var model: LabelClock = LabelClock(timeZone: .current, textColor: .black) {
+    private var timer: Timer?
+
+    private(set) var model: LabelClock = LabelClock(timeZone: .current, textColor: .black, backgroundColor: .white) {
         didSet {
             formatter.timeZone = model.timeZone
             timeLabel?.textColor = model.textColor
+            self.backgroundColor = model.backgroundColor
         }
     }
 
@@ -40,6 +43,10 @@ class LabelClockView: UIView {
         
     }
 
+    deinit {
+        timer?.invalidate()
+    }
+
     func config(with model: LabelClock) {
         self.model = model
     }
@@ -60,6 +67,15 @@ class LabelClockView: UIView {
         
         formatter.dateFormat = "HH:mm:ss"
         formatter.timeZone = TimeZone.current
+
+        let timer = Timer.scheduledTimer(
+            timeInterval: 1.0,
+            target: self,
+            selector: #selector(updateTime),
+            userInfo: nil,
+            repeats: true
+        )
+        updateTime()
     }
 }
 // MARK: ClockViewForProtocol
@@ -68,7 +84,7 @@ extension LabelClockView: ClockViewProtocol {
         return timeLabel.textColor
     }
     
-    func updateTime() {
+    @objc func updateTime() {
         let currentDate = Date()
         let timeString = formatter.string(from:  currentDate)
         timeLabel.text = timeString

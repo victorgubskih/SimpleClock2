@@ -2,6 +2,6 @@ import Foundation
 import UIKit
 
 protocol Clock: Codable {
-    var timeZone: TimeZone { get set }
+    var timeZone: TimeZone { get }
 }
 

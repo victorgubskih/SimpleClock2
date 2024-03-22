@@ -12,9 +12,9 @@ class GalleryViewController: UIViewController {
     private var previews: [ClockViewFactory.Preview] = [.label, .cloudLabel, .colorLabel]
 
     private var clocks: [Clock] = [
-        LabelClock(timeZone: .current, textColor: .black),
-        LabelClock(timeZone: .current, textColor: .green),
-        LabelClock(timeZone: .current, textColor: .red),
+        LabelClock(timeZone: .current, textColor: .black, backgroundColor: .white),
+        LabelClock(timeZone: .current, textColor: .green, backgroundColor: .blue),
+        LabelClock(timeZone: .current, textColor: .red, backgroundColor: .green),
         VerticalLabelClock(timeZone: .current, textColor: .black),
         VerticalLabelClock(timeZone: .current, textColor: .green),
         VerticalLabelClock(timeZone: .current, textColor: .red),

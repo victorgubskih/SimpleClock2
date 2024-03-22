@@ -18,19 +18,17 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="342" placeholderIntrinsicHeight="309" translatesAutoresizingMaskIntoConstraints="NO" id="OyS-y5-fyj" customClass="LabelClockView" customModule="SimpleClock2" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="25" width="342" height="284"/>
+                        <rect key="frame" x="0.0" y="0.0" width="342" height="309"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="OyS-y5-fyj" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="3kg-h3-LoP"/>
-                <constraint firstItem="OyS-y5-fyj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" id="6VK-7o-HGH"/>
-                <constraint firstItem="OyS-y5-fyj" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="CwD-8d-2hQ"/>
-                <constraint firstItem="OyS-y5-fyj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="top" id="Zlv-Kr-4Ud"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OyS-y5-fyj" secondAttribute="trailing" id="qgp-1R-rWb"/>
-                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="OyS-y5-fyj" secondAttribute="bottom" id="rMY-Ar-wHV"/>
+                <constraint firstItem="OyS-y5-fyj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="6VK-7o-HGH"/>
+                <constraint firstItem="OyS-y5-fyj" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Zlv-Kr-4Ud"/>
+                <constraint firstAttribute="trailing" secondItem="OyS-y5-fyj" secondAttribute="trailing" id="qgp-1R-rWb"/>
+                <constraint firstAttribute="bottom" secondItem="OyS-y5-fyj" secondAttribute="bottom" id="rMY-Ar-wHV"/>
             </constraints>
             <size key="customSize" width="342" height="309"/>
             <connections>

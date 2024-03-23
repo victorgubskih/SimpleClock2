@@ -2,7 +2,8 @@ import Foundation
 import UIKit
 
 struct VerticalLabelClock: Clock {
-    var timeZone: TimeZone
-    var textColor: UIColor
+    let timeZone: TimeZone
+    let  textColor: UIColor
+    let backgroundColor: UIColor
 }
 

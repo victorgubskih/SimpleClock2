@@ -72,7 +72,7 @@ class ViewController: UIViewController {
 //        timeZoneControler.delegate = self
         self.present(timeZoneControler, animated: true)
     }
-    
+
     @IBAction func colorAction(sender: UIButton) {
         let selectColorControler = SelectColorControler()
         selectColorControler.delegate = self
@@ -85,7 +85,6 @@ class ViewController: UIViewController {
         selectClockControler.selectedClock = selectedPreview
         selectClockControler.delegate = self
         self.present(selectClockControler, animated: true)
-        
         
     }
 }

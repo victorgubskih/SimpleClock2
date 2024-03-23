@@ -18,19 +18,17 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="399" placeholderIntrinsicHeight="345" translatesAutoresizingMaskIntoConstraints="NO" id="eZw-55-dbR" customClass="VerticalLabelClockView" customModule="SimpleClock2" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="25" width="399" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="399" height="345"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="eZw-55-dbR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" id="50N-kY-jeE"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eZw-55-dbR" secondAttribute="trailing" id="7HR-e2-d4j"/>
-                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="eZw-55-dbR" secondAttribute="bottom" id="9Rp-Aq-FQc"/>
-                <constraint firstItem="eZw-55-dbR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="top" id="PWI-ob-8Yh"/>
-                <constraint firstItem="eZw-55-dbR" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="fZE-sE-yH2"/>
-                <constraint firstItem="eZw-55-dbR" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="gol-bz-F9t"/>
+                <constraint firstItem="eZw-55-dbR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="50N-kY-jeE"/>
+                <constraint firstAttribute="trailing" secondItem="eZw-55-dbR" secondAttribute="trailing" id="7HR-e2-d4j"/>
+                <constraint firstAttribute="bottom" secondItem="eZw-55-dbR" secondAttribute="bottom" id="9Rp-Aq-FQc"/>
+                <constraint firstItem="eZw-55-dbR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="PWI-ob-8Yh"/>
             </constraints>
             <size key="customSize" width="399" height="345"/>
             <connections>

@@ -18,9 +18,10 @@ class GalleryViewController: UIViewController {
         VerticalLabelClock(timeZone: .current, textColor: .black, backgroundColor: .brown),
         VerticalLabelClock(timeZone: .current, textColor: .green, backgroundColor: .blue),
         VerticalLabelClock(timeZone: .current, textColor: .red, backgroundColor: .brown),
-        ColorLabelClock(timeZone: .current, textColor: .yellow),
-        ColorLabelClock(timeZone: .current, textColor: .brown),
-        ColorLabelClock(timeZone: .current, textColor: .gray),
+
+        ColorLabelClock(timeZone: .current, textColor: .yellow, srartColor: .white, finishColor: .red),
+        ColorLabelClock(timeZone: .current, textColor: .brown, srartColor: .white, finishColor: .red),
+        ColorLabelClock(timeZone: .current, textColor: .gray, srartColor: .white, finishColor: .red),
         CloudLabelClock(timeZone: .current, textColor: .black),
         CloudLabelClock(timeZone: .current, textColor: .blue),
         CloudLabelClock(timeZone: .current, textColor: .green),

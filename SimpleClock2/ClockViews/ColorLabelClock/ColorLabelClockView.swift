@@ -11,17 +11,22 @@ class ColorLabelClockView: UIView {
 
     @IBOutlet private(set) var timeLabel: UILabel!
     private let formatter = DateFormatter()
-    private(set) var model: ColorLabelClock = .init(timeZone: .current, textColor: .black) {
-        didSet {
-            formatter.timeZone = model.timeZone
-            timeLabel?.textColor = model.textColor
-        }
-    }
+    private var timer: Timer!
 
-    let startColor: UIColor
-    let finishColor: UIColor
+    var startColor: UIColor
+    var finishColor: UIColor
     var startTime: Date!
     var finishTime: Date!
+
+    private(set) var model: ColorLabelClock = .init(timeZone: .current, textColor: .black, srartColor: .white, finishColor: .red) {
+        didSet {
+            self.startColor = model.srartColor
+            self.finishColor = model.finishColor
+            formatter.timeZone = model.timeZone
+            timeLabel?.textColor = model.textColor
+
+        }
+    }
 
     required init?(coder: NSCoder) {
         startColor = UIColor.white
@@ -36,12 +41,17 @@ class ColorLabelClockView: UIView {
         super.init(frame: frame)
         setupFromNib()
     }
-    
+
+
     init(startColor: UIColor, finishColor: UIColor) {
         self.startColor = startColor
         self.finishColor = finishColor
         super.init(frame: .zero)
         setupFromNib()
+    }
+
+    deinit {
+        timer?.invalidate()
     }
 
     func config(with model: ColorLabelClock) {
@@ -55,29 +65,37 @@ class ColorLabelClockView: UIView {
         guard let view = nib.instantiate(withOwner: self).first as? UIView else {
             return
         }
-        
+
         addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor).isActive = true
         view.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
         view.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor).isActive = true
         view.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        
+
         formatter.dateFormat =  "HH:mm:ss"
         formatter.timeZone = TimeZone.current
-        
+
+        let timer = Timer.scheduledTimer(
+            timeInterval: 1.0,
+            target: self,
+            selector: #selector(updateTime),
+            userInfo: nil,
+            repeats: true
+        )
         updateTimeInterval()
+        updateTime()
     }
-    
-    func updateTimeInterval() {
+
+      func updateTimeInterval() {
         let currentDate = Date()
         let calendar = Calendar.current
         let dateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: currentDate)
         startTime = calendar.date(from: dateComponents)!
         finishTime = calendar.date(byAdding: .minute, value: 1, to: startTime)!
-        animateBackground()
+       //animateBackground()
     }
-    
+
     func currentColor(for currentDate: Date) -> UIColor {
         var red1: CGFloat = 0
         var green1: CGFloat = 0
@@ -85,14 +103,14 @@ class ColorLabelClockView: UIView {
         var alpha1: CGFloat = 0
         startColor.getRed(&red1, green: &green1, blue: &blue1, alpha: &alpha1)
         let start = startTime.timeIntervalSince1970
-        
+
         var red2: CGFloat = 0
         var green2: CGFloat = 0
         var blue2: CGFloat = 0
         var alpha2: CGFloat = 0
         finishColor.getRed(&red2, green: &green2, blue: &blue2, alpha: &alpha2)
         let finish = finishTime.timeIntervalSince1970
-        
+
         let current = currentDate.timeIntervalSince1970
         let proportion = CGFloat((current - start) / (finish - start))
         var red: Float = Float(red1 + proportion * (red2 - red1))
@@ -101,7 +119,7 @@ class ColorLabelClockView: UIView {
         var alpha: Float = Float(alpha1 + proportion * (alpha2 - alpha1))
         return UIColor(_colorLiteralRed: red, green: green, blue: blue, alpha: alpha)
     }
-    
+
     func animateBackground() {
         let currentDate = Date()
         let currentColor = self.currentColor(for: currentDate)
@@ -111,33 +129,34 @@ class ColorLabelClockView: UIView {
             self.layer.backgroundColor = self.finishColor.cgColor
         }
     }
-    
+
 }
 //MARK: ClockViewForProtocol
 extension ColorLabelClockView: ClockViewProtocol {
     func currentColor() -> UIColor {
         return timeLabel.textColor
     }
-    
-    func updateTime() {
+
+    @objc func updateTime() {
         let currentDate = Date()
         let timeString = formatter.string(from: currentDate)
         timeLabel.text = timeString
-        
         if currentDate >= finishTime {
             updateTimeInterval()
+
+
         }
     }
-    
+
     func update(timeZone: TimeZone) {
         formatter.timeZone = timeZone
         updateTime()
     }
-    
+
     func update(color: UIColor) {
         timeLabel.textColor = color
     }
-    
+
     func currentTimeZone() -> TimeZone {
         return formatter.timeZone
     }

@@ -2,6 +2,8 @@ import Foundation
 import UIKit
 
 struct ColorLabelClock: Clock {
-    var timeZone: TimeZone
-    var textColor: UIColor
+    let timeZone: TimeZone
+    let  textColor: UIColor
+    let srartColor: UIColor
+    let finishColor: UIColor
 }

@@ -19,8 +19,6 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var colorButton: UIButton!
 
-    @IBOutlet weak var clockButton: UIButton!
-
     @IBOutlet weak var contentStackView: UIStackView!
 
     var timer: Timer!
@@ -38,21 +36,20 @@ class ViewController: UIViewController {
         if let timeZone = repository.timeZone() {
             clockView.update(timeZone: timeZone)
         }
-        
+
         if let color = repository.color() {
             clockView.update(color: color)
         }
-        
+
         timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
-        
+
         clockView.updateTime()
     }
-    
+
     @objc func fireTimer() {
         clockView.updateTime()
     }
-    
-   
+
     @IBAction func startAction(sender: UIButton) {
         if timer.isValid  {
             sender.setTitle("Start", for: .normal)
@@ -62,7 +59,7 @@ class ViewController: UIViewController {
             timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
         }
     }
-    
+
     @IBAction func timeZoneAction(sender: UIButton) {
         let timeZoneControler = TimeZoneController(action: { timeZone in
             repository.save(timeZone: timeZone)
@@ -79,13 +76,12 @@ class ViewController: UIViewController {
         selectColorControler.selectedColor = clockView.currentColor()
         self.present(selectColorControler, animated: true)
     }
-    
+
     @IBAction func clockAction() {
         let selectClockControler = SelectClockController()
         selectClockControler.selectedClock = selectedPreview
         selectClockControler.delegate = self
         self.present(selectClockControler, animated: true)
-        
     }
 }
 

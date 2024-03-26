@@ -17,6 +17,8 @@ class CloudClockView: UIView {
 
     private let formatter = DateFormatter()
 
+    private var timer: Timer?
+
     private(set) var model: CloudLabelClock = CloudLabelClock(timeZone: .current, textColor: .black) {
         didSet {
             formatter.timeZone = model.timeZone
@@ -42,6 +44,10 @@ class CloudClockView: UIView {
 
     }
 
+    deinit {
+        timer?.invalidate()
+    }
+
     func config(with model: CloudLabelClock) {
         self.model = model
     }
@@ -64,6 +70,14 @@ class CloudClockView: UIView {
 
         formatter.timeZone = TimeZone.current
 
+        let timer = Timer.scheduledTimer(
+            timeInterval: 1.0,
+            target: self, selector: #selector(updateTime),
+            userInfo: nil,
+            repeats: true
+        )
+        updateTime()
+
         circlelView.layer.cornerRadius = circlelView.frame.height / 2
         circlelView.layer.borderWidth = 4.0
         circlelView.layer.borderColor = timeLabel.textColor.cgColor
@@ -83,7 +97,7 @@ extension CloudClockView: ClockViewProtocol {
         return timeLabel.textColor
     }
 
-    func updateTime() {
+    @objc func updateTime() {
         let currentDate = Date()
         formatter.dateFormat = "HH:mm:ss"
         let timeString = formatter.string(from: currentDate)

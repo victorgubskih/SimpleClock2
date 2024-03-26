@@ -71,11 +71,11 @@
                                 <rect key="frame" x="0.0" y="79" width="393" height="699"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2va-wH-KQb" customClass="CloudClockView" customModule="SimpleClock2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="441.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="506"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwM-BC-6z1">
-                                        <rect key="frame" x="0.0" y="471.66666666666663" width="393" height="34.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="536" width="393" height="34.333333333333371"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34.329999999999998" id="8Oq-65-UlP"/>
                                         </constraints>
@@ -86,7 +86,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4Q-3b-Zlz">
-                                        <rect key="frame" x="0.0" y="536" width="393" height="34.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="600.33333333333337" width="393" height="34.333333333333371"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34.329999999999998" id="tmf-zc-Bnm"/>
                                         </constraints>
@@ -97,7 +97,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PP9-tG-YZj">
-                                        <rect key="frame" x="0.0" y="600.33333333333337" width="393" height="34.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="664.66666666666663" width="393" height="34.333333333333371"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34.329999999999998" id="GnA-bQ-fKd"/>
                                         </constraints>
@@ -105,17 +105,6 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Select color"/>
                                         <connections>
                                             <action selector="colorActionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F0h-ug-nT4"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97H-sg-DIS">
-                                        <rect key="frame" x="0.0" y="664.66666666666663" width="393" height="34.333333333333371"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="34.329999999999998" id="wt6-Gc-G3p"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Change clock view"/>
-                                        <connections>
-                                            <action selector="clockAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xh9-BP-Vzg"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -131,7 +120,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="clockButton" destination="97H-sg-DIS" id="KgL-Cp-bKP"/>
                         <outlet property="clockView" destination="2va-wH-KQb" id="EgV-aU-1Wp"/>
                         <outlet property="colorButton" destination="PP9-tG-YZj" id="uIO-ZO-4rk"/>
                         <outlet property="contentStackView" destination="w8z-dB-mcK" id="DAJ-xY-ju2"/>

@@ -25,12 +25,13 @@ class GalleryViewController: UIViewController {
         CloudLabelClock(timeZone: .current, textColor: .black),
         CloudLabelClock(timeZone: .current, textColor: .blue),
         CloudLabelClock(timeZone: .current, textColor: .green),
-        JustClock(timeZone: .current),
-        JustClock(timeZone: .current),
-        JustClock(timeZone: .current)
+        JustClock(timeZone: .current, background: .green),
+        JustClock(timeZone: .current, background: .blue),
+        JustClock(timeZone: .current, background: .gray)
     ]
 
     @IBOutlet private var collectionView: UICollectionView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(UINib(nibName: "LabelClockCell", bundle: nil), forCellWithReuseIdentifier: "LabelClockCell")
@@ -40,6 +41,24 @@ class GalleryViewController: UIViewController {
         collectionView.register(UINib(nibName: "JustClockCell", bundle: nil), forCellWithReuseIdentifier: "JustClockCell")
 
         previews = ClockViewFactory().makePreviews()
+    }
+
+    @IBAction func edit() {
+        guard let index = collectionView.indexPathsForVisibleItems.first?.item else {
+            return
+        }
+        guard index < clocks.count else {
+            return
+        }
+        let clock = clocks[index]
+        switch clock {
+        case let labelClock as LabelClock:
+            let storyboard = UIStoryboard(name: String(describing: EditLabelClockViewController.self), bundle: nil)
+            let editViewController = storyboard.instantiateViewController(identifier: "edit")
+            self.present(editViewController, animated: true)
+        default:
+            break
+        }
     }
 }
 

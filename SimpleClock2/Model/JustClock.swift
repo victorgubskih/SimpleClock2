@@ -3,6 +3,6 @@ import UIKit
 
 struct JustClock: Clock {
     var timeZone: TimeZone
-   // var textColor: UIColor
+    var background: UIColor
 }
 

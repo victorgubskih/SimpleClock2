@@ -11,7 +11,6 @@ class VerticalLabelClockView: UIView {
 
     @IBOutlet private(set) var timeLabel: UILabel!
     private let formatter = DateFormatter()
-    private var timer: Timer?
     private(set) var model: VerticalLabelClock = VerticalLabelClock(timeZone: .current, textColor: .black, backgroundColor: .white) {
         didSet {
             formatter.timeZone = model.timeZone
@@ -19,6 +18,8 @@ class VerticalLabelClockView: UIView {
             self.backgroundColor = model.backgroundColor
         }
     }
+    private var timer: Timer?
+
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)

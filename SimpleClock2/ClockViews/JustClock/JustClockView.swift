@@ -19,9 +19,10 @@ class JustClockView: UIView {
     var calendar = Calendar.current
     var timer: Timer?
 
-    private(set) var model: JustClock = .init(timeZone: .current) {
+    private(set) var model: JustClock = .init(timeZone: .current, background: .white) {
         didSet {
             calendar.timeZone = model.timeZone
+            self.backgroundColor = model.background
         }
     }
 

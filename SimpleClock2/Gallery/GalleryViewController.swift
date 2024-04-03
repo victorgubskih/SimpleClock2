@@ -57,12 +57,30 @@ class GalleryViewController: UIViewController {
             let editViewController = storyboard.instantiateViewController(identifier: "edit") as! EditLabelClockViewController
             editViewController.config(with: labelClock)
             self.present(editViewController, animated: true)
-        
+            
         case let verticalLabelClock as VerticalLabelClock:
             let storyBoard = UIStoryboard(name: String(describing: EditVerticalViewController.self), bundle: nil)
             let editVerticalViewController = storyBoard.instantiateViewController(identifier: "edit") as! EditVerticalViewController
             editVerticalViewController.config(with: verticalLabelClock)
             self.present(editVerticalViewController, animated: true)
+
+        case let colorlabelClock as ColorLabelClock:
+            let storybord = UIStoryboard(name: String(describing: EditColorLabelViewController.self), bundle: nil)
+            let editColoLabelrViewControllert = storybord.instantiateViewController(identifier: "edit") as! EditColorLabelViewController
+            editColoLabelrViewControllert.config(with: colorlabelClock)
+            self.present(editColoLabelrViewControllert, animated: true)
+
+        case let cloudLabelClock as CloudLabelClock:
+            let storyboard = UIStoryboard(name: String(describing: EditCloudViewController.self), bundle: nil)
+            let editCloudClockViewController = storyboard.instantiateViewController(identifier: "edit") as! EditCloudViewController
+            editCloudClockViewController.config(with: cloudLabelClock)
+            self.present(editCloudClockViewController, animated: true)
+
+        case let justClock as JustClock:
+            let storyboard = UIStoryboard(name: String(describing: EditJustViewController.self), bundle: nil)
+            let editJustClockViewController = storyboard.instantiateViewController(identifier: "edit") as! EditJustViewController
+            editJustClockViewController.config(with: justClock)
+            self.present(editJustClockViewController, animated: true)
         default:
             break
 

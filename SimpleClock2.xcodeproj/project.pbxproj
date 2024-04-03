@@ -49,6 +49,8 @@
 		577C58872BA9BB4A00CAE3C9 /* JustClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577C58862BA9BB4A00CAE3C9 /* JustClock.swift */; };
 		5785142C2BBC5C0E005C9923 /* EditVerticalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5785142B2BBC5C0E005C9923 /* EditVerticalViewController.swift */; };
 		5785142E2BBC5C26005C9923 /* EditVerticalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5785142D2BBC5C26005C9923 /* EditVerticalViewController.storyboard */; };
+		578514302BBD4C7B005C9923 /* EditColorLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5785142F2BBD4C7B005C9923 /* EditColorLabelViewController.swift */; };
+		578514322BBD4C9B005C9923 /* EditColorLabelViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 578514312BBD4C9B005C9923 /* EditColorLabelViewController.storyboard */; };
 		578592062B4DBF23008637CA /* ClockPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578592042B4DBF23008637CA /* ClockPreviewCell.swift */; };
 		578592072B4DBF23008637CA /* ClockPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 578592052B4DBF23008637CA /* ClockPreviewCell.xib */; };
 		57AAF3342BB3395400608AF7 /* EditLabelClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAF3332BB3395400608AF7 /* EditLabelClockViewController.swift */; };
@@ -57,6 +59,10 @@
 		57D282952B8661A800A46E23 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D282942B8661A800A46E23 /* Repository.swift */; };
 		57D282982B8664A000A46E23 /* DefaultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D282972B8664A000A46E23 /* DefaultRepository.swift */; };
 		57D2830F2B8E607600A46E23 /* FileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D2830E2B8E607600A46E23 /* FileRepository.swift */; };
+		57D325722BBD8BC7001BB71F /* EditCloudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D325712BBD8BC7001BB71F /* EditCloudViewController.swift */; };
+		57D325742BBD8BE3001BB71F /* EditCloudViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D325732BBD8BE3001BB71F /* EditCloudViewController.storyboard */; };
+		57D325762BBD9551001BB71F /* EditJustViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D325752BBD9551001BB71F /* EditJustViewController.swift */; };
+		57D325782BBD955F001BB71F /* EditJustViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D325772BBD955F001BB71F /* EditJustViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +110,8 @@
 		577C58862BA9BB4A00CAE3C9 /* JustClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustClock.swift; sourceTree = "<group>"; };
 		5785142B2BBC5C0E005C9923 /* EditVerticalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVerticalViewController.swift; sourceTree = "<group>"; };
 		5785142D2BBC5C26005C9923 /* EditVerticalViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditVerticalViewController.storyboard; sourceTree = "<group>"; };
+		5785142F2BBD4C7B005C9923 /* EditColorLabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditColorLabelViewController.swift; sourceTree = "<group>"; };
+		578514312BBD4C9B005C9923 /* EditColorLabelViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditColorLabelViewController.storyboard; sourceTree = "<group>"; };
 		578592042B4DBF23008637CA /* ClockPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockPreviewCell.swift; sourceTree = "<group>"; };
 		578592052B4DBF23008637CA /* ClockPreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClockPreviewCell.xib; sourceTree = "<group>"; };
 		57AAF3332BB3395400608AF7 /* EditLabelClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLabelClockViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +120,10 @@
 		57D282942B8661A800A46E23 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		57D282972B8664A000A46E23 /* DefaultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRepository.swift; sourceTree = "<group>"; };
 		57D2830E2B8E607600A46E23 /* FileRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileRepository.swift; sourceTree = "<group>"; };
+		57D325712BBD8BC7001BB71F /* EditCloudViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCloudViewController.swift; sourceTree = "<group>"; };
+		57D325732BBD8BE3001BB71F /* EditCloudViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditCloudViewController.storyboard; sourceTree = "<group>"; };
+		57D325752BBD9551001BB71F /* EditJustViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditJustViewController.swift; sourceTree = "<group>"; };
+		57D325772BBD955F001BB71F /* EditJustViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditJustViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +172,8 @@
 				5755E14B2AFA608100429A7E /* ColorLabelClockView.xib */,
 				576100AF2B99A71500478398 /* ColorLabelClockCell.swift */,
 				576100B02B99A71500478398 /* ColorLabelClockCell.xib */,
+				5785142F2BBD4C7B005C9923 /* EditColorLabelViewController.swift */,
+				578514312BBD4C9B005C9923 /* EditColorLabelViewController.storyboard */,
 			);
 			path = ColorLabelClock;
 			sourceTree = "<group>";
@@ -184,6 +198,8 @@
 				572474B62B286CAB0080BE56 /* JustClockView.xib */,
 				576100C72B99D00400478398 /* JustClockCell.swift */,
 				576100C82B99D00400478398 /* JustClockCell.xib */,
+				57D325752BBD9551001BB71F /* EditJustViewController.swift */,
+				57D325772BBD955F001BB71F /* EditJustViewController.storyboard */,
 			);
 			path = JustClock;
 			sourceTree = "<group>";
@@ -195,6 +211,8 @@
 				572474AE2B2392980080BE56 /* CloudClockView.xib */,
 				576100C12B99C6EA00478398 /* CloudLabelClockCell.swift */,
 				576100C22B99C6EA00478398 /* CloudLabelClockCell.xib */,
+				57D325712BBD8BC7001BB71F /* EditCloudViewController.swift */,
+				57D325732BBD8BE3001BB71F /* EditCloudViewController.storyboard */,
 			);
 			path = CloudClock;
 			sourceTree = "<group>";
@@ -344,13 +362,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				572474AF2B2392980080BE56 /* CloudClockView.xib in Resources */,
+				578514322BBD4C9B005C9923 /* EditColorLabelViewController.storyboard in Resources */,
 				578592072B4DBF23008637CA /* ClockPreviewCell.xib in Resources */,
 				57AAF3362BB3397500608AF7 /* EditLabelClockViewController.storyboard in Resources */,
 				5778DD692ACC708C00675257 /* LaunchScreen.storyboard in Resources */,
 				5778DD662ACC708C00675257 /* Assets.xcassets in Resources */,
 				576100CA2B99D00400478398 /* JustClockCell.xib in Resources */,
 				5778DD642ACC708B00675257 /* Main.storyboard in Resources */,
+				57D325782BBD955F001BB71F /* EditJustViewController.storyboard in Resources */,
 				576100C42B99C6EA00478398 /* CloudLabelClockCell.xib in Resources */,
+				57D325742BBD8BE3001BB71F /* EditCloudViewController.storyboard in Resources */,
 				5755E1382AF5695900429A7E /* LabelClockView.xib in Resources */,
 				5785142E2BBC5C26005C9923 /* EditVerticalViewController.storyboard in Resources */,
 				576100B22B99A71500478398 /* ColorLabelClockCell.xib in Resources */,
@@ -375,6 +396,7 @@
 				576100B12B99A71500478398 /* ColorLabelClockCell.swift in Sources */,
 				576100AC2B98D74300478398 /* LabelClockCell.swift in Sources */,
 				576100BA2B99C07500478398 /* VerticalLabelClockCell.swift in Sources */,
+				578514302BBD4C7B005C9923 /* EditColorLabelViewController.swift in Sources */,
 				57D282982B8664A000A46E23 /* DefaultRepository.swift in Sources */,
 				5755E1402AF93D4800429A7E /* ClockViewProtocol.swift in Sources */,
 				5755E1362AF568EC00429A7E /* LabelClockView.swift in Sources */,
@@ -400,6 +422,8 @@
 				570341BE2B9639A4000A748E /* GalleryViewController.swift in Sources */,
 				5778DD5F2ACC708B00675257 /* SceneDelegate.swift in Sources */,
 				572474B52B286C810080BE56 /* JustClockView.swift in Sources */,
+				57D325762BBD9551001BB71F /* EditJustViewController.swift in Sources */,
+				57D325722BBD8BC7001BB71F /* EditCloudViewController.swift in Sources */,
 				576100C32B99C6EA00478398 /* CloudLabelClockCell.swift in Sources */,
 				577C58872BA9BB4A00CAE3C9 /* JustClock.swift in Sources */,
 				577C58832BA99F3D00CAE3C9 /* ColorLabelClock.swift in Sources */,

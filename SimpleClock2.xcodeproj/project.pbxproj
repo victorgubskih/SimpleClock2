@@ -47,6 +47,8 @@
 		577C58832BA99F3D00CAE3C9 /* ColorLabelClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577C58822BA99F3D00CAE3C9 /* ColorLabelClock.swift */; };
 		577C58852BA9A65500CAE3C9 /* CloudLabelClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577C58842BA9A65500CAE3C9 /* CloudLabelClock.swift */; };
 		577C58872BA9BB4A00CAE3C9 /* JustClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577C58862BA9BB4A00CAE3C9 /* JustClock.swift */; };
+		5785142C2BBC5C0E005C9923 /* EditVerticalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5785142B2BBC5C0E005C9923 /* EditVerticalViewController.swift */; };
+		5785142E2BBC5C26005C9923 /* EditVerticalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5785142D2BBC5C26005C9923 /* EditVerticalViewController.storyboard */; };
 		578592062B4DBF23008637CA /* ClockPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578592042B4DBF23008637CA /* ClockPreviewCell.swift */; };
 		578592072B4DBF23008637CA /* ClockPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 578592052B4DBF23008637CA /* ClockPreviewCell.xib */; };
 		57AAF3342BB3395400608AF7 /* EditLabelClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAF3332BB3395400608AF7 /* EditLabelClockViewController.swift */; };
@@ -100,6 +102,8 @@
 		577C58822BA99F3D00CAE3C9 /* ColorLabelClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLabelClock.swift; sourceTree = "<group>"; };
 		577C58842BA9A65500CAE3C9 /* CloudLabelClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudLabelClock.swift; sourceTree = "<group>"; };
 		577C58862BA9BB4A00CAE3C9 /* JustClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustClock.swift; sourceTree = "<group>"; };
+		5785142B2BBC5C0E005C9923 /* EditVerticalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVerticalViewController.swift; sourceTree = "<group>"; };
+		5785142D2BBC5C26005C9923 /* EditVerticalViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditVerticalViewController.storyboard; sourceTree = "<group>"; };
 		578592042B4DBF23008637CA /* ClockPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockPreviewCell.swift; sourceTree = "<group>"; };
 		578592052B4DBF23008637CA /* ClockPreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClockPreviewCell.xib; sourceTree = "<group>"; };
 		57AAF3332BB3395400608AF7 /* EditLabelClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLabelClockViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 				576100CB2B9A29F000478398 /* VerticalLabelClockView.xib */,
 				576100B82B99C07500478398 /* VerticalLabelClockCell.swift */,
 				576100B92B99C07500478398 /* VerticalLabelClockCell.xib */,
+				5785142B2BBC5C0E005C9923 /* EditVerticalViewController.swift */,
+				5785142D2BBC5C26005C9923 /* EditVerticalViewController.storyboard */,
 			);
 			path = VerticalLabelClock;
 			sourceTree = "<group>";
@@ -346,6 +352,7 @@
 				5778DD642ACC708B00675257 /* Main.storyboard in Resources */,
 				576100C42B99C6EA00478398 /* CloudLabelClockCell.xib in Resources */,
 				5755E1382AF5695900429A7E /* LabelClockView.xib in Resources */,
+				5785142E2BBC5C26005C9923 /* EditVerticalViewController.storyboard in Resources */,
 				576100B22B99A71500478398 /* ColorLabelClockCell.xib in Resources */,
 				570B23352AE30817008DF2D7 /* SelectColorControler.xib in Resources */,
 				576100AD2B98D74300478398 /* LabelClockCell.xib in Resources */,
@@ -384,6 +391,7 @@
 				5761011C2BA9824400478398 /* VerticalLabelClock.swift in Sources */,
 				5755E12C2AF02BAB00429A7E /* UIColor+Codable .swift in Sources */,
 				5778DD5D2ACC708B00675257 /* AppDelegate.swift in Sources */,
+				5785142C2BBC5C0E005C9923 /* EditVerticalViewController.swift in Sources */,
 				570B23342AE30817008DF2D7 /* SelectColorControler.swift in Sources */,
 				57D282952B8661A800A46E23 /* Repository.swift in Sources */,
 				570B232C2AD5B670008DF2D7 /* TimeZoneController.swift in Sources */,

@@ -8,41 +8,41 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Edit Label Clock View Controller-->
+        <!--Edit Vertical View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="edit" id="Y6W-OH-hqX" customClass="EditLabelClockViewController" customModule="SimpleClock2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="edit" id="Y6W-OH-hqX" customClass="EditVerticalViewController" customModule="SimpleClock2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Wf-tD-VpW">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="W6f-Rg-AeQ">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="656" translatesAutoresizingMaskIntoConstraints="NO" id="5B5-Yt-vDn" customClass="LabelClockView" customModule="SimpleClock2" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Reu-xI-anJ" customClass="VerticalLabelClockView" customModule="SimpleClock2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="627"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYU-hE-cue">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TyY-8Q-b0N">
                                         <rect key="frame" x="0.0" y="627" width="393" height="44"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="EdH-qs-5bG"/>
+                                            <constraint firstAttribute="height" constant="44" id="98N-Q0-ncp"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Time zone"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="TimeZine"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XR8-IJ-N8j">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVA-F3-Gnu">
                                         <rect key="frame" x="0.0" y="671" width="393" height="44"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="gOv-pU-CJu"/>
+                                            <constraint firstAttribute="height" constant="44" id="L6k-np-IRO"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Text color"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="TextCplor"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEk-m4-DdZ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOt-1u-lgN">
                                         <rect key="frame" x="0.0" y="715" width="393" height="44"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="bes-E2-dfU"/>
+                                            <constraint firstAttribute="height" constant="44" id="6BP-bD-Tm6"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="BackgroundColor"/>
@@ -53,19 +53,19 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="2Wf-tD-VpW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="KQ6-R2-vEY"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="2Wf-tD-VpW" secondAttribute="bottom" id="LzD-ie-ayI"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2Wf-tD-VpW" secondAttribute="trailing" id="Sbs-ib-yn3"/>
-                            <constraint firstItem="2Wf-tD-VpW" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="jft-JN-3xZ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="W6f-Rg-AeQ" secondAttribute="trailing" id="4uS-X7-Mcl"/>
+                            <constraint firstItem="W6f-Rg-AeQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="qIM-Cx-igA"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="W6f-Rg-AeQ" secondAttribute="bottom" id="s9J-td-RGp"/>
+                            <constraint firstItem="W6f-Rg-AeQ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="ybN-eE-vpb"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="clockView" destination="5B5-Yt-vDn" id="RZY-6B-Hiw"/>
+                        <outlet property="clockView" destination="Reu-xI-anJ" id="tq8-a5-e8F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1" y="-28"/>
+            <point key="canvasLocation" x="116" y="-34"/>
         </scene>
     </scenes>
     <resources>

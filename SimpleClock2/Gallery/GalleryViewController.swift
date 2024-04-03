@@ -54,10 +54,18 @@ class GalleryViewController: UIViewController {
         switch clock {
         case let labelClock as LabelClock:
             let storyboard = UIStoryboard(name: String(describing: EditLabelClockViewController.self), bundle: nil)
-            let editViewController = storyboard.instantiateViewController(identifier: "edit")
+            let editViewController = storyboard.instantiateViewController(identifier: "edit") as! EditLabelClockViewController
+            editViewController.config(with: labelClock)
             self.present(editViewController, animated: true)
+        
+        case let verticalLabelClock as VerticalLabelClock:
+            let storyBoard = UIStoryboard(name: String(describing: EditVerticalViewController.self), bundle: nil)
+            let editVerticalViewController = storyBoard.instantiateViewController(identifier: "edit") as! EditVerticalViewController
+            editVerticalViewController.config(with: verticalLabelClock)
+            self.present(editVerticalViewController, animated: true)
         default:
             break
+
         }
     }
 }

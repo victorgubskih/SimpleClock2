@@ -30,6 +30,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="TimeZine"/>
+                                        <connections>
+                                            <action selector="didTapTimeZone" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cQm-Da-qff"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVA-F3-Gnu">
                                         <rect key="frame" x="0.0" y="671" width="393" height="44"/>

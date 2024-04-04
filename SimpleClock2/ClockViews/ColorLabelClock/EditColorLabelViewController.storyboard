@@ -30,6 +30,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="TimeZone"/>
+                                        <connections>
+                                            <action selector="didTapTimeZone" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Q3i-YU-vX9"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qud-vq-a4R" userLabel="TextColor">
                                         <rect key="frame" x="0.0" y="656" width="393" height="34.333333333333371"/>

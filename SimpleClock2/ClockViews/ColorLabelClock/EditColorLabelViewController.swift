@@ -25,4 +25,15 @@ class EditColorLabelViewController: UIViewController {
         self.model = model
     }
 
+    @IBAction func didTapTimeZone() {
+        let controller = TimeZoneController(action: update(timeZone:))
+        self.present(controller, animated: true)
+    }
+
+}
+extension EditColorLabelViewController {
+    private func update(timeZone: TimeZone) {
+        self.model = ColorLabelClock(timeZone: timeZone, textColor: model.textColor, srartColor: model.srartColor, finishColor: model.finishColor)
+    }
+
 }

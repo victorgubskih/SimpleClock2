@@ -27,6 +27,9 @@
                                         <rect key="frame" x="0.0" y="690.33333333333337" width="393" height="34.333333333333371"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="TimeZone"/>
+                                        <connections>
+                                            <action selector="didTapTimeZone" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fhl-5F-K6l"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VS1-l7-UGe">
                                         <rect key="frame" x="0.0" y="724.66666666666663" width="393" height="34.333333333333371"/>

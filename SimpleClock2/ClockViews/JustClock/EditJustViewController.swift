@@ -25,4 +25,14 @@ class EditJustViewController: UIViewController {
         self.model = model
     }
 
+    @IBAction func didTapTimeZone() {
+        let controller = TimeZoneController(action: update(timeZone:))
+        self.present(controller, animated: true)
+    }
+}
+
+extension EditJustViewController {
+    private func update(timeZone: TimeZone) {
+        self.model = JustClock(timeZone: timeZone, background: model.background)
+    }
 }

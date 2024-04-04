@@ -25,4 +25,15 @@ class EditVerticalViewController: UIViewController {
     func config(with model: VerticalLabelClock) {
         self.model =  model
     }
+
+    @IBAction func didTapTimeZone() {
+        let controller = TimeZoneController(action: update(timeZone:))
+        self.present(controller, animated: true)
+    }
+}
+
+extension EditVerticalViewController {
+    private func update(timeZone: TimeZone) {
+        self.model = VerticalLabelClock(timeZone: timeZone, textColor: model.textColor, backgroundColor: model.backgroundColor)
+    }
 }

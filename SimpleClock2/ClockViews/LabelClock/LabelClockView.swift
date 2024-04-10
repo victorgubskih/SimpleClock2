@@ -64,7 +64,7 @@ class LabelClockView: UIView {
         view.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
         view.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor).isActive = true
         view.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        
+
         formatter.dateFormat = "HH:mm:ss"
         formatter.timeZone = TimeZone.current
 
@@ -83,22 +83,22 @@ extension LabelClockView: ClockViewProtocol {
     func currentColor() -> UIColor {
         return timeLabel.textColor
     }
-    
+
     @objc func updateTime() {
         let currentDate = Date()
         let timeString = formatter.string(from:  currentDate)
         timeLabel.text = timeString
     }
-    
+
     func update(timeZone: TimeZone) {
         formatter.timeZone = timeZone
         updateTime()
     }
-    
+
     func update(color: UIColor) {
        timeLabel.textColor = color
     }
-    
+
     func currentTimeZone() -> TimeZone {
         return formatter.timeZone
     }

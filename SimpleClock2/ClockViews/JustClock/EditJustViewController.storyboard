@@ -35,6 +35,9 @@
                                         <rect key="frame" x="0.0" y="724.66666666666663" width="393" height="34.333333333333371"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="BackgroundColor"/>
+                                        <connections>
+                                            <action selector="didTapBackgroundColor" destination="Y6W-OH-hqX" eventType="touchUpInside" id="89P-05-pza"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,11 +18,12 @@
                 <subviews>
                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="315" placeholderIntrinsicHeight="269" translatesAutoresizingMaskIntoConstraints="NO" id="TAf-EB-daQ" customClass="ColorLabelClockView" customModule="SimpleClock2" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="315" height="269"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="TAf-EB-daQ" secondAttribute="trailing" id="7En-Sv-xiV"/>
                 <constraint firstAttribute="bottom" secondItem="TAf-EB-daQ" secondAttribute="bottom" id="JS4-dM-DO1"/>
@@ -37,9 +37,4 @@
             <point key="canvasLocation" x="203.81679389312976" y="-82.042253521126767"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

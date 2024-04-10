@@ -42,7 +42,6 @@ class ColorLabelClockView: UIView {
         setupFromNib()
     }
 
-
     init(startColor: UIColor, finishColor: UIColor) {
         self.startColor = startColor
         self.finishColor = finishColor
@@ -143,7 +142,6 @@ extension ColorLabelClockView: ClockViewProtocol {
         timeLabel.text = timeString
         if currentDate >= finishTime {
             updateTimeInterval()
-
 
         }
     }

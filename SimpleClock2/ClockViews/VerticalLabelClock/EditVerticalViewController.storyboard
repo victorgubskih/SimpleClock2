@@ -41,6 +41,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="TextCplor"/>
+                                        <connections>
+                                            <action selector="didTapTextColor" destination="Y6W-OH-hqX" eventType="touchUpInside" id="QsB-cj-Np9"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOt-1u-lgN">
                                         <rect key="frame" x="0.0" y="715" width="393" height="44"/>
@@ -49,6 +52,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="BackgroundColor"/>
+                                        <connections>
+                                            <action selector="didTapBackground" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TnA-8Z-pDm"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

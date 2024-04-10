@@ -8,7 +8,16 @@
 import UIKit
 
 class EditColorLabelViewController: UIViewController {
+
+    private enum ColorButtonContext {
+        case text
+        case srartColor
+        case finishColor
+    }
     @IBOutlet private var clockView: ColorLabelClockView!
+
+    private var colorButtonContext: ColorButtonContext?
+
     private var  model = ColorLabelClock(timeZone: .current, textColor: .black, srartColor: .white, finishColor: .red) {
         didSet {
             clockView?.config(with: model)
@@ -30,6 +39,30 @@ class EditColorLabelViewController: UIViewController {
         self.present(controller, animated: true)
     }
 
+    @IBAction func didTapTextColor() {
+       let selectColorController = SelectColorControler()
+        selectColorController.selectedColor = clockView.currentColor()
+        selectColorController.delegate = self
+        self.present(selectColorController, animated: true)
+        colorButtonContext = .text
+    }
+
+    @IBAction func didTapStartColor() {
+       let selectColorController = SelectColorControler()
+        selectColorController.selectedColor = clockView.currentColor()
+        selectColorController.delegate = self
+        self.present(selectColorController, animated: true)
+        colorButtonContext = .srartColor
+    }
+
+    @IBAction func didTapFinishColor() {
+       let selectColorController = SelectColorControler()
+        selectColorController.selectedColor = clockView.currentColor()
+        selectColorController.delegate = self
+        self.present(selectColorController, animated: true)
+        colorButtonContext = .finishColor
+    }
+
 }
 extension EditColorLabelViewController {
     private func update(timeZone: TimeZone) {
@@ -37,3 +70,21 @@ extension EditColorLabelViewController {
     }
 
 }
+extension EditColorLabelViewController: SelectColorDelegate {
+    func didSelect(color: UIColor) {
+        guard let colorButtonContext = colorButtonContext else {
+            return
+        }
+        switch colorButtonContext{
+        case .text:
+            self.model = ColorLabelClock(timeZone: model.timeZone, textColor: color, srartColor: model.srartColor, finishColor: model.finishColor)
+        case .srartColor:
+            self.model = ColorLabelClock(timeZone: model.timeZone, textColor: model.textColor, srartColor: color, finishColor: model.finishColor)
+        case .finishColor:
+            self.model = ColorLabelClock(timeZone: model.timeZone, textColor: model.textColor, srartColor: model.srartColor, finishColor: color)
+        }
+        self.colorButtonContext = nil
+    }
+}
+
+

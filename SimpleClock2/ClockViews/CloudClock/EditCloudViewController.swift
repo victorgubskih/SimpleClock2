@@ -30,11 +30,23 @@ class EditCloudViewController: UIViewController {
         let controller = TimeZoneController(action: update(timeZone:))
         self.present(controller, animated: true)
     }
+    @IBAction func didTapTextColor() {
+       let selectColorController = SelectColorControler()
+        selectColorController.delegate = self
+        selectColorController.selectedColor = clockView.currentColor()
+        self.present(selectColorController, animated: true)
+    }
 
 }
 
 extension EditCloudViewController {
     private func update(timeZone: TimeZone) {
         self.model = CloudLabelClock(timeZone: timeZone, textColor: model.textColor)
+    }
+}
+
+extension EditCloudViewController: SelectColorDelegate {
+    func didSelect(color: UIColor) {
+        self.model = CloudLabelClock(timeZone: model.timeZone, textColor: color)
     }
 }

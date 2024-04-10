@@ -181,7 +181,6 @@
 		576100B32B99B9D100478398 /* VerticalLabelClock */ = {
 			isa = PBXGroup;
 			children = (
-				5755E1532B07921900429A7E /* VerticalLabelClockView.swift */,
 				576100CB2B9A29F000478398 /* VerticalLabelClockView.xib */,
 				576100B82B99C07500478398 /* VerticalLabelClockCell.swift */,
 				576100B92B99C07500478398 /* VerticalLabelClockCell.xib */,
@@ -287,6 +286,7 @@
 		57DFC0E42B98D51A00D62069 /* LabelClock */ = {
 			isa = PBXGroup;
 			children = (
+				5755E1532B07921900429A7E /* VerticalLabelClockView.swift */,
 				5755E1372AF5695900429A7E /* LabelClockView.xib */,
 				5755E1352AF568EC00429A7E /* LabelClockView.swift */,
 				576100AA2B98D74300478398 /* LabelClockCell.swift */,

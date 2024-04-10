@@ -41,6 +41,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="TextColor"/>
+                                        <connections>
+                                            <action selector="didTapTextColor" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gGO-Th-tSf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

@@ -88,11 +88,10 @@ class ViewController: UIViewController {
 // MARK: SelectTimeZoneDelegate
 //extension ViewController: SelectTimeZoneDelegate {
 //    func didSelect(timeZone: TimeZone) {
-//        
+//
 //        clockView.update(timeZone: timeZone)
 //    }
 //}
-
 // MARK: SelectColorDelegate
 extension ViewController: SelectColorDelegate {
     func didSelect(color: UIColor) {
@@ -115,4 +114,3 @@ extension ViewController: SelectClockDelegate {
         selectedPreview = preview
     }
 }
-

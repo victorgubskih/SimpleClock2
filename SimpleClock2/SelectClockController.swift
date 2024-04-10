@@ -17,8 +17,6 @@ class SelectClockController: UIViewController {
     var previews: [ClockViewFactory.Preview] = []
     let factory = ClockViewFactory()
     var selectedClock: ClockViewFactory.Preview? = nil
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +24,7 @@ class SelectClockController: UIViewController {
         setupTableView()
         tableView.reloadData()
     }
-    
+
     func setupTableView() {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -34,40 +32,34 @@ class SelectClockController: UIViewController {
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        
+
         tableView.rowHeight = 60
         let nib = UINib(nibName: "ClockPreviewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "cell")
-       // tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
+        // tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+
         tableView.dataSource = self
         tableView.delegate = self
     }
-   
 }
-
 
 extension SelectClockController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return previews.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         if let previewCell = cell as? ClockPreviewCell {
             previewCell.preview = previews[indexPath.row]
         }
-        
         if  previews[indexPath.row] == selectedClock {
              cell.backgroundColor = .gray
          } else {
              cell.backgroundColor = .white
          }
-        
-        return cell
+            return cell
     }
-        
 }
 
 extension SelectClockController: UITableViewDelegate {
@@ -76,7 +68,5 @@ extension SelectClockController: UITableViewDelegate {
         let preview = previews[indexPath.row]
         let currentClock = factory.makeClockView(with: preview)
         delegate?.didSelect(clock: currentClock, preview: preview)
-        
     }
 }
-

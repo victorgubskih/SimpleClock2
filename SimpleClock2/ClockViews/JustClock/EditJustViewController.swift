@@ -8,6 +8,7 @@
 import UIKit
 
 class EditJustViewController: UIViewController {
+
     @IBOutlet private var clockView: JustClockView!
     private var model = JustClock(timeZone: .current, background: .white) {
         didSet {
@@ -29,10 +30,24 @@ class EditJustViewController: UIViewController {
         let controller = TimeZoneController(action: update(timeZone:))
         self.present(controller, animated: true)
     }
+
+    @IBAction func didTapBackgroundColor() {
+        let selectColorController = SelectColorControler()
+        selectColorController.delegate = self
+        selectColorController.selectedColor = clockView.currentColor()
+        self.present(selectColorController, animated: true)
+    }
+
 }
 
 extension EditJustViewController {
     private func update(timeZone: TimeZone) {
         self.model = JustClock(timeZone: timeZone, background: model.background)
+    }
+}
+
+extension EditJustViewController: SelectColorDelegate {
+    func didSelect(color: UIColor) {
+        self.model = JustClock(timeZone: model.timeZone, background: color)
     }
 }

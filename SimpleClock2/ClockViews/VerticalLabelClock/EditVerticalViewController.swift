@@ -9,14 +9,14 @@ import UIKit
 
 class EditVerticalViewController: UIViewController {
 
-    private enum ColorButtonContext {
-        case text
-        case background
-    }
+//    private enum ColorButtonContext {
+//        case text
+//        case background
+//    }
 
     @IBOutlet private var clockView: VerticalLabelClockView!
 
-    private var colorButtonContext: ColorButtonContext?
+//    private var colorButtonContext: ColorButtonContext?
     
     private var model = VerticalLabelClock(timeZone: .current, textColor: .black, backgroundColor: .white) {
         didSet {
@@ -41,18 +41,24 @@ class EditVerticalViewController: UIViewController {
 
     @IBAction func didTapTextColor() {
        let selectColorController = SelectColorControler()
-        selectColorController.delegate = self
+        //selectColorController.delegate = self
+        selectColorController.action = { color in
+            self.model = VerticalLabelClock(timeZone: self.model.timeZone, textColor: color, backgroundColor: self.model.backgroundColor)
+        }
         selectColorController.selectedColor = clockView.currentColor()
         self.present(selectColorController, animated: true)
-        colorButtonContext = .text
+        //colorButtonContext = .text
     }
 
     @IBAction func didTapBackground() {
        let selectColorController = SelectColorControler()
-        selectColorController.delegate = self
+        //selectColorController.delegate = self
+        selectColorController.action = { color in
+            self.model = VerticalLabelClock(timeZone: self.model.timeZone, textColor: self.model.textColor, backgroundColor: color)
+        }
         selectColorController.selectedColor = clockView.currentColor()
         self.present(selectColorController, animated: true)
-        colorButtonContext = .background
+       // colorButtonContext = .background
     }
 
 }
@@ -63,18 +69,18 @@ extension EditVerticalViewController {
     }
 }
 
-extension EditVerticalViewController: SelectColorDelegate {
-    func didSelect(color: UIColor) {
-        guard let colorButtonContext = colorButtonContext else {
-            return
-        }
-        switch colorButtonContext {
-        case .text:
-            self.model = VerticalLabelClock(timeZone: model.timeZone, textColor: color, backgroundColor: model.backgroundColor)
-        case .background:
-            self.model = VerticalLabelClock(timeZone: model.timeZone, textColor: model.textColor, backgroundColor: color)
-
-        }
-        self.colorButtonContext = nil
-    }
-}
+//extension EditVerticalViewController: SelectColorDelegate {
+//    func didSelect(color: UIColor) {
+//        guard let colorButtonContext = colorButtonContext else {
+//            return
+//        }
+//        switch colorButtonContext {
+//        case .text:
+//            self.model = VerticalLabelClock(timeZone: model.timeZone, textColor: color, backgroundColor: model.backgroundColor)
+//        case .background:
+//            self.model = VerticalLabelClock(timeZone: model.timeZone, textColor: model.textColor, backgroundColor: color)
+//
+//        }
+//        self.colorButtonContext = nil
+//    }
+//}

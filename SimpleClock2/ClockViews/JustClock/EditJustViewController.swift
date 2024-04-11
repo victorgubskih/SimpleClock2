@@ -33,7 +33,10 @@ class EditJustViewController: UIViewController {
 
     @IBAction func didTapBackgroundColor() {
         let selectColorController = SelectColorControler()
-        selectColorController.delegate = self
+        //selectColorController.delegate = self
+        selectColorController.action = {color in
+            self.model = JustClock(timeZone: self.model.timeZone, background: color)
+        }
         selectColorController.selectedColor = clockView.currentColor()
         self.present(selectColorController, animated: true)
     }
@@ -46,8 +49,8 @@ extension EditJustViewController {
     }
 }
 
-extension EditJustViewController: SelectColorDelegate {
-    func didSelect(color: UIColor) {
-        self.model = JustClock(timeZone: model.timeZone, background: color)
-    }
-}
+//extension EditJustViewController: SelectColorDelegate {
+//    func didSelect(color: UIColor) {
+//        self.model = JustClock(timeZone: model.timeZone, background: color)
+//    }
+//}

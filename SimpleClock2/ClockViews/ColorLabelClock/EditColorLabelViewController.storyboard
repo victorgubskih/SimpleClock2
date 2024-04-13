@@ -20,11 +20,11 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R2H-4c-y3W" userLabel="ColorLabelClockView" customClass="ColorLabelClockView" customModule="SimpleClock2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="621.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="587.33333333333337"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sn1-bQ-rdn" userLabel="TimeZone">
-                                        <rect key="frame" x="0.0" y="621.66666666666663" width="393" height="34.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="587.33333333333337" width="393" height="34.333333333333371"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34.329999999999998" id="pNR-AH-t88"/>
                                         </constraints>
@@ -35,7 +35,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qud-vq-a4R" userLabel="TextColor">
-                                        <rect key="frame" x="0.0" y="656" width="393" height="34.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="621.66666666666663" width="393" height="34.333333333333371"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34.329999999999998" id="3jZ-QU-OVN"/>
                                         </constraints>
@@ -46,7 +46,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJ0-aS-pVJ" userLabel=" SrartColor:">
-                                        <rect key="frame" x="0.0" y="690.33333333333337" width="393" height="34.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="656" width="393" height="34.333333333333371"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34.329999999999998" id="uUW-LD-Dvc"/>
                                         </constraints>
@@ -57,7 +57,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7K-Hd-yGh" userLabel="FinishColor">
-                                        <rect key="frame" x="0.0" y="724.66666666666663" width="393" height="34.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="690.33333333333337" width="393" height="34.333333333333371"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34.329999999999998" id="Qdy-Jm-in2"/>
                                         </constraints>
@@ -65,6 +65,17 @@
                                         <buttonConfiguration key="configuration" style="plain" title="FinishColor"/>
                                         <connections>
                                             <action selector="didTapFinishColor" destination="Y6W-OH-hqX" eventType="touchUpInside" id="EYy-5L-4bf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4D-bf-W5f" userLabel="FinishColor">
+                                        <rect key="frame" x="0.0" y="724.66666666666663" width="393" height="34.333333333333371"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34.329999999999998" id="bYY-Wm-66t"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                        <connections>
+                                            <action selector="didTapSave" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3L8-YS-iVG"/>
                                         </connections>
                                     </button>
                                 </subviews>

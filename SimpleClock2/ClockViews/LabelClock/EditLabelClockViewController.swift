@@ -25,6 +25,8 @@ class EditLabelClockViewController: UIViewController, UIColorPickerViewControlle
         }
     }
 
+    var saveAction: ((LabelClock) -> ())?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,7 +40,7 @@ class EditLabelClockViewController: UIViewController, UIColorPickerViewControlle
 
     @IBAction func didTapTimeZone() {
         let controller = TimeZoneController(action: update(timeZone:))
-        self.present(controller, animated: true)
+        present(controller, animated: true)
     }
 
     @IBAction func didTapTextColor() {
@@ -48,7 +50,7 @@ class EditLabelClockViewController: UIViewController, UIColorPickerViewControlle
             self.model = LabelClock(timeZone: self.model.timeZone, textColor: color, backgroundColor: self.model.backgroundColor)
         }
         selectColorController.selectedColor = clockView.currentColor()
-        self.present(selectColorController, animated: true)
+        present(selectColorController, animated: true)
         //colorButtonContext = .text
     }
 
@@ -59,14 +61,19 @@ class EditLabelClockViewController: UIViewController, UIColorPickerViewControlle
             self.model = LabelClock(timeZone: self.model.timeZone, textColor: self.model.textColor,  backgroundColor: color)
         }
         selectColorController.selectedColor = clockView.currentColor()
-        self.present(selectColorController, animated: true)
+        present(selectColorController, animated: true)
         //colorButtonContext = .background
+    }
+
+    @IBAction func didTapSave() {
+        saveAction?(model)
+        dismiss(animated: true)
     }
 }
 
 extension EditLabelClockViewController {
     private func update(timeZone: TimeZone) {
-        self.model = LabelClock(timeZone: timeZone, textColor: model.textColor, backgroundColor: model.backgroundColor)
+        model = LabelClock(timeZone: timeZone, textColor: model.textColor, backgroundColor: model.backgroundColor)
     }
 }
 

@@ -16,6 +16,8 @@ class EditJustViewController: UIViewController {
         }
     }
 
+    var saveAction: ((JustClock) -> ())?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,6 +41,11 @@ class EditJustViewController: UIViewController {
         }
         selectColorController.selectedColor = clockView.currentColor()
         self.present(selectColorController, animated: true)
+    }
+
+    @IBAction func didTapAction() {
+        saveAction?(model)
+        dismiss(animated: true)
     }
 
 }

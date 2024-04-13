@@ -24,6 +24,9 @@ class EditColorLabelViewController: UIViewController {
         }
     }
 
+    var saveAction: ((ColorLabelClock) -> ())?
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,7 +39,7 @@ class EditColorLabelViewController: UIViewController {
 
     @IBAction func didTapTimeZone() {
         let controller = TimeZoneController(action: update(timeZone:))
-        self.present(controller, animated: true)
+        present(controller, animated: true)
     }
 
     @IBAction func didTapTextColor() {
@@ -46,7 +49,7 @@ class EditColorLabelViewController: UIViewController {
         selectColorController.action = { color in
             self.model = ColorLabelClock(timeZone: self.model.timeZone, textColor: color, srartColor: self.model.srartColor, finishColor: self.model.finishColor)
         }
-        self.present(selectColorController, animated: true)
+        present(selectColorController, animated: true)
        // colorButtonContext = .text
     }
 
@@ -57,7 +60,7 @@ class EditColorLabelViewController: UIViewController {
         selectColorController.action = {color in
             self.model = ColorLabelClock(timeZone: self.model.timeZone, textColor: self.model.textColor, srartColor: color, finishColor: self.model.finishColor)
         }
-        self.present(selectColorController, animated: true)
+        present(selectColorController, animated: true)
        // colorButtonContext = .srartColor
     }
 
@@ -72,10 +75,15 @@ class EditColorLabelViewController: UIViewController {
        // colorButtonContext = .finishColor
     }
 
+    @IBAction func didTapSave() {
+        saveAction?(model)
+        dismiss(animated: true)
+    }
+
 }
 extension EditColorLabelViewController {
     private func update(timeZone: TimeZone) {
-        self.model = ColorLabelClock(timeZone: timeZone, textColor: model.textColor, srartColor: model.srartColor, finishColor: model.finishColor)
+        model = ColorLabelClock(timeZone: timeZone, textColor: model.textColor, srartColor: model.srartColor, finishColor: model.finishColor)
     }
 
 }

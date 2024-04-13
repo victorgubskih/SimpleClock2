@@ -20,11 +20,11 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Reu-xI-anJ" customClass="VerticalLabelClockView" customModule="SimpleClock2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="627"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="583"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TyY-8Q-b0N">
-                                        <rect key="frame" x="0.0" y="627" width="393" height="44"/>
+                                        <rect key="frame" x="0.0" y="583" width="393" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="98N-Q0-ncp"/>
                                         </constraints>
@@ -35,7 +35,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVA-F3-Gnu">
-                                        <rect key="frame" x="0.0" y="671" width="393" height="44"/>
+                                        <rect key="frame" x="0.0" y="627" width="393" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="L6k-np-IRO"/>
                                         </constraints>
@@ -46,7 +46,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOt-1u-lgN">
-                                        <rect key="frame" x="0.0" y="715" width="393" height="44"/>
+                                        <rect key="frame" x="0.0" y="671" width="393" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="6BP-bD-Tm6"/>
                                         </constraints>
@@ -54,6 +54,17 @@
                                         <buttonConfiguration key="configuration" style="plain" title="BackgroundColor"/>
                                         <connections>
                                             <action selector="didTapBackground" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TnA-8Z-pDm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gss-Xj-3hU">
+                                        <rect key="frame" x="0.0" y="715" width="393" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="kci-eQ-tyN"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                        <connections>
+                                            <action selector="didTapSave" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fR4-L4-UH7"/>
                                         </connections>
                                     </button>
                                 </subviews>

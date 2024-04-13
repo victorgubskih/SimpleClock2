@@ -16,6 +16,8 @@ class EditCloudViewController: UIViewController {
         }
     }
 
+    var saveAction: ((CloudLabelClock) -> ())?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,7 +30,7 @@ class EditCloudViewController: UIViewController {
 
     @IBAction func didTapTimeZone() {
         let controller = TimeZoneController(action: update(timeZone:))
-        self.present(controller, animated: true)
+        present(controller, animated: true)
     }
     @IBAction func didTapTextColor() {
        let selectColorController = SelectColorControler()
@@ -37,14 +39,19 @@ class EditCloudViewController: UIViewController {
             self.model = CloudLabelClock(timeZone: self.model.timeZone, textColor: color)
         }
         selectColorController.selectedColor = clockView.currentColor()
-        self.present(selectColorController, animated: true)
+        present(selectColorController, animated: true)
+    }
+
+    @IBAction func didTapAction() {
+        saveAction?(model)
+        dismiss(animated: true)
     }
 
 }
 
 extension EditCloudViewController {
     private func update(timeZone: TimeZone) {
-        self.model = CloudLabelClock(timeZone: timeZone, textColor: model.textColor)
+        model = CloudLabelClock(timeZone: timeZone, textColor: model.textColor)
     }
 }
 

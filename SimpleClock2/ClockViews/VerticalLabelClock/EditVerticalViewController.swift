@@ -17,12 +17,14 @@ class EditVerticalViewController: UIViewController {
     @IBOutlet private var clockView: VerticalLabelClockView!
 
 //    private var colorButtonContext: ColorButtonContext?
-    
+
     private var model = VerticalLabelClock(timeZone: .current, textColor: .black, backgroundColor: .white) {
         didSet {
             clockView?.config(with: model)
         }
     }
+
+    var saveAction: ((VerticalLabelClock) ->())?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,36 +38,42 @@ class EditVerticalViewController: UIViewController {
 
     @IBAction func didTapTimeZone() {
         let controller = TimeZoneController(action: update(timeZone:))
-        self.present(controller, animated: true)
+        present(controller, animated: true)
     }
 
     @IBAction func didTapTextColor() {
-       let selectColorController = SelectColorControler()
+
+        let selectColorController = SelectColorControler()
         //selectColorController.delegate = self
         selectColorController.action = { color in
             self.model = VerticalLabelClock(timeZone: self.model.timeZone, textColor: color, backgroundColor: self.model.backgroundColor)
         }
         selectColorController.selectedColor = clockView.currentColor()
-        self.present(selectColorController, animated: true)
+        present(selectColorController, animated: true)
         //colorButtonContext = .text
     }
 
     @IBAction func didTapBackground() {
-       let selectColorController = SelectColorControler()
+        let selectColorController = SelectColorControler()
         //selectColorController.delegate = self
         selectColorController.action = { color in
             self.model = VerticalLabelClock(timeZone: self.model.timeZone, textColor: self.model.textColor, backgroundColor: color)
         }
         selectColorController.selectedColor = clockView.currentColor()
-        self.present(selectColorController, animated: true)
+        present(selectColorController, animated: true)
        // colorButtonContext = .background
+    }
+
+    @IBAction func didTapSave() {
+        saveAction?(model)
+        dismiss(animated: true)
     }
 
 }
 
 extension EditVerticalViewController {
     private func update(timeZone: TimeZone) {
-        self.model = VerticalLabelClock(timeZone: timeZone, textColor: model.textColor, backgroundColor: model.backgroundColor)
+        model = VerticalLabelClock(timeZone: timeZone, textColor: model.textColor, backgroundColor: model.backgroundColor)
     }
 }
 

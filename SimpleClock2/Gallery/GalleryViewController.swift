@@ -9,8 +9,6 @@ import UIKit
 
 class GalleryViewController: UIViewController {
 
-    private var previews: [ClockViewFactory.Preview] = [.label, .cloudLabel, .colorLabel]
-
     private var clocks: [Clock] = [
         LabelClock(timeZone: .current, textColor: .black, backgroundColor: .white),
         LabelClock(timeZone: .current, textColor: .green, backgroundColor: .blue),
@@ -28,7 +26,11 @@ class GalleryViewController: UIViewController {
         JustClock(timeZone: .current, background: .green),
         JustClock(timeZone: .current, background: .blue),
         JustClock(timeZone: .current, background: .gray)
-    ]
+    ] {
+        didSet {
+            repository.save(clocks: clocks)
+        }
+    }
 
     @IBOutlet private var collectionView: UICollectionView!
 
@@ -40,7 +42,11 @@ class GalleryViewController: UIViewController {
         collectionView.register(UINib(nibName: "CloudLabelClockCell", bundle: nil), forCellWithReuseIdentifier: "CloudLabelClockCell")
         collectionView.register(UINib(nibName: "JustClockCell", bundle: nil), forCellWithReuseIdentifier: "JustClockCell")
 
-        previews = ClockViewFactory().makePreviews()
+        let savedClocks = repository.clocks()
+        if !savedClocks.isEmpty {
+            clocks = savedClocks
+            collectionView.reloadData()
+        }
     }
 
     @IBAction func edit() {

@@ -14,6 +14,20 @@ class FileRepository: Repository {
         save(timeZone, toFileName: "timeZone.json")
     }
     
+    func save(clocks: [Clock]) {
+        let wrappedClocks = clocks.map { clock in
+            return clock.wrappedValue
+        }
+        save(wrappedClocks, toFileName: "Clocks.json")
+    }
+
+    func clocks() -> [Clock] {
+        let wrappedClocks: [CodableClockWrapper] = read(fromFileName: "Clocks.json") ?? []
+        return wrappedClocks.map { wrappedClock in
+            wrappedClock.rawValue
+        }
+    }
+   
     func preview() -> ClockViewFactory.Preview? {
         return read(fromFileName: "preview.json")
     }

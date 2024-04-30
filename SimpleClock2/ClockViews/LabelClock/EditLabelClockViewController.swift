@@ -30,7 +30,7 @@ class EditLabelClockViewController: UIViewController, UIColorPickerViewControlle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        clockView.config(with: model)
+        clockView?.config(with: model)
 
     }
 

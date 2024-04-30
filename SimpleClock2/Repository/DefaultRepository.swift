@@ -2,6 +2,14 @@ import Foundation
 import UIKit
 
 class DefaultRepository: Repository {
+    func save(clocks: [Clock]) {
+
+    }
+    
+    func clocks() -> [Clock] {
+        return []
+    }
+    
     private static let userKeySelectedColor = "selectedColor"
     private static let userKeyTimeZone = "selectedTimeZone"
     private static let userKeyClock = "ClockPreviewKey"

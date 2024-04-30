@@ -6,4 +6,6 @@ struct ColorLabelClock: Clock {
     let  textColor: UIColor
     var  srartColor: UIColor
     var finishColor: UIColor
+
+    var wrappedValue: CodableClockWrapper { return .colorLabel(self) }
 }

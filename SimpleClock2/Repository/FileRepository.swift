@@ -5,7 +5,7 @@ class FileRepository: Repository {
     func save(preview: ClockViewFactory.Preview) {
         save(preview, toFileName: "preview.json")
     }
-    
+
     func save(color: UIColor) {
         save(color, toFileName: "color.json")
     }
@@ -13,9 +13,9 @@ class FileRepository: Repository {
     func save(timeZone: TimeZone) {
         save(timeZone, toFileName: "timeZone.json")
     }
-    
+
     func save(clocks: [Clock]) {
-        let wrappedClocks = clocks.map { clock in
+        let wrappedClocks: [CodableClockWrapper] = clocks.map { clock in
             return clock.wrappedValue
         }
         save(wrappedClocks, toFileName: "Clocks.json")
@@ -23,9 +23,10 @@ class FileRepository: Repository {
 
     func clocks() -> [Clock] {
         let wrappedClocks: [CodableClockWrapper] = read(fromFileName: "Clocks.json") ?? []
-        return wrappedClocks.map { wrappedClock in
-            wrappedClock.rawValue
+        let unwrappedClocks: [Clock] = wrappedClocks.map { wrappedClock in
+            return wrappedClock.rawValue
         }
+        return unwrappedClocks
     }
    
     func preview() -> ClockViewFactory.Preview? {

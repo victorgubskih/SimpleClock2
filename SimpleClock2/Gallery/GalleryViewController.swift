@@ -111,7 +111,20 @@ class GalleryViewController: UIViewController {
 
         }
     }
+
+    @IBAction func newAction() {
+        let index = collectionView.indexPathsForVisibleItems.first?.item ?? 0
+        let storyboard = UIStoryboard(name: String(describing: EditLabelClockViewController.self), bundle: nil)
+        let editViewController = storyboard.instantiateViewController(identifier: "edit") as! EditLabelClockViewController
+        editViewController.config(with: LabelClock(timeZone: .current, textColor: .black, backgroundColor: .white))
+        self.present(editViewController, animated: true)
+        editViewController.saveAction = { model in
+            self.clocks.insert(model, at: index)
+            self.collectionView.reloadData()
+        }
+    }
 }
+
 
 extension GalleryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

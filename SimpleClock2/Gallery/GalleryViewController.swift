@@ -123,6 +123,28 @@ class GalleryViewController: UIViewController {
             self.collectionView.reloadData()
         }
     }
+
+    @IBAction func deleteAction() {
+        guard let index = collectionView.indexPathsForVisibleItems.first?.item else {
+            return
+        }
+        guard index < clocks.count else {
+            return
+        }
+
+        let alert = UIAlertController()
+        alert.title = "Delete"
+        alert.message = "Do you want to delete clock?"
+        alert.addAction(.init(title: "Yes", style: .default, handler: { _ in
+            self.clocks.remove(at: index)
+            self.collectionView.reloadData()
+        }))
+
+
+        alert.addAction(.init(title: "No", style: .cancel))
+        self.present(alert, animated: true)
+
+    }
 }
 
 

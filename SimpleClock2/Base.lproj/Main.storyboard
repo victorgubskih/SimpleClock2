@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3D2-dV-BxJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3D2-dV-BxJ">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -57,15 +57,25 @@
                                     <action selector="newAction" destination="3D2-dV-BxJ" eventType="touchUpInside" id="Rwe-2q-znN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9j9-YJ-AEb">
+                                <rect key="frame" x="159.66666666666666" y="59" width="74" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Delete"/>
+                                <connections>
+                                    <action selector="deleteAction" destination="3D2-dV-BxJ" eventType="touchUpInside" id="zlG-yA-T8K"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Xzo-mu-eTe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="9j9-YJ-AEb" firstAttribute="centerX" secondItem="Xzo-mu-eTe" secondAttribute="centerX" id="2Tr-VE-bcs"/>
                             <constraint firstItem="Xzo-mu-eTe" firstAttribute="trailing" secondItem="3PZ-9i-SU9" secondAttribute="trailing" id="Fcp-1a-XfZ"/>
                             <constraint firstItem="Xzo-mu-eTe" firstAttribute="bottom" secondItem="z27-dV-e3d" secondAttribute="bottom" id="SIx-Fu-8br"/>
                             <constraint firstItem="Xt7-nH-Eh8" firstAttribute="top" secondItem="Xzo-mu-eTe" secondAttribute="top" id="X6J-6H-8kg"/>
                             <constraint firstItem="3PZ-9i-SU9" firstAttribute="top" secondItem="Xzo-mu-eTe" secondAttribute="top" id="bte-Gl-oYl"/>
                             <constraint firstItem="z27-dV-e3d" firstAttribute="top" secondItem="Xzo-mu-eTe" secondAttribute="top" id="gjK-CA-31z"/>
+                            <constraint firstItem="9j9-YJ-AEb" firstAttribute="top" secondItem="Xzo-mu-eTe" secondAttribute="top" id="pmM-eg-O7C"/>
                             <constraint firstItem="Xt7-nH-Eh8" firstAttribute="leading" secondItem="Xzo-mu-eTe" secondAttribute="leading" id="q3h-da-8V7"/>
                             <constraint firstItem="Xzo-mu-eTe" firstAttribute="trailing" secondItem="z27-dV-e3d" secondAttribute="trailing" id="rzs-iQ-OaD"/>
                             <constraint firstItem="z27-dV-e3d" firstAttribute="leading" secondItem="Xzo-mu-eTe" secondAttribute="leading" id="tyO-zv-vtG"/>

@@ -63,6 +63,7 @@
 		57D325742BBD8BE3001BB71F /* EditCloudViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D325732BBD8BE3001BB71F /* EditCloudViewController.storyboard */; };
 		57D325762BBD9551001BB71F /* EditJustViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D325752BBD9551001BB71F /* EditJustViewController.swift */; };
 		57D325782BBD955F001BB71F /* EditJustViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D325772BBD955F001BB71F /* EditJustViewController.storyboard */; };
+		57ED77C02BF2806200D0C290 /* ChooseClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ED77BF2BF2806200D0C290 /* ChooseClockViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +125,7 @@
 		57D325732BBD8BE3001BB71F /* EditCloudViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditCloudViewController.storyboard; sourceTree = "<group>"; };
 		57D325752BBD9551001BB71F /* EditJustViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditJustViewController.swift; sourceTree = "<group>"; };
 		57D325772BBD955F001BB71F /* EditJustViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditJustViewController.storyboard; sourceTree = "<group>"; };
+		57ED77BF2BF2806200D0C290 /* ChooseClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseClockViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +252,7 @@
 				572474A42B17AAF90080BE56 /* ClockViewFactory.swift */,
 				57DFC0E32B98D4F100D62069 /* ClockViews */,
 				5755E13F2AF93D4800429A7E /* ClockViewProtocol.swift */,
+				57ED77BF2BF2806200D0C290 /* ChooseClockViewController.swift */,
 				571D30502B92498000FE0964 /* Model */,
 				57D282962B86635500A46E23 /* Repository */,
 				5778DD622ACC708B00675257 /* Main.storyboard */,
@@ -406,6 +409,7 @@
 				5778DD612ACC708B00675257 /* ViewController.swift in Sources */,
 				57D2830F2B8E607600A46E23 /* FileRepository.swift in Sources */,
 				5761011A2BA8AF2400478398 /* LabelClock.swift in Sources */,
+				57ED77C02BF2806200D0C290 /* ChooseClockViewController.swift in Sources */,
 				575210C22B0FD36300C4A2A7 /* SelectClockController.swift in Sources */,
 				572474A52B17AAF90080BE56 /* ClockViewFactory.swift in Sources */,
 				5755E1482AFA5FC200429A7E /* ColorLabelClockView.swift in Sources */,

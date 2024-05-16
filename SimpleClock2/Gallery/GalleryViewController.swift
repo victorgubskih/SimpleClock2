@@ -57,6 +57,14 @@ class GalleryViewController: UIViewController {
             return
         }
         let clock = clocks[index]
+
+        presentEditController(for: clock, editAction: { model in
+            self.clocks[index] = model
+            self.collectionView.reloadData()
+        })
+    }
+
+    func presentEditController(for clock: Clock, editAction: @escaping (Clock) -> (Void)) {
         switch clock {
         case let labelClock as LabelClock:
             let storyboard = UIStoryboard(name: String(describing: EditLabelClockViewController.self), bundle: nil)
@@ -64,17 +72,16 @@ class GalleryViewController: UIViewController {
             editViewController.config(with: labelClock)
             self.present(editViewController, animated: true)
             editViewController.saveAction = { model in
-                self.clocks[index] = model
-                self.collectionView.reloadData()
+                editAction(model)
             }
+            
         case let verticalLabelClock as VerticalLabelClock:
             let storyBoard = UIStoryboard(name: String(describing: EditVerticalViewController.self), bundle: nil)
             let editVerticalViewController = storyBoard.instantiateViewController(identifier: "edit") as! EditVerticalViewController
             editVerticalViewController.config(with: verticalLabelClock)
             self.present(editVerticalViewController, animated: true)
             editVerticalViewController.saveAction = { model in
-                self.clocks[index] = model
-                self.collectionView.reloadData()
+                editAction(model)
             }
 
         case let colorlabelClock as ColorLabelClock:
@@ -83,8 +90,7 @@ class GalleryViewController: UIViewController {
             editColoLabelrViewControllert.config(with: colorlabelClock)
             self.present(editColoLabelrViewControllert, animated: true)
             editColoLabelrViewControllert.saveAction = { model in
-                self.clocks[index] = model
-                self.collectionView.reloadData()
+                editAction(model)
             }
 
         case let cloudLabelClock as CloudLabelClock:
@@ -93,8 +99,7 @@ class GalleryViewController: UIViewController {
             editCloudClockViewController.config(with: cloudLabelClock)
             self.present(editCloudClockViewController, animated: true)
             editCloudClockViewController.saveAction = { model in
-                self.clocks[index] = model
-                self.collectionView.reloadData()
+                editAction(model)
             }
 
         case let justClock as JustClock:
@@ -102,9 +107,8 @@ class GalleryViewController: UIViewController {
             let editJustClockViewController = storyboard.instantiateViewController(identifier: "edit") as! EditJustViewController
             editJustClockViewController.config(with: justClock)
             self.present(editJustClockViewController, animated: true)
-            editJustClockViewController.saveAction = {model in
-                self.clocks[index] = model
-                self.collectionView.reloadData()
+            editJustClockViewController.saveAction = { model in
+                editAction(model)
             }
         default:
             break
@@ -113,16 +117,6 @@ class GalleryViewController: UIViewController {
     }
 
     @IBAction func newAction() {
-        //let index = collectionView.indexPathsForVisibleItems.first?.item ?? 0
-//        let storyboard = UIStoryboard(name: String(describing: EditLabelClockViewController.self), bundle: nil)
-//        let editViewController = storyboard.instantiateViewController(identifier: "edit") as! EditLabelClockViewController
-//        editViewController.config(with: LabelClock(timeZone: .current, textColor: .black, backgroundColor: .white))
-//        self.present(editViewController, animated: true)
-//        editViewController.saveAction = { model in
-//            self.clocks.insert(model, at: index)
-//            self.collectionView.reloadData()
-//        }
-
         let viewController = ChooseClockViewController()
         viewController.delegate = self
         self.present(viewController, animated: true)
@@ -150,7 +144,6 @@ class GalleryViewController: UIViewController {
 
     }
 }
-
 
 extension GalleryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -212,61 +205,12 @@ extension GalleryViewController: ChooseClockDelegate {
         guard index < clocks.count else {
             return
         }
-
-        switch clock {
-        case let labelClock as LabelClock:
-            let storyboard = UIStoryboard(name: String(describing: EditLabelClockViewController.self), bundle: nil)
-            let editViewController = storyboard.instantiateViewController(identifier: "edit") as! EditLabelClockViewController
-            editViewController.config(with: labelClock)
-            self.present(editViewController, animated: true)
-            editViewController.saveAction = { model in
+        presentEditController(for: clock, editAction: {
+            model in
                 self.clocks.insert(model, at: index)
                 self.collectionView.reloadData()
-            }
-        case let verticalLabelClock as VerticalLabelClock:
-            let storyBoard = UIStoryboard(name: String(describing: EditVerticalViewController.self), bundle: nil)
-            let editVerticalViewController = storyBoard.instantiateViewController(identifier: "edit") as! EditVerticalViewController
-            editVerticalViewController.config(with: verticalLabelClock)
-            self.present(editVerticalViewController, animated: true)
-            editVerticalViewController.saveAction = { model in
-                self.clocks.insert(model, at: index)
-                self.collectionView.reloadData()
-            }
+        })
 
-        case let colorlabelClock as ColorLabelClock:
-            let storybord = UIStoryboard(name: String(describing: EditColorLabelViewController.self), bundle: nil)
-            let editColoLabelrViewControllert = storybord.instantiateViewController(identifier: "edit") as! EditColorLabelViewController
-            editColoLabelrViewControllert.config(with: colorlabelClock)
-            self.present(editColoLabelrViewControllert, animated: true)
-            editColoLabelrViewControllert.saveAction = { model in
-                self.clocks.insert(model, at: index)
-                self.collectionView.reloadData()
-            }
-
-        case let cloudLabelClock as CloudLabelClock:
-            let storyboard = UIStoryboard(name: String(describing: EditCloudViewController.self), bundle: nil)
-            let editCloudClockViewController = storyboard.instantiateViewController(identifier: "edit") as! EditCloudViewController
-            editCloudClockViewController.config(with: cloudLabelClock)
-            self.present(editCloudClockViewController, animated: true)
-            editCloudClockViewController.saveAction = { model in
-                self.clocks.insert(model, at: index)
-                self.collectionView.reloadData()
-            }
-
-        case let justClock as JustClock:
-            let storyboard = UIStoryboard(name: String(describing: EditJustViewController.self), bundle: nil)
-            let editJustClockViewController = storyboard.instantiateViewController(identifier: "edit") as! EditJustViewController
-            editJustClockViewController.config(with: justClock)
-            self.present(editJustClockViewController, animated: true)
-            editJustClockViewController.saveAction = {model in
-                self.clocks.insert(model, at: index)
-                self.collectionView.reloadData()
-            }
-        default:
-            break
-
-        }
     }
-    
 
 }
